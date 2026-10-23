@@ -2,1064 +2,671 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Dent Way | Dental Tourism in Albania</title>
-  <meta name="description" content="Discover dental implants, All-on-4, All-on-6, zirconia crowns and smile makeovers at Dent Way in Tirana, Albania. Contact us for a personalized treatment plan.">
-  <meta name="theme-color" content="#0b5b49">
-
-  <style>
-    :root {
-      --green: #0b5b49;
-      --green-dark: #073c32;
-      --green-light: #eaf5ef;
-      --gold: #c5a45d;
-      --white: #ffffff;
-      --text: #24332f;
-      --muted: #687771;
-      --border: #e1eae5;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 100px;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
-      background: var(--white);
-      line-height: 1.7;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .container {
-      width: min(1160px, 92%);
-      margin: 0 auto;
-    }
-
-    /* HEADER AND LARGE LOGO */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(255, 255, 255, 0.97);
-      border-bottom: 1px solid var(--border);
-      box-shadow: 0 3px 18px rgba(0, 0, 0, 0.04);
-    }
-
-    .header-inner {
-      min-height: 125px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 25px;
-      padding: 10px 0;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      flex-shrink: 0;
-    }
-
-    .brand img {
-      width: 125px;
-      height: 105px;
-      object-fit: contain;
-      object-position: center;
-    }
-
-    .brand-text strong {
-      display: block;
-      color: var(--green);
-      font-size: 25px;
-      letter-spacing: 2px;
-      line-height: 1.2;
-    }
-
-    .brand-text span {
-      color: var(--gold);
-      font-size: 11px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    nav a {
-      font-size: 14px;
-      font-weight: 600;
-      transition: color 0.2s;
-    }
-
-    nav a:hover {
-      color: var(--gold);
-    }
-
-    .nav-cta,
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--green);
-      color: var(--white);
-      padding: 13px 23px;
-      border-radius: 6px;
-      font-weight: 700;
-      border: 1px solid var(--green);
-      transition: 0.2s;
-    }
-
-    .nav-cta:hover,
-    .btn:hover {
-      background: var(--green-dark);
-      color: var(--white);
-      transform: translateY(-1px);
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: var(--green);
-      border-color: var(--green);
-    }
-
-    .btn-outline:hover {
-      background: var(--green);
-    }
-
-    /* HERO */
-    .hero {
-      background:
-        radial-gradient(ellipse at 90% 10%, rgba(197, 164, 93, 0.15), transparent 35%),
-        linear-gradient(135deg, #f2f8f4, #ffffff 70%);
-      padding: 95px 0 90px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      align-items: center;
-      gap: 60px;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      color: var(--green);
-      background: var(--green-light);
-      padding: 7px 13px;
-      border-radius: 30px;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      margin-bottom: 22px;
-    }
-
-    h1 {
-      color: var(--green-dark);
-      font-size: clamp(38px, 5vw, 61px);
-      line-height: 1.12;
-      letter-spacing: -1.5px;
-      margin-bottom: 23px;
-    }
-
-    h1 span {
-      color: var(--gold);
-    }
-
-    .hero p {
-      color: var(--muted);
-      font-size: 18px;
-      max-width: 620px;
-      margin-bottom: 28px;
-    }
-
-    .button-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 13px;
-      margin-bottom: 27px;
-    }
-
-    .hero-note {
-      font-size: 13px !important;
-      margin-bottom: 0 !important;
-    }
-
-    .hero-card {
-      min-height: 390px;
-      padding: 35px;
-      border-radius: 24px;
-      background: var(--green);
-      color: var(--white);
-      box-shadow: 0 25px 65px rgba(11, 91, 73, 0.18);
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-    }
-
-    .hero-card::before,
-    .hero-card::after {
-      content: "";
-      position: absolute;
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      border-radius: 50%;
-    }
-
-    .hero-card::before {
-      width: 340px;
-      height: 340px;
-      right: -100px;
-      top: -90px;
-    }
-
-    .hero-card::after {
-      width: 240px;
-      height: 240px;
-      right: -45px;
-      top: -40px;
-    }
-
-    .hero-card .decor {
-      font-size: 78px;
-      line-height: 1;
-      margin-bottom: 32px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-card h2 {
-      font-size: 29px;
-      margin-bottom: 12px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-card p {
-      color: #e4f1eb;
-      font-size: 16px;
-      margin: 0;
-      position: relative;
-      z-index: 1;
-    }
-
-    /* GENERAL SECTIONS */
-    section {
-      padding: 82px 0;
-    }
-
-    .section-heading {
-      text-align: center;
-      max-width: 720px;
-      margin: 0 auto 45px;
-    }
-
-    .section-heading .eyebrow {
-      margin-bottom: 12px;
-    }
-
-    h2.section-title {
-      font-size: clamp(30px, 4vw, 42px);
-      color: var(--green-dark);
-      line-height: 1.2;
-      margin-bottom: 15px;
-    }
-
-    .section-heading p {
-      color: var(--muted);
-    }
-
-    .treatments {
-      background: #fff;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 22px;
-    }
-
-    .service-card {
-      border: 1px solid var(--border);
-      border-radius: 15px;
-      padding: 28px;
-      background: white;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .service-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 15px 35px rgba(7, 60, 50, 0.08);
-    }
-
-    .service-icon {
-      width: 55px;
-      height: 55px;
-      display: grid;
-      place-items: center;
-      border-radius: 14px;
-      background: var(--green-light);
-      color: var(--green);
-      font-size: 26px;
-      margin-bottom: 20px;
-    }
-
-    .service-card h3 {
-      font-size: 20px;
-      color: var(--green-dark);
-      margin-bottom: 10px;
-    }
-
-    .service-card p {
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    /* ABOUT */
-    .about {
-      background: var(--green-light);
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 55px;
-      align-items: center;
-    }
-
-    .about h2 {
-      font-size: clamp(30px, 4vw, 42px);
-      line-height: 1.2;
-      color: var(--green-dark);
-      margin-bottom: 20px;
-    }
-
-    .about p {
-      color: var(--muted);
-      margin-bottom: 17px;
-    }
-
-    .benefits {
-      display: grid;
-      gap: 14px;
-    }
-
-    .benefit {
-      background: #fff;
-      padding: 17px 20px;
-      border-radius: 10px;
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-    }
-
-    .check {
-      color: var(--green);
-      font-weight: 900;
-      font-size: 20px;
-    }
-
-    .benefit strong {
-      display: block;
-      color: var(--green-dark);
-    }
-
-    .benefit span:last-child {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    /* PATIENT JOURNEY */
-    .journey-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 20px;
-    }
-
-    .journey-step {
-      text-align: center;
-      padding: 25px 15px;
-    }
-
-    .step-number {
-      display: grid;
-      place-items: center;
-      width: 57px;
-      height: 57px;
-      border-radius: 50%;
-      background: var(--green);
-      color: white;
-      font-size: 20px;
-      font-weight: 700;
-      margin: 0 auto 20px;
-    }
-
-    .journey-step h3 {
-      color: var(--green-dark);
-      font-size: 18px;
-      margin-bottom: 8px;
-    }
-
-    .journey-step p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    /* CONTACT */
-    .contact {
-      background: #f7faf8;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 35px;
-      align-items: start;
-    }
-
-    .contact-copy h2 {
-      font-size: 38px;
-      line-height: 1.2;
-      color: var(--green-dark);
-      margin-bottom: 18px;
-    }
-
-    .contact-copy p {
-      color: var(--muted);
-      margin-bottom: 22px;
-    }
-
-    .contact-list {
-      display: grid;
-      gap: 14px;
-    }
-
-    .contact-item {
-      display: flex;
-      gap: 13px;
-      align-items: center;
-      overflow-wrap: anywhere;
-    }
-
-    .contact-item strong {
-      color: var(--green-dark);
-      display: block;
-    }
-
-    .contact-item span {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .contact-panel {
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: 17px;
-      padding: 30px;
-      box-shadow: 0 12px 35px rgba(7, 60, 50, 0.05);
-    }
-
-    .contact-panel h3 {
-      color: var(--green-dark);
-      font-size: 24px;
-      margin-bottom: 12px;
-    }
-
-    .contact-panel p {
-      color: var(--muted);
-      margin-bottom: 22px;
-    }
-
-    .contact-buttons {
-      display: grid;
-      gap: 12px;
-    }
-
-    .contact-buttons a {
-      text-align: center;
-      padding: 14px 18px;
-      border-radius: 7px;
-      font-weight: 700;
-      border: 1px solid var(--green);
-      overflow-wrap: anywhere;
-    }
-
-    .contact-buttons .whatsapp {
-      color: white;
-      background: #16865d;
-      border-color: #16865d;
-    }
-
-    .contact-buttons .email {
-      color: var(--green);
-      background: white;
-    }
-
-    /* FOOTER */
-    footer {
-      background: var(--green-dark);
-      color: white;
-      padding: 35px 0;
-    }
-
-    .footer-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 25px;
-      flex-wrap: wrap;
-    }
-
-    .footer-brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .footer-brand img {
-      width: 75px;
-      height: 65px;
-      object-fit: contain;
-      background: white;
-      border-radius: 8px;
-      padding: 3px;
-    }
-
-    .footer-brand strong {
-      display: block;
-      font-size: 20px;
-    }
-
-    .footer-brand span,
-    .copyright {
-      color: #d3e5dc;
-      font-size: 13px;
-    }
-
-    .socials {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .socials a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid rgba(255,255,255,0.35);
-      border-radius: 30px;
-      padding: 8px 14px;
-      font-size: 13px;
-    }
-
-    .socials a:hover {
-      background: rgba(255,255,255,0.12);
-    }
-
-    .copyright {
-      width: 100%;
-      border-top: 1px solid rgba(255,255,255,0.17);
-      padding-top: 18px;
-      margin-top: 8px;
-    }
-
-    .floating-whatsapp {
-      position: fixed;
-      right: 22px;
-      bottom: 22px;
-      z-index: 999;
-      background: #16865d;
-      color: white;
-      border-radius: 50px;
-      padding: 14px 19px;
-      font-size: 14px;
-      font-weight: 700;
-      box-shadow: 0 7px 22px rgba(0, 0, 0, 0.2);
-    }
-
-    .floating-whatsapp:hover {
-      background: #106c4a;
-    }
-
-    /* MOBILE */
-    @media (max-width: 900px) {
-      .header-inner {
-        flex-direction: column;
-        gap: 10px;
-        padding: 12px 0 15px;
-      }
-
-      .brand img {
-        width: 110px;
-        height: 90px;
-      }
-
-      nav {
-        justify-content: center;
-        gap: 12px 18px;
-      }
-
-      .hero-grid,
-      .about-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-grid {
-        gap: 35px;
-      }
-
-      .hero-card {
-        min-height: 300px;
-      }
-
-      .cards {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .journey-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 560px) {
-      .container {
-        width: 91%;
-      }
-
-      .header-inner {
-        min-height: auto;
-      }
-
-      .brand {
-        gap: 10px;
-      }
-
-      .brand img {
-        width: 100px;
-        height: 85px;
-      }
-
-      .brand-text strong {
-        font-size: 22px;
-      }
-
-      nav {
-        gap: 10px 14px;
-      }
-
-      nav a {
-        font-size: 12px;
-      }
-
-      nav .nav-cta {
-        padding: 9px 12px;
-      }
-
-      .hero {
-        padding: 60px 0;
-      }
-
-      h1 {
-        font-size: 39px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-
-      .hero-card {
-        padding: 26px;
-        min-height: 280px;
-      }
-
-      .hero-card h2 {
-        font-size: 25px;
-      }
-
-      section {
-        padding: 60px 0;
-      }
-
-      .cards,
-      .journey-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .service-card {
-        padding: 24px;
-      }
-
-      .contact-panel {
-        padding: 22px;
-      }
-
-      .footer-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .floating-whatsapp {
-        right: 12px;
-        bottom: 12px;
-        padding: 12px 15px;
-        font-size: 12px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#103e3b">
+<meta name="description" content="Dent Way in Tirana, Albania. Explore dental implants, All-on-4, All-on-6, zirconia crowns, veneers and dental tourism support.">
+<title>Dent Way | Dental Care in Albania</title>
+
+<style>
+:root {
+  --green: #103e3b;
+  --green2: #1d6259;
+  --gold: #c9a66b;
+  --cream: #f7f5ef;
+  --white: #ffffff;
+  --text: #243532;
+  --muted: #687975;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  line-height: 1.7;
+  background: var(--white);
+}
+a { color: inherit; text-decoration: none; }
+button, select, input, textarea { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+.container { width: min(1160px, 92%); margin: auto; }
+header {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(255,255,255,.97);
+  border-bottom: 1px solid #e9e8e1;
+  backdrop-filter: blur(12px);
+}
+.nav {
+  min-height: 88px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 20px;
+}
+.brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.brand img { width: 112px; height: 76px; object-fit: contain; }
+.brand-text { color: var(--green); font-weight: 800; letter-spacing: 3px; }
+.brand-text small {
+  display: block; color: var(--gold); font-size: 10px;
+  letter-spacing: 2px; font-weight: 600;
+}
+.nav-right { display: flex; align-items: center; gap: 17px; }
+nav { display: flex; align-items: center; gap: 19px; }
+nav a { font-size: 13px; font-weight: 700; }
+nav a:hover { color: var(--gold); }
+#language {
+  max-width: 112px; padding: 10px 8px;
+  border: 1px solid #dcded6; border-radius: 8px;
+  background: white; color: var(--green); cursor: pointer;
+}
+.menu-button {
+  display: none; border: 0; background: transparent;
+  color: var(--green); font-size: 27px; cursor: pointer;
+}
+.hero {
+  background: linear-gradient(120deg, #103e3b 0%, #174f48 65%, #28685b 100%);
+  color: white; overflow: hidden; position: relative;
+}
+.hero::after {
+  content: ""; position: absolute; width: 440px; height: 440px;
+  border: 1px solid rgba(201,166,107,.35); border-radius: 50%;
+  right: -130px; top: -120px; pointer-events: none;
+}
+.hero-grid {
+  min-height: 550px; padding: 85px 0;
+  display: grid; grid-template-columns: 1.25fr .75fr;
+  align-items: center; gap: 55px; position: relative; z-index: 1;
+}
+.eyebrow {
+  text-transform: uppercase; color: var(--gold);
+  letter-spacing: 2.5px; font-size: 12px; font-weight: 800;
+}
+h1 { font-size: clamp(40px, 5.6vw, 69px); line-height: 1.08; margin: 20px 0; letter-spacing: -2px; }
+h1 span { color: #dfc18e; }
+.hero p { color: #e1e9e4; font-size: 17px; max-width: 600px; }
+.hero-art {
+  min-height: 330px; border: 1px solid rgba(255,255,255,.22);
+  border-radius: 190px 190px 24px 24px;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; padding: 30px;
+  background: radial-gradient(ellipse at center, rgba(255,255,255,.13), rgba(255,255,255,.02) 65%);
+}
+.hero-art-inner { border: 1px solid rgba(201,166,107,.65); border-radius: 50%; width: 210px; height: 210px; display: grid; place-content: center; }
+.hero-art .tooth { font-size: 83px; line-height: 1.2; color: #e6d1a6; }
+.hero-art small { color: #f4e6ca; letter-spacing: 2px; font-size: 10px; }
+.buttons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.btn {
+  display: inline-flex; justify-content: center; align-items: center;
+  padding: 13px 21px; border-radius: 6px;
+  font-size: 13px; font-weight: 800; border: 1px solid transparent;
+  cursor: pointer; transition: .2s;
+}
+.btn-gold { background: var(--gold); color: #172d28; }
+.btn-gold:hover { background: #e0c18a; transform: translateY(-1px); }
+.btn-outline { border-color: rgba(255,255,255,.65); color: white; }
+.btn-outline:hover { background: white; color: var(--green); }
+.btn-green { background: var(--green); color: white; }
+.btn-green:hover { background: var(--green2); }
+.trust { padding: 25px 0; background: var(--cream); }
+.trust-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 25px; }
+.trust-item { display: flex; align-items: center; gap: 13px; }
+.trust-icon { color: var(--gold); font-size: 25px; }
+.trust-item strong { display: block; color: var(--green); font-size: 14px; }
+.trust-item small { display: block; color: var(--muted); font-size: 12px; }
+section { padding: 85px 0; }
+.section-head { max-width: 720px; margin: 0 auto 40px; text-align: center; }
+.section-head h2, .about h2, .contact h2 {
+  color: var(--green); font-size: clamp(30px, 4vw, 43px);
+  line-height: 1.2; margin: 12px 0 17px; letter-spacing: -1px;
+}
+.section-head p, .about p { color: var(--muted); }
+.cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.card {
+  padding: 27px; border: 1px solid #e9e9e2;
+  border-radius: 12px; background: white;
+  transition: transform .2s, box-shadow .2s;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 12px 35px #103e3b12; }
+.card-icon {
+  width: 49px; height: 49px; display: grid; place-content: center;
+  background: #f4f0e7; color: var(--green);
+  border-radius: 10px; font-size: 24px; margin-bottom: 18px;
+}
+.card h3 { color: var(--green); margin: 0 0 10px; font-size: 19px; }
+.card p { color: var(--muted); font-size: 14px; margin-bottom: 19px; }
+.card a { color: var(--green2); font-size: 13px; font-weight: 800; }
+.card a:hover { color: #9b743b; }
+.about { background: var(--cream); }
+.about-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 65px; align-items: center; }
+.about-panel {
+  min-height: 330px; border-radius: 14px; padding: 30px;
+  display: flex; flex-direction: column; justify-content: center;
+  color: white; background: linear-gradient(145deg, var(--green), #276c60);
+}
+.about-panel .big { color: var(--gold); font-size: 51px; font-weight: 800; line-height: 1.2; }
+.about-panel p { color: #e2eae5; }
+.check-list { list-style: none; padding: 0; }
+.check-list li { padding: 8px 0; }
+.check-list li::before { content: "✓"; color: #ad874c; font-weight: 800; margin-right: 10px; }
+.journey-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; }
+.journey-step { padding: 23px 19px; border-top: 2px solid var(--gold); background: #faf9f5; }
+.journey-step .number { color: var(--gold); font-size: 29px; font-weight: 800; }
+.journey-step h3 { color: var(--green); font-size: 16px; }
+.journey-step p { color: var(--muted); font-size: 13px; }
+.faq { background: var(--cream); }
+.faq-list { max-width: 820px; margin: auto; }
+details { background: white; border: 1px solid #e6e5dd; border-radius: 8px; padding: 17px 20px; margin: 10px 0; }
+summary { cursor: pointer; font-weight: 700; color: var(--green); }
+details p { color: var(--muted); font-size: 14px; }
+.contact-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 45px; align-items: start; }
+.contact-info { background: var(--green); color: white; border-radius: 12px; padding: 30px; }
+.contact-info h3 { color: #e2c38e; }
+.contact-info p { color: #e0e8e3; }
+.contact-info a { overflow-wrap: anywhere; }
+.contact-form { display: grid; gap: 14px; }
+.contact-form label { display: block; font-size: 13px; font-weight: 700; color: var(--green); }
+.contact-form input, .contact-form select, .contact-form textarea {
+  width: 100%; margin-top: 6px; padding: 12px;
+  border: 1px solid #dcded6; border-radius: 6px;
+  background: white; color: var(--text);
+}
+.contact-form textarea { min-height: 115px; resize: vertical; }
+.form-note { color: var(--muted); font-size: 12px; }
+footer { background: #0b2e2b; color: white; padding: 35px 0 20px; }
+.footer-grid { display: flex; justify-content: space-between; align-items: center; gap: 25px; flex-wrap: wrap; }
+.footer-brand { display: flex; align-items: center; gap: 13px; }
+.footer-brand img { width: 75px; height: 60px; object-fit: contain; }
+.footer-links { display: flex; flex-wrap: wrap; gap: 17px; font-size: 13px; }
+footer p { color: #cbd8d2; font-size: 12px; }
+.copyright { border-top: 1px solid #31514b; margin-top: 24px; padding-top: 16px; }
+.whatsapp {
+  position: fixed; right: 22px; bottom: 22px; z-index: 99;
+  background: #168b58; color: white; padding: 13px 19px;
+  border-radius: 40px; box-shadow: 0 5px 22px #0002;
+  font-size: 13px; font-weight: 800;
+}
+.whatsapp:hover { background: #107448; }
+@media(max-width:900px) {
+  .nav { min-height: 76px; }
+  .brand img { width: 85px; height: 64px; }
+  .brand-text { letter-spacing: 2px; }
+  .menu-button { display: block; }
+  .nav-right { gap: 10px; }
+  nav {
+    display: none; position: absolute; top: 76px; left: 0; right: 0;
+    background: white; padding: 18px 5%; border-bottom: 1px solid #e9e8e1;
+    flex-direction: column; align-items: stretch; gap: 0;
+  }
+  nav.open { display: flex; }
+  nav a { padding: 12px 0; }
+  .hero-grid { grid-template-columns: 1fr; padding: 65px 0; gap: 30px; }
+  .hero-art { min-height: 230px; border-radius: 100px 100px 18px 18px; }
+  .hero-art-inner { width: 155px; height: 155px; }
+  .hero-art .tooth { font-size: 57px; }
+  .cards { grid-template-columns: repeat(2,1fr); }
+  .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 30px; }
+  .journey-grid { grid-template-columns: repeat(2,1fr); }
+}
+@media(max-width:540px) {
+  .brand img { width: 66px; height: 56px; }
+  .brand { gap: 5px; }
+  .brand-text { font-size: 12px; letter-spacing: 1.5px; }
+  .brand-text small { font-size: 8px; letter-spacing: 1px; }
+  #language { font-size: 12px; max-width: 95px; padding: 8px 5px; }
+  .nav-right { gap: 7px; }
+  .hero-grid { padding: 52px 0; }
+  .trust-grid { grid-template-columns: 1fr; gap: 17px; }
+  section { padding: 60px 0; }
+  .cards, .journey-grid { grid-template-columns: 1fr; }
+  .card { padding: 23px; }
+  .whatsapp { right: 12px; bottom: 12px; padding: 12px 15px; }
+  .footer-grid { align-items: flex-start; flex-direction: column; }
+}
+</style>
 </head>
 
 <body>
-
-  <header>
-    <div class="container header-inner">
-      <a class="brand" href="#home" aria-label="Dent Way homepage">
-        <img
-          src="WhatsApp%20Image%202026-10-23%20at%205.27.43%20PM%20(1).jpeg"
-          alt="Dent Way logo"
-        >
-        <div class="brand-text">
-          <strong>DENT WAY</strong>
-          <span>Dental Tourism · Albania</span>
-        </div>
-      </a>
-
-      <nav aria-label="Main navigation">
-        <a href="#home">Home</a>
-        <a href="#treatments">Treatments</a>
-        <a href="#about">About Us</a>
-        <a href="#journey">Your Journey</a>
-        <a href="#contact" class="nav-cta">Contact Us</a>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#home" aria-label="Dent Way home">
+      <img src="WhatsApp%20Image%202026-10-23%20at%205.27.43%20PM%20(1).jpeg" alt="Dent Way logo">
+      <span class="brand-text">DENT WAY<small>DENTAL TOURISM</small></span>
+    </a>
+    <div class="nav-right">
+      <select id="language" aria-label="Select language">
+        <option value="en">🇬🇧 EN</option>
+        <option value="it">🇮🇹 IT</option>
+        <option value="de">🇩🇪 DE</option>
+        <option value="fr">🇫🇷 FR</option>
+        <option value="pl">🇵🇱 PL</option>
+        <option value="sq">🇦🇱 SQ</option>
+      </select>
+      <button class="menu-button" id="menuButton" aria-label="Open menu">☰</button>
+      <nav id="nav">
+        <a href="#home" data-i18n="navHome">Home</a>
+        <a href="#treatments" data-i18n="navTreatments">Treatments</a>
+        <a href="#about" data-i18n="navAbout">About Us</a>
+        <a href="#journey" data-i18n="navJourney">Your Journey</a>
+        <a href="#contact" data-i18n="navContact">Contact</a>
       </nav>
     </div>
-  </header>
+  </div>
+</header>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="container hero-grid">
-        <div>
-          <span class="eyebrow">Your smile, our priority</span>
-          <h1>Your New Smile Starts <span>in Albania</span></h1>
-          <p>
-            Discover personalized dental care in Tirana, Albania.
-            From dental implants and full-mouth rehabilitation to
-            crowns and veneers, our team can help you explore your options.
-          </p>
-
-          <div class="button-row">
-            <a class="btn"
-               href="https://wa.me/355676938595?text=Hello%20Dent%20Way%2C%20I%20would%20like%20a%20dental%20consultation."
-               target="_blank" rel="noopener">
-              Get a Free Consultation
-            </a>
-            <a class="btn btn-outline" href="#treatments">
-              Explore Treatments
-            </a>
-          </div>
-
-          <p class="hero-note">
-            Send us your panoramic X-ray or CBCT for an initial review.
-            Final treatment recommendations require a clinical assessment.
-          </p>
-        </div>
-
-        <div class="hero-card">
-          <div class="decor" aria-hidden="true">✦</div>
-          <h2>Quality Care. Personal Attention.</h2>
-          <p>
-            Your dental journey, from your first enquiry to planning
-            your visit to Tirana.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="treatments" id="treatments">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">Our services</span>
-          <h2 class="section-title">Dental Treatments</h2>
-          <p>
-            Explore our dental treatment options. Every treatment plan
-            is prepared according to the patient's individual needs.
-          </p>
-        </div>
-
-        <div class="cards">
-          <article class="service-card">
-            <div class="service-icon" aria-hidden="true">✧</div>
-            <h3>Dental Implants</h3>
-            <p>
-              Explore tooth replacement options using dental implants,
-              subject to examination and treatment planning.
-            </p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon" aria-hidden="true">◈</div>
-            <h3>All-on-4 / All-on-6</h3>
-            <p>
-              Full-arch rehabilitation options for suitable patients,
-              following a detailed clinical evaluation.
-            </p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon" aria-hidden="true">◇</div>
-            <h3>Zirconia Crowns</h3>
-            <p>
-              Restorative options designed to improve the appearance
-              and function of damaged or missing teeth.
-            </p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon" aria-hidden="true">✦</div>
-            <h3>Dental Veneers</h3>
-            <p>
-              Cosmetic treatment options to discuss your smile goals,
-              tooth condition and suitable materials.
-            </p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon" aria-hidden="true">＋</div>
-            <h3>Extractions</h3>
-            <p>
-              Dental assessment and extraction planning when clinically
-              indicated by the treating dentist.
-            </p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon" aria-hidden="true">◎</div>
-            <h3>Dental Imaging</h3>
-            <p>
-              Panoramic X-rays and 3D CBCT imaging to support diagnostic
-              assessment and treatment planning when indicated.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="about" id="about">
-      <div class="container about-grid">
-        <div>
-          <span class="eyebrow">About Dent Way</span>
-          <h2>Personalized Dental Care in Tirana</h2>
-          <p>
-            Dent Way welcomes international patients who are considering
-            dental treatment in Albania. We help patients understand
-            the next steps and organize their enquiries before travelling.
-          </p>
-          <p>
-            Our approach begins with understanding your needs and
-            reviewing the available dental information. Your dentist
-            will determine the appropriate treatment after a clinical
-            examination.
-          </p>
-          <a class="btn" href="#contact">Talk to Our Team</a>
-        </div>
-
-        <div class="benefits">
-          <div class="benefit">
-            <span class="check">✓</span>
-            <div>
-              <strong>Individual Treatment Planning</strong>
-              <span>Options based on your dental condition and goals.</span>
-            </div>
-          </div>
-
-          <div class="benefit">
-            <span class="check">✓</span>
-            <div>
-              <strong>Support Before Your Visit</strong>
-              <span>Discuss your questions and share available X-rays.</span>
-            </div>
-          </div>
-
-          <div class="benefit">
-            <span class="check">✓</span>
-            <div>
-              <strong>Travel Coordination</strong>
-              <span>Ask our team about accommodation and transport options.</span>
-            </div>
-          </div>
-
-          <div class="benefit">
-            <span class="check">✓</span>
-            <div>
-              <strong>Clear Communication</strong>
-              <span>Understand the proposed steps, timing and estimated costs.</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="journey">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">How it works</span>
-          <h2 class="section-title">Your Dental Journey</h2>
-          <p>
-            We can help you prepare for your visit and understand
-            the proposed treatment process.
-          </p>
-        </div>
-
-        <div class="journey-grid">
-          <article class="journey-step">
-            <div class="step-number">1</div>
-            <h3>Contact Us</h3>
-            <p>Tell us about your dental concerns and treatment goals.</p>
-          </article>
-
-          <article class="journey-step">
-            <div class="step-number">2</div>
-            <h3>Share Your X-ray</h3>
-            <p>Send available panoramic imaging or CBCT for initial review.</p>
-          </article>
-
-          <article class="journey-step">
-            <div class="step-number">3</div>
-            <h3>Plan Your Visit</h3>
-            <p>Discuss the proposed plan, estimated costs and travel needs.</p>
-          </article>
-
-          <article class="journey-step">
-            <div class="step-number">4</div>
-            <h3>Visit Tirana</h3>
-            <p>Attend your clinical examination and discuss treatment with the dentist.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact" id="contact">
-      <div class="container contact-grid">
-        <div class="contact-copy">
-          <span class="eyebrow">Get in touch</span>
-          <h2>Let's Talk About Your Smile</h2>
-          <p>
-            Contact our team to ask about treatments, share your
-            dental imaging or request an initial consultation.
-          </p>
-
-          <div class="contact-list">
-            <div class="contact-item">
-              <span aria-hidden="true">📍</span>
-              <div>
-                <strong>Location</strong>
-                <span>Tirana, Albania</span>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <span aria-hidden="true">☎</span>
-              <div>
-                <strong>Phone / WhatsApp</strong>
-                <span>+355 67 693 8595</span>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <span aria-hidden="true">✉</span>
-              <div>
-                <strong>Email</strong>
-                <span>dentwaytourism@gmail.com</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="contact-panel">
-          <h3>Request Information</h3>
-          <p>
-            Choose your preferred contact method. You can message us
-            directly to discuss your treatment enquiry.
-          </p>
-
-          <div class="contact-buttons">
-            <a class="whatsapp"
-               href="https://wa.me/355676938595?text=Hello%20Dent%20Way%2C%20I%20would%20like%20more%20information%20about%20dental%20treatment."
-               target="_blank" rel="noopener">
-              Message Us on WhatsApp
-            </a>
-
-            <a class="email"
-               href="mailto:dentwaytourism@gmail.com?subject=Dental%20Treatment%20Enquiry">
-              Send Us an Email
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer-inner">
-      <a class="footer-brand" href="#home">
-        <img
-          src="WhatsApp%20Image%202026-10-23%20at%205.27.43%20PM%20(1).jpeg"
-          alt="Dent Way logo"
-        >
-        <div>
-          <strong>DENT WAY</strong>
-          <span>Dental Tourism · Tirana, Albania</span>
-        </div>
-      </a>
-
-      <div class="socials">
-        <a href="https://www.instagram.com/dent__way/"
-           target="_blank" rel="noopener">Instagram</a>
-        <a href="https://www.facebook.com/dentwaytourism"
-           target="_blank" rel="noopener">Facebook</a>
-        <a href="https://wa.me/355676938595"
-           target="_blank" rel="noopener">WhatsApp</a>
-      </div>
-
-      <div class="copyright">
-        © <span id="year">2026</span> Dent Way. All rights reserved.
-        Treatment recommendations depend on clinical examination.
+<main>
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow" data-i18n="eyebrow">Dental Tourism · Tirana, Albania</div>
+      <h1><span data-i18n="heroLine1">Your Smile.</span><br><span data-i18n="heroLine2">Our Care.</span></h1>
+      <p data-i18n="heroText">Discover personalised dental care in Albania. Explore treatment options with our team and plan your visit to Tirana.</p>
+      <div class="buttons">
+        <a class="btn btn-gold" href="https://wa.me/355676938595?text=Hello%20Dent%20Way%2C%20I%20would%20like%20a%20dental%20consultation." data-i18n="heroCTA">WhatsApp Consultation</a>
+        <a class="btn btn-outline" href="#treatments" data-i18n="heroExplore">Explore Treatments</a>
       </div>
     </div>
-  </footer>
+    <div class="hero-art" aria-label="Dent Way dental care">
+      <div class="hero-art-inner">
+        <div class="tooth">✧</div>
+        <small>DENT WAY · TIRANA</small>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <a class="floating-whatsapp"
-     href="https://wa.me/355676938595?text=Hello%20Dent%20Way"
-     target="_blank" rel="noopener"
-     aria-label="Contact Dent Way on WhatsApp">
-    WhatsApp Us
-  </a>
+<div class="trust">
+  <div class="container trust-grid">
+    <div class="trust-item"><span class="trust-icon">✧</span><div><strong data-i18n="trust1Title">Personalised Plans</strong><small data-i18n="trust1Text">Options based on your needs</small></div></div>
+    <div class="trust-item"><span class="trust-icon">◎</span><div><strong data-i18n="trust2Title">Dental Imaging</strong><small data-i18n="trust2Text">Imaging support for assessment</small></div></div>
+    <div class="trust-item"><span class="trust-icon">◇</span><div><strong data-i18n="trust3Title">Patient Support</strong><small data-i18n="trust3Text">Help planning your visit</small></div></div>
+  </div>
+</div>
 
+<section id="treatments">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow" data-i18n="servicesEyebrow">OUR SERVICES</div>
+      <h2 data-i18n="servicesTitle">Dental Treatments Tailored to You</h2>
+      <p data-i18n="servicesText">Tell us about your dental needs. Our team can discuss possible treatment options following a clinical assessment.</p>
+    </div>
+    <div class="cards">
+      <article class="card"><div class="card-icon">✧</div><h3 data-i18n="implantTitle">Dental Implants</h3><p data-i18n="implantText">Explore tooth replacement options and personalised implant plans following clinical assessment.</p><a href="#contact" data-i18n="ask">Ask for a consultation →</a></article>
+      <article class="card"><div class="card-icon">◈</div><h3 data-i18n="allTitle">All-on-4 & All-on-6</h3><p data-i18n="allText">Full-arch rehabilitation options for eligible patients, based on examination and diagnostic imaging.</p><a href="#contact" data-i18n="ask">Ask for a consultation →</a></article>
+      <article class="card"><div class="card-icon">◇</div><h3 data-i18n="crownTitle">Zirconia Crowns</h3><p data-i18n="crownText">Restorative options designed to support tooth function and a natural-looking smile.</p><a href="#contact" data-i18n="ask">Ask for a consultation →</a></article>
+      <article class="card"><div class="card-icon">✦</div><h3 data-i18n="veneerTitle">Dental Veneers</h3><p data-i18n="veneerText">Discuss cosmetic options to improve your smile after a suitable dental assessment.</p><a href="#contact" data-i18n="ask">Ask for a consultation →</a></article>
+      <article class="card"><div class="card-icon">＋</div><h3 data-i18n="extractTitle">Tooth Extractions</h3><p data-i18n="extractText">Assessment and extraction options where clinically appropriate, with aftercare advice.</p><a href="#contact" data-i18n="ask">Ask for a consultation →</a></article>
+      <article class="card"><div class="card-icon">◎</div><h3 data-i18n="cbctTitle">CBCT & Dental Imaging</h3><p data-i18n="cbctText">Dental imaging can help clinicians evaluate your case and prepare an informed treatment plan.</p><a href="#contact" data-i18n="ask">Ask for a consultation →</a></article>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container about-grid">
+    <div class="about-panel">
+      <div class="big">DENT WAY</div>
+      <p data-i18n="panelText">Dental care and patient support in Tirana, Albania.</p>
+    </div>
+    <div>
+      <div class="eyebrow" data-i18n="aboutEyebrow">DENT WAY · ALBANIA</div>
+      <h2 data-i18n="aboutTitle">Dental Care, With Support Along the Way</h2>
+      <p data-i18n="aboutText">We help international patients take the first steps towards understanding their dental treatment options in Tirana.</p>
+      <ul class="check-list">
+        <li data-i18n="aboutPoint1">Individual case review and treatment discussion</li>
+        <li data-i18n="aboutPoint2">Dental imaging support where appropriate</li>
+        <li data-i18n="aboutPoint3">Help coordinating travel and accommodation enquiries</li>
+        <li data-i18n="aboutPoint4">Communication with our team before your visit</li>
+      </ul>
+      <a class="btn btn-green" href="#contact" data-i18n="talkCTA">Talk to Our Team</a>
+    </div>
+  </div>
+</section>
+
+<section id="journey">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow" data-i18n="journeyEyebrow">HOW IT WORKS</div>
+      <h2 data-i18n="journeyTitle">Your Journey to Tirana</h2>
+      <p data-i18n="journeyText">We can help you plan your visit step by step, from your first enquiry to discussing aftercare with your dental team.</p>
+    </div>
+    <div class="journey-grid">
+      <article class="journey-step"><div class="number">01</div><h3 data-i18n="step1Title">Contact Us</h3><p data-i18n="step1Text">Tell us about your goals and share available dental records or X-rays.</p></article>
+      <article class="journey-step"><div class="number">02</div><h3 data-i18n="step2Title">Case Review</h3><p data-i18n="step2Text">Your information can be reviewed to discuss possible options and next steps.</p></article>
+      <article class="journey-step"><div class="number">03</div><h3 data-i18n="step3Title">Plan Your Visit</h3><p data-i18n="step3Text">Discuss appointment dates and any travel or accommodation coordination you may need.</p></article>
+      <article class="journey-step"><div class="number">04</div><h3 data-i18n="step4Title">Visit the Clinic</h3><p data-i18n="step4Text">Your dentist will assess you in person and confirm the appropriate treatment plan.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow" data-i18n="faqEyebrow">USEFUL INFORMATION</div>
+      <h2 data-i18n="faqTitle">Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-list">
+      <details><summary data-i18n="faq1Q">How do I start a consultation?</summary><p data-i18n="faq1A">Contact us via WhatsApp or the enquiry form. You can tell us about your needs and ask how to share relevant dental records securely.</p></details>
+      <details><summary data-i18n="faq2Q">Can you estimate treatment costs before I travel?</summary><p data-i18n="faq2A">We can discuss an initial estimate based on the information provided. Final treatment recommendations and costs require clinical assessment and may change after an in-person examination.</p></details>
+      <details><summary data-i18n="faq3Q">Can you help with travel planning?</summary><p data-i18n="faq3A">Ask our team about available support for appointment scheduling and travel or accommodation enquiries. Availability should be confirmed before making arrangements.</p></details>
+      <details><summary data-i18n="faq4Q">Is every patient suitable for implants?</summary><p data-i18n="faq4A">No. Suitability depends on individual oral health, medical history, examination and diagnostic imaging. A qualified dental professional must determine the appropriate options.</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow" data-i18n="contactEyebrow">GET IN TOUCH</div>
+      <h2 data-i18n="contactTitle">Let's Talk About Your Smile</h2>
+      <p data-i18n="contactText">Contact Dent Way to ask a question or discuss your dental treatment enquiry in Tirana, Albania.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3 data-i18n="contactDirect">Contact Our Team</h3>
+        <p data-i18n="contactDirectText">We look forward to hearing from you.</p>
+        <p>WhatsApp: <a href="https://wa.me/355676938595">+355 67 693 8595</a></p>
+        <p>Email: <a href="mailto:dentwaytourism@gmail.com">dentwaytourism@gmail.com</a></p>
+        <p>Instagram: <a href="https://www.instagram.com/dent__way/" target="_blank" rel="noopener"> @dent__way</a></p>
+        <p>Facebook: <a href="https://www.facebook.com/dentwaytourism" target="_blank" rel="noopener">Dent Way</a></p>
+        <a class="btn btn-gold" id="contactWhatsApp" href="https://wa.me/355676938595" data-i18n="whatsappCTA">Message us on WhatsApp</a>
+      </div>
+
+      <form class="contact-form" id="contactForm">
+        <label><span data-i18n="formName">Your name</span><input id="name" name="name" autocomplete="name" required></label>
+        <label><span data-i18n="formEmail">Your email</span><input id="email" name="email" type="email" autocomplete="email" required></label>
+        <label><span data-i18n="formTreatment">Treatment of interest</span>
+          <select id="treatment" name="treatment" required>
+            <option value="" data-i18n="formChoose">Please select</option>
+            <option value="Dental implants" data-i18n="implantTitle">Dental Implants</option>
+            <option value="All-on-4 / All-on-6" data-i18n="allTitle">All-on-4 & All-on-6</option>
+            <option value="Zirconia crowns" data-i18n="crownTitle">Zirconia Crowns</option>
+            <option value="Dental veneers" data-i18n="veneerTitle">Dental Veneers</option>
+            <option value="Tooth extractions" data-i18n="extractTitle">Tooth Extractions</option>
+            <option value="CBCT and dental imaging" data-i18n="cbctTitle">CBCT & Dental Imaging</option>
+            <option value="Other" data-i18n="formOther">Other / not sure yet</option>
+          </select>
+        </label>
+        <label><span data-i18n="formMessage">How can we help?</span><textarea id="message" name="message" required></textarea></label>
+        <button class="btn btn-green" type="submit" data-i18n="formSubmit">Prepare enquiry in WhatsApp</button>
+        <p class="form-note" data-i18n="formNote">This form opens WhatsApp with your message prepared. You can review it before sending. Please do not include sensitive medical information in the message.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="WhatsApp%20Image%202026-10-23%20at%205.27.43%20PM%20(1).jpeg" alt="Dent Way logo">
+        <div><strong>DENT WAY</strong><br><small data-i18n="footerLocation">Dental Tourism · Tirana, Albania</small></div>
+      </div>
+      <div class="footer-links">
+        <a href="#home" data-i18n="navHome">Home</a>
+        <a href="#treatments" data-i18n="navTreatments">Treatments</a>
+        <a href="#about" data-i18n="navAbout">About Us</a>
+        <a href="#contact" data-i18n="navContact">Contact</a>
+      </div>
+    </div>
+    <div class="copyright">
+      <p data-i18n="disclaimer">© 2026 Dent Way · Tirana, Albania. Treatment suitability, timelines and costs are confirmed after individual clinical assessment. Website information is not a substitute for professional dental advice.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="whatsapp" id="floatingWhatsApp" href="https://wa.me/355676938595?text=Hello%20Dent%20Way" target="_blank" rel="noopener" data-i18n="floatCTA">☏ WhatsApp</a>
+
+<script>
+const translations = {
+en: {
+navHome:"Home",navTreatments:"Treatments",navAbout:"About Us",navJourney:"Your Journey",navContact:"Contact",
+eyebrow:"Dental Tourism · Tirana, Albania",heroLine1:"Your Smile.",heroLine2:"Our Care.",
+heroText:"Discover personalised dental care in Albania. Explore treatment options with our team and plan your visit to Tirana.",
+heroCTA:"WhatsApp Consultation",heroExplore:"Explore Treatments",
+trust1Title:"Personalised Plans",trust1Text:"Options based on your needs",trust2Title:"Dental Imaging",trust2Text:"Imaging support for assessment",trust3Title:"Patient Support",trust3Text:"Help planning your visit",
+servicesEyebrow:"OUR SERVICES",servicesTitle:"Dental Treatments Tailored to You",servicesText:"Tell us about your dental needs. Our team can discuss possible treatment options following a clinical assessment.",
+implantTitle:"Dental Implants",implantText:"Explore tooth replacement options and personalised implant plans following clinical assessment.",
+allTitle:"All-on-4 & All-on-6",allText:"Full-arch rehabilitation options for eligible patients, based on examination and diagnostic imaging.",
+crownTitle:"Zirconia Crowns",crownText:"Restorative options designed to support tooth function and a natural-looking smile.",
+veneerTitle:"Dental Veneers",veneerText:"Discuss cosmetic options to improve your smile after a suitable dental assessment.",
+extractTitle:"Tooth Extractions",extractText:"Assessment and extraction options where clinically appropriate, with aftercare advice.",
+cbctTitle:"CBCT & Dental Imaging",cbctText:"Dental imaging can help clinicians evaluate your case and prepare an informed treatment plan.",ask:"Ask for a consultation →",
+panelText:"Dental care and patient support in Tirana, Albania.",aboutEyebrow:"DENT WAY · ALBANIA",aboutTitle:"Dental Care, With Support Along the Way",
+aboutText:"We help international patients take the first steps towards understanding their dental treatment options in Tirana.",
+aboutPoint1:"Individual case review and treatment discussion",aboutPoint2:"Dental imaging support where appropriate",aboutPoint3:"Help coordinating travel and accommodation enquiries",aboutPoint4:"Communication with our team before your visit",talkCTA:"Talk to Our Team",
+journeyEyebrow:"HOW IT WORKS",journeyTitle:"Your Journey to Tirana",journeyText:"We can help you plan your visit step by step, from your first enquiry to discussing aftercare with your dental team.",
+step1Title:"Contact Us",step1Text:"Tell us about your goals and share available dental records or X-rays.",step2Title:"Case Review",step2Text:"Your information can be reviewed to discuss possible options and next steps.",step3Title:"Plan Your Visit",step3Text:"Discuss appointment dates and any travel or accommodation coordination you may need.",step4Title:"Visit the Clinic",step4Text:"Your dentist will assess you in person and confirm the appropriate treatment plan.",
+faqEyebrow:"USEFUL INFORMATION",faqTitle:"Frequently Asked Questions",
+faq1Q:"How do I start a consultation?",faq1A:"Contact us via WhatsApp or the enquiry form. You can tell us about your needs and ask how to share relevant dental records securely.",
+faq2Q:"Can you estimate treatment costs before I travel?",faq2A:"We can discuss an initial estimate based on the information provided. Final treatment recommendations and costs require clinical assessment and may change after an in-person examination.",
+faq3Q:"Can you help with travel planning?",faq3A:"Ask our team about available support for appointment scheduling and travel or accommodation enquiries. Availability should be confirmed before making arrangements.",
+faq4Q:"Is every patient suitable for implants?",faq4A:"No. Suitability depends on individual oral health, medical history, examination and diagnostic imaging. A qualified dental professional must determine the appropriate options.",
+contactEyebrow:"GET IN TOUCH",contactTitle:"Let's Talk About Your Smile",contactText:"Contact Dent Way to ask a question or discuss your dental treatment enquiry in Tirana, Albania.",
+contactDirect:"Contact Our Team",contactDirectText:"We look forward to hearing from you.",whatsappCTA:"Message us on WhatsApp",
+formName:"Your name",formEmail:"Your email",formTreatment:"Treatment of interest",formChoose:"Please select",formOther:"Other / not sure yet",formMessage:"How can we help?",formSubmit:"Prepare enquiry in WhatsApp",formNote:"This form opens WhatsApp with your message prepared. You can review it before sending. Please do not include sensitive medical information in the message.",
+footerLocation:"Dental Tourism · Tirana, Albania",disclaimer:"© 2026 Dent Way · Tirana, Albania. Treatment suitability, timelines and costs are confirmed after individual clinical assessment. Website information is not a substitute for professional dental advice.",floatCTA:"☏ WhatsApp",
+waMessage:"Hello Dent Way, I would like to discuss dental treatment."
+},
+it: {
+navHome:"Home",navTreatments:"Trattamenti",navAbout:"Chi siamo",navJourney:"Il tuo percorso",navContact:"Contatti",
+eyebrow:"Turismo dentale · Tirana, Albania",heroLine1:"Il tuo sorriso.",heroLine2:"La nostra cura.",
+heroText:"Scopri le cure dentali personalizzate in Albania. Esplora le opzioni di trattamento con il nostro team e organizza la tua visita a Tirana.",
+heroCTA:"Consulenza WhatsApp",heroExplore:"Scopri i trattamenti",
+trust1Title:"Piani personalizzati",trust1Text:"Opzioni in base alle tue esigenze",trust2Title:"Diagnostica dentale",trust2Text:"Supporto diagnostico per la valutazione",trust3Title:"Assistenza al paziente",trust3Text:"Aiuto per organizzare la visita",
+servicesEyebrow:"I NOSTRI SERVIZI",servicesTitle:"Trattamenti dentali su misura",servicesText:"Raccontaci le tue esigenze dentali. Il nostro team potrà discutere le possibili opzioni dopo una valutazione clinica.",
+implantTitle:"Impianti dentali",implantText:"Scopri le opzioni per sostituire i denti e i piani implantari personalizzati dopo una valutazione clinica.",
+allTitle:"All-on-4 e All-on-6",allText:"Soluzioni di riabilitazione dell'intera arcata per i pazienti idonei, in base alla visita e agli esami diagnostici.",
+crownTitle:"Corone in zirconia",crownText:"Soluzioni restaurative per sostenere la funzione dentale e un sorriso dall'aspetto naturale.",
+veneerTitle:"Faccette dentali",veneerText:"Valuta le opzioni estetiche per migliorare il sorriso dopo un'adeguata visita odontoiatrica.",
+extractTitle:"Estrazioni dentali",extractText:"Valutazione ed estrazioni quando clinicamente indicate, con consigli per la cura successiva.",
+cbctTitle:"CBCT e diagnostica dentale",cbctText:"La diagnostica dentale aiuta i professionisti a valutare il caso e preparare un piano di trattamento informato.",ask:"Richiedi una consulenza →",
+panelText:"Cure dentali e assistenza ai pazienti a Tirana, Albania.",aboutEyebrow:"DENT WAY · ALBANIA",aboutTitle:"Cure dentali, con assistenza in ogni fase",
+aboutText:"Aiutiamo i pazienti internazionali a comprendere le opzioni di trattamento dentale a Tirana.",
+aboutPoint1:"Valutazione individuale del caso e discussione del trattamento",aboutPoint2:"Supporto diagnostico quando appropriato",aboutPoint3:"Aiuto per richieste di viaggio e alloggio",aboutPoint4:"Comunicazione con il nostro team prima della visita",talkCTA:"Parla con il nostro team",
+journeyEyebrow:"COME FUNZIONA",journeyTitle:"Il tuo viaggio a Tirana",journeyText:"Possiamo aiutarti a pianificare la visita passo dopo passo, dalla prima richiesta alle indicazioni per la cura successiva.",
+step1Title:"Contattaci",step1Text:"Raccontaci i tuoi obiettivi e condividi eventuali radiografie o documentazione dentale.",step2Title:"Valutazione del caso",step2Text:"Le informazioni possono essere esaminate per discutere le opzioni e i passaggi successivi.",step3Title:"Organizza la visita",step3Text:"Parla con noi delle date degli appuntamenti e delle eventuali esigenze di viaggio o alloggio.",step4Title:"Visita la clinica",step4Text:"Il dentista ti visiterà di persona e confermerà il piano di trattamento appropriato.",
+faqEyebrow:"INFORMAZIONI UTILI",faqTitle:"Domande frequenti",
+faq1Q:"Come posso iniziare una consulenza?",faq1A:"Contattaci su WhatsApp o tramite il modulo. Raccontaci le tue esigenze e chiedi come condividere in modo sicuro la documentazione dentale.",
+faq2Q:"È possibile stimare i costi prima del viaggio?",faq2A:"Possiamo discutere una stima iniziale sulla base delle informazioni disponibili. Le raccomandazioni e i costi definitivi richiedono una valutazione clinica e possono cambiare dopo la visita in presenza.",
+faq3Q:"Potete aiutarmi a organizzare il viaggio?",faq3A:"Chiedi al nostro team quali servizi di supporto sono disponibili per appuntamenti, viaggio e alloggio. La disponibilità va confermata prima di organizzare il viaggio.",
+faq4Q:"Tutti i pazienti possono ricevere impianti?",faq4A:"No. L'idoneità dipende dalla salute orale, dalla storia clinica, dalla visita e dagli esami diagnostici. Le opzioni appropriate devono essere stabilite da un professionista qualificato.",
+contactEyebrow:"CONTATTACI",contactTitle:"Parliamo del tuo sorriso",contactText:"Contatta Dent Way per domande o per discutere un trattamento dentale a Tirana, Albania.",
+contactDirect:"Contatta il nostro team",contactDirectText:"Saremo lieti di ricevere il tuo messaggio.",whatsappCTA:"Scrivici su WhatsApp",
+formName:"Il tuo nome",formEmail:"La tua email",formTreatment:"Trattamento di interesse",formChoose:"Seleziona un'opzione",formOther:"Altro / non ho ancora deciso",formMessage:"Come possiamo aiutarti?",formSubmit:"Prepara la richiesta su WhatsApp",formNote:"Il modulo apre WhatsApp con il messaggio preparato. Puoi controllarlo prima di inviarlo. Non inserire informazioni mediche sensibili.",
+footerLocation:"Turismo dentale · Tirana, Albania",disclaimer:"© 2026 Dent Way · Tirana, Albania. Idoneità, tempi e costi vengono confermati dopo una valutazione clinica individuale. Le informazioni del sito non sostituiscono il parere di un professionista sanitario.",floatCTA:"☏ WhatsApp",
+waMessage:"Salve Dent Way, vorrei discutere un trattamento dentale."
+},
+de: {
+navHome:"Startseite",navTreatments:"Behandlungen",navAbout:"Über uns",navJourney:"Ihre Reise",navContact:"Kontakt",
+eyebrow:"Zahntourismus · Tirana, Albanien",heroLine1:"Ihr Lächeln.",heroLine2:"Unsere Fürsorge.",
+heroText:"Entdecken Sie individuelle Zahnbehandlungen in Albanien. Besprechen Sie Behandlungsmöglichkeiten mit unserem Team und planen Sie Ihren Besuch in Tirana.",
+heroCTA:"Beratung per WhatsApp",heroExplore:"Behandlungen ansehen",
+trust1Title:"Individuelle Behandlungspläne",trust1Text:"Optionen nach Ihrem Bedarf",trust2Title:"Zahnmedizinische Bildgebung",trust2Text:"Bildgebung zur Beurteilung",trust3Title:"Patientenbetreuung",trust3Text:"Unterstützung bei der Besuchsplanung",
+servicesEyebrow:"UNSERE LEISTUNGEN",servicesTitle:"Zahnbehandlungen nach Maß",servicesText:"Teilen Sie uns Ihre zahnmedizinischen Anliegen mit. Nach einer klinischen Untersuchung kann unser Team mögliche Behandlungsoptionen besprechen.",
+implantTitle:"Zahnimplantate",implantText:"Entdecken Sie Möglichkeiten zum Zahnersatz und individuelle Implantatpläne nach klinischer Beurteilung.",
+allTitle:"All-on-4 und All-on-6",allText:"Möglichkeiten zur Versorgung eines vollständigen Zahnbogens für geeignete Patienten, abhängig von Untersuchung und Diagnostik.",
+crownTitle:"Zirkonkronen",crownText:"Zahnersatzlösungen zur Unterstützung der Zahnfunktion und eines natürlich wirkenden Lächelns.",
+veneerTitle:"Zahnveneers",veneerText:"Besprechen Sie ästhetische Möglichkeiten zur Verbesserung Ihres Lächelns nach einer geeigneten Untersuchung.",
+extractTitle:"Zahnentfernungen",extractText:"Untersuchung und Zahnextraktionen, sofern klinisch angezeigt, einschließlich Hinweisen zur Nachsorge.",
+cbctTitle:"DVT/CBCT und Bildgebung",cbctText:"Zahnmedizinische Bildgebung kann die Beurteilung des Falls und eine fundierte Behandlungsplanung unterstützen.",ask:"Beratung anfragen →",
+panelText:"Zahnmedizinische Versorgung und Patientenbetreuung in Tirana, Albanien.",aboutEyebrow:"DENT WAY · ALBANIEN",aboutTitle:"Zahnmedizinische Versorgung mit Unterstützung",
+aboutText:"Wir unterstützen internationale Patienten dabei, ihre Behandlungsmöglichkeiten in Tirana kennenzulernen.",
+aboutPoint1:"Individuelle Fallprüfung und Besprechung der Behandlung",aboutPoint2:"Diagnostische Bildgebung, sofern sinnvoll",aboutPoint3:"Unterstützung bei Anfragen zu Reise und Unterkunft",aboutPoint4:"Kontakt mit unserem Team vor Ihrem Besuch",talkCTA:"Unser Team kontaktieren",
+journeyEyebrow:"SO FUNKTIONIERT ES",journeyTitle:"Ihre Reise nach Tirana",journeyText:"Wir unterstützen Sie bei der Planung Ihres Besuchs – von der ersten Anfrage bis zur Besprechung der Nachsorge.",
+step1Title:"Kontakt aufnehmen",step1Text:"Beschreiben Sie Ihre Wünsche und teilen Sie vorhandene Zahnröntgenbilder oder Unterlagen mit uns.",step2Title:"Fallprüfung",step2Text:"Ihre Angaben können geprüft werden, um mögliche Optionen und nächste Schritte zu besprechen.",step3Title:"Besuch planen",step3Text:"Besprechen Sie Termine und mögliche Unterstützung bei Reise oder Unterkunft.",step4Title:"Klinikbesuch",step4Text:"Ihr Zahnarzt untersucht Sie persönlich und bestätigt den geeigneten Behandlungsplan.",
+faqEyebrow:"NÜTZLICHE INFORMATIONEN",faqTitle:"Häufig gestellte Fragen",
+faq1Q:"Wie beginne ich eine Beratung?",faq1A:"Kontaktieren Sie uns über WhatsApp oder das Anfrageformular. Teilen Sie uns Ihre Wünsche mit und fragen Sie, wie Sie relevante Zahnarztunterlagen sicher übermitteln können.",
+faq2Q:"Können die Kosten vor der Reise geschätzt werden?",faq2A:"Auf Grundlage Ihrer Angaben können wir eine erste Kostenschätzung besprechen. Die endgültigen Empfehlungen und Kosten erfordern eine klinische Beurteilung und können sich nach der persönlichen Untersuchung ändern.",
+faq3Q:"Können Sie bei der Reiseplanung helfen?",faq3A:"Fragen Sie unser Team nach verfügbarer Unterstützung bei Terminen sowie Reise- und Unterkunftsanfragen. Die Verfügbarkeit sollte vor der Buchung bestätigt werden.",
+faq4Q:"Sind Implantate für jeden Patienten geeignet?",faq4A:"Nein. Die Eignung hängt von der Mundgesundheit, der Krankengeschichte, der Untersuchung und der diagnostischen Bildgebung ab. Die geeigneten Optionen muss eine qualifizierte zahnmedizinische Fachkraft festlegen.",
+contactEyebrow:"KONTAKT",contactTitle:"Sprechen wir über Ihr Lächeln",contactText:"Kontaktieren Sie Dent Way mit Fragen oder für eine Anfrage zu Zahnbehandlungen in Tirana, Albanien.",
+contactDirect:"Kontaktieren Sie unser Team",contactDirectText:"Wir freuen uns auf Ihre Nachricht.",whatsappCTA:"Nachricht über WhatsApp",
+formName:"Ihr Name",formEmail:"Ihre E-Mail-Adresse",formTreatment:"Gewünschte Behandlung",formChoose:"Bitte auswählen",formOther:"Sonstiges / noch unentschieden",formMessage:"Wie können wir helfen?",formSubmit:"Anfrage in WhatsApp vorbereiten",formNote:"Dieses Formular öffnet WhatsApp mit einer vorbereiteten Nachricht. Sie können diese vor dem Senden prüfen. Bitte geben Sie keine sensiblen medizinischen Informationen ein.",
+footerLocation:"Zahntourismus · Tirana, Albanien",disclaimer:"© 2026 Dent Way · Tirana, Albanien. Eignung, Zeitrahmen und Kosten werden nach einer individuellen klinischen Untersuchung bestätigt. Website-Informationen ersetzen keine professionelle zahnmedizinische Beratung.",floatCTA:"☏ WhatsApp",
+waMessage:"Hallo Dent Way, ich möchte eine Zahnbehandlung besprechen."
+},
+fr: {
+navHome:"Accueil",navTreatments:"Soins",navAbout:"À propos",navJourney:"Votre parcours",navContact:"Contact",
+eyebrow:"Tourisme dentaire · Tirana, Albanie",heroLine1:"Votre sourire.",heroLine2:"Notre attention.",
+heroText:"Découvrez des soins dentaires personnalisés en Albanie. Échangez avec notre équipe sur les options de traitement et préparez votre visite à Tirana.",
+heroCTA:"Consultation WhatsApp",heroExplore:"Découvrir les soins",
+trust1Title:"Plans personnalisés",trust1Text:"Options selon vos besoins",trust2Title:"Imagerie dentaire",trust2Text:"Aide à l'évaluation diagnostique",trust3Title:"Accompagnement",trust3Text:"Aide à la préparation de votre visite",
+servicesEyebrow:"NOS SERVICES",servicesTitle:"Des soins dentaires adaptés à vos besoins",servicesText:"Parlez-nous de vos besoins dentaires. Notre équipe pourra discuter des options possibles après une évaluation clinique.",
+implantTitle:"Implants dentaires",implantText:"Découvrez les solutions de remplacement des dents et les plans implantaires personnalisés après évaluation clinique.",
+allTitle:"All-on-4 et All-on-6",allText:"Solutions de réhabilitation complète d'une arcade pour les patients éligibles, selon l'examen et l'imagerie diagnostique.",
+crownTitle:"Couronnes en zircone",crownText:"Solutions restauratrices visant à soutenir la fonction dentaire et un sourire d'apparence naturelle.",
+veneerTitle:"Facettes dentaires",veneerText:"Discutez des options esthétiques pour améliorer votre sourire après une évaluation dentaire adaptée.",
+extractTitle:"Extractions dentaires",extractText:"Évaluation et extraction lorsque cela est cliniquement indiqué, avec des conseils de suivi.",
+cbctTitle:"CBCT et imagerie dentaire",cbctText:"L'imagerie dentaire peut aider les professionnels à évaluer votre situation et à préparer un plan de traitement éclairé.",ask:"Demander une consultation →",
+panelText:"Soins dentaires et accompagnement des patients à Tirana, Albanie.",aboutEyebrow:"DENT WAY · ALBANIE",aboutTitle:"Des soins dentaires avec un accompagnement à chaque étape",
+aboutText:"Nous aidons les patients internationaux à comprendre les options de traitement dentaire à Tirana.",
+aboutPoint1:"Étude individuelle du dossier et discussion du traitement",aboutPoint2:"Aide à l'imagerie dentaire si nécessaire",aboutPoint3:"Aide pour les demandes de voyage et d'hébergement",aboutPoint4:"Échanges avec notre équipe avant votre visite",talkCTA:"Parler à notre équipe",
+journeyEyebrow:"COMMENT ÇA MARCHE",journeyTitle:"Votre voyage à Tirana",journeyText:"Nous pouvons vous aider à organiser votre visite étape par étape, de votre première demande aux échanges sur le suivi.",
+step1Title:"Contactez-nous",step1Text:"Expliquez vos objectifs et partagez les radiographies ou dossiers dentaires disponibles.",step2Title:"Étude du dossier",step2Text:"Vos informations peuvent être examinées afin de discuter des options possibles et des prochaines étapes.",step3Title:"Préparez votre visite",step3Text:"Discutez des dates de rendez-vous et des besoins éventuels de voyage ou d'hébergement.",step4Title:"Visitez la clinique",step4Text:"Votre dentiste vous examinera en personne et confirmera le plan de traitement approprié.",
+faqEyebrow:"INFORMATIONS UTILES",faqTitle:"Questions fréquentes",
+faq1Q:"Comment commencer une consultation ?",faq1A:"Contactez-nous sur WhatsApp ou via le formulaire. Expliquez vos besoins et demandez comment partager vos dossiers dentaires de manière sécurisée.",
+faq2Q:"Pouvez-vous estimer le coût avant mon voyage ?",faq2A:"Nous pouvons discuter d'une première estimation à partir des informations fournies. Les recommandations et coûts définitifs nécessitent une évaluation clinique et peuvent changer après un examen en personne.",
+faq3Q:"Pouvez-vous aider à organiser le voyage ?",faq3A:"Demandez à notre équipe quelles aides sont disponibles pour les rendez-vous, le voyage ou l'hébergement. La disponibilité doit être confirmée avant toute réservation.",
+faq4Q:"Les implants conviennent-ils à tous les patients ?",faq4A:"Non. L'indication dépend de la santé bucco-dentaire, des antécédents médicaux, de l'examen et de l'imagerie diagnostique. Un professionnel dentaire qualifié doit déterminer les options adaptées.",
+contactEyebrow:"CONTACTEZ-NOUS",contactTitle:"Parlons de votre sourire",contactText:"Contactez Dent Way pour poser une question ou discuter de soins dentaires à Tirana, Albanie.",
+contactDirect:"Contacter notre équipe",contactDirectText:"Nous serons ravis de vous lire.",whatsappCTA:"Nous écrire sur WhatsApp",
+formName:"Votre nom",formEmail:"Votre adresse e-mail",formTreatment:"Soin souhaité",formChoose:"Veuillez sélectionner",formOther:"Autre / pas encore décidé",formMessage:"Comment pouvons-nous vous aider ?",formSubmit:"Préparer la demande sur WhatsApp",formNote:"Ce formulaire ouvre WhatsApp avec un message préparé. Vous pourrez le vérifier avant l'envoi. N'incluez pas d'informations médicales sensibles.",
+footerLocation:"Tourisme dentaire · Tirana, Albanie",disclaimer:"© 2026 Dent Way · Tirana, Albanie. L'indication, les délais et les coûts sont confirmés après une évaluation clinique individuelle. Les informations du site ne remplacent pas un avis dentaire professionnel.",floatCTA:"☏ WhatsApp",
+waMessage:"Bonjour Dent Way, je souhaite discuter d'un traitement dentaire."
+},
+pl: {
+navHome:"Strona główna",navTreatments:"Zabiegi",navAbout:"O nas",navJourney:"Twoja podróż",navContact:"Kontakt",
+eyebrow:"Turystyka stomatologiczna · Tirana, Albania",heroLine1:"Twój uśmiech.",heroLine2:"Nasza troska.",
+heroText:"Poznaj indywidualną opiekę stomatologiczną w Albanii. Porozmawiaj z naszym zespołem o możliwościach leczenia i zaplanuj wizytę w Tiranie.",
+heroCTA:"Konsultacja przez WhatsApp",heroExplore:"Poznaj zabiegi",
+trust1Title:"Indywidualne plany",trust1Text:"Opcje dopasowane do potrzeb",trust2Title:"Diagnostyka stomatologiczna",trust2Text:"Wsparcie diagnostyczne",trust3Title:"Wsparcie pacjenta",trust3Text:"Pomoc w planowaniu wizyty",
+servicesEyebrow:"NASZE USŁUGI",servicesTitle:"Zabiegi dopasowane do Ciebie",servicesText:"Opowiedz nam o swoich potrzebach. Po ocenie klinicznej nasz zespół może omówić możliwe opcje leczenia.",
+implantTitle:"Implanty stomatologiczne",implantText:"Poznaj możliwości uzupełnienia braków zębowych i indywidualne plany implantologiczne po ocenie klinicznej.",
+allTitle:"All-on-4 i All-on-6",allText:"Odbudowa całego łuku zębowego dla odpowiednio zakwalifikowanych pacjentów, na podstawie badania i diagnostyki.",
+crownTitle:"Korony cyrkonowe",crownText:"Rozwiązania protetyczne wspierające funkcję zębów i naturalny wygląd uśmiechu.",
+veneerTitle:"Licówki dentystyczne",veneerText:"Omów możliwości poprawy estetyki uśmiechu po odpowiedniej ocenie stomatologicznej.",
+extractTitle:"Ekstrakcje zębów",extractText:"Ocena i usuwanie zębów, gdy jest to klinicznie wskazane, wraz z zaleceniami pozabiegowymi.",
+cbctTitle:"CBCT i diagnostyka obrazowa",cbctText:"Obrazowanie stomatologiczne pomaga ocenić przypadek i przygotować świadomy plan leczenia.",ask:"Zapytaj o konsultację →",
+panelText:"Opieka stomatologiczna i wsparcie pacjentów w Tiranie w Albanii.",aboutEyebrow:"DENT WAY · ALBANIA",aboutTitle:"Opieka stomatologiczna ze wsparciem na każdym etapie",
+aboutText:"Pomagamy pacjentom z zagranicy poznać możliwości leczenia stomatologicznego w Tiranie.",
+aboutPoint1:"Indywidualna analiza przypadku i omówienie leczenia",aboutPoint2:"Wsparcie diagnostyczne, gdy jest potrzebne",aboutPoint3:"Pomoc w zapytaniach dotyczących podróży i zakwaterowania",aboutPoint4:"Kontakt z naszym zespołem przed wizytą",talkCTA:"Porozmawiaj z naszym zespołem",
+journeyEyebrow:"JAK TO DZIAŁA",journeyTitle:"Twoja podróż do Tirany",journeyText:"Pomożemy Ci zaplanować wizytę krok po kroku — od pierwszego zapytania po omówienie dalszej opieki.",
+step1Title:"Skontaktuj się z nami",step1Text:"Opowiedz o swoich oczekiwaniach i udostępnij dostępne zdjęcia RTG lub dokumentację stomatologiczną.",step2Title:"Analiza przypadku",step2Text:"Przekazane informacje mogą zostać przeanalizowane w celu omówienia możliwości i kolejnych kroków.",step3Title:"Zaplanuj wizytę",step3Text:"Omów terminy wizyt oraz ewentualną pomoc w organizacji podróży lub zakwaterowania.",step4Title:"Wizyta w klinice",step4Text:"Dentysta zbada Cię osobiście i potwierdzi odpowiedni plan leczenia.",
+faqEyebrow:"PRZYDATNE INFORMACJE",faqTitle:"Często zadawane pytania",
+faq1Q:"Jak rozpocząć konsultację?",faq1A:"Skontaktuj się z nami przez WhatsApp lub formularz. Opisz swoje potrzeby i zapytaj, jak bezpiecznie przekazać dokumentację stomatologiczną.",
+faq2Q:"Czy można oszacować koszty przed podróżą?",faq2A:"Na podstawie dostępnych informacji możemy omówić wstępny kosztorys. Ostateczne zalecenia i koszty wymagają oceny klinicznej i mogą ulec zmianie po badaniu osobistym.",
+faq3Q:"Czy pomagacie w organizacji podróży?",faq3A:"Zapytaj nasz zespół o dostępne wsparcie w ustalaniu terminów oraz zapytaniach dotyczących podróży i zakwaterowania. Dostępność należy potwierdzić przed rezerwacją.",
+faq4Q:"Czy implanty są odpowiednie dla każdego pacjenta?",faq4A:"Nie. Kwalifikacja zależy od stanu jamy ustnej, historii medycznej, badania i diagnostyki obrazowej. Odpowiednie opcje ustala wykwalifikowany specjalista stomatologii.",
+contactEyebrow:"SKONTAKTUJ SIĘ",contactTitle:"Porozmawiajmy o Twoim uśmiechu",contactText:"Skontaktuj się z Dent Way, aby zadać pytanie lub omówić leczenie stomatologiczne w Tiranie w Albanii.",
+contactDirect:"Skontaktuj się z naszym zespołem",contactDirectText:"Czekamy na Twoją wiadomość.",whatsappCTA:"Napisz do nas na WhatsApp",
+formName:"Imię i nazwisko",formEmail:"Adres e-mail",formTreatment:"Interesujący Cię zabieg",formChoose:"Wybierz",formOther:"Inne / jeszcze nie wiem",formMessage:"Jak możemy pomóc?",formSubmit:"Przygotuj zapytanie w WhatsApp",formNote:"Formularz otworzy WhatsApp z przygotowaną wiadomością. Przed wysłaniem możesz ją sprawdzić. Nie wpisuj poufnych informacji medycznych.",
+footerLocation:"Turystyka stomatologiczna · Tirana, Albania",disclaimer:"© 2026 Dent Way · Tirana, Albania. Kwalifikacja do leczenia, terminy i koszty są potwierdzane po indywidualnej ocenie klinicznej. Informacje na stronie nie zastępują profesjonalnej porady stomatologicznej.",floatCTA:"☏ WhatsApp",
+waMessage:"Dzień dobry Dent Way, chciałbym/chciałabym omówić leczenie stomatologiczne."
+},
+sq: {
+navHome:"Kryefaqja",navTreatments:"Trajtimet",navAbout:"Rreth nesh",navJourney:"Udhëtimi juaj",navContact:"Kontakt",
+eyebrow:"Turizëm dentar · Tiranë, Shqipëri",heroLine1:"Buzëqeshja juaj.",heroLine2:"Kujdesi ynë.",
+heroText:"Zbuloni kujdes dentar të personalizuar në Shqipëri. Diskutoni mundësitë e trajtimit me ekipin tonë dhe planifikoni vizitën tuaj në Tiranë.",
+heroCTA:"Konsultë në WhatsApp",heroExplore:"Shiko trajtimet",
+trust1Title:"Plane të personalizuara",trust1Text:"Mundësi sipas nevojave tuaja",trust2Title:"Imazheri dentare",trust2Text:"Mbështetje për vlerësimin diagnostik",trust3Title:"Mbështetje për pacientin",trust3Text:"Ndihmë për planifikimin e vizitës",
+servicesEyebrow:"SHËRBIMET TONA",servicesTitle:"Trajtime dentare sipas nevojave tuaja",servicesText:"Na tregoni për nevojat tuaja dentare. Pas një vlerësimi klinik, ekipi ynë mund të diskutojë mundësitë e trajtimit.",
+implantTitle:"Implante dentare",implantText:"Eksploroni mundësitë për zëvendësimin e dhëmbëve dhe planet individuale të implanteve pas vlerësimit klinik.",
+allTitle:"All-on-4 dhe All-on-6",allText:"Mundësi rehabilitimi për të gjithë harkun dentar te pacientët e përshtatshëm, bazuar në ekzaminim dhe imazheri diagnostike.",
+crownTitle:"Kurora zirkoni",crownText:"Zgjidhje restauruese për të mbështetur funksionin e dhëmbëve dhe një buzëqeshje me pamje natyrale.",
+veneerTitle:"Faseta dentare",veneerText:"Diskutoni mundësitë estetike për përmirësimin e buzëqeshjes pas vlerësimit të përshtatshëm dentar.",
+extractTitle:"Heqje dhëmbësh",extractText:"Vlerësim dhe heqje dhëmbësh kur është klinikisht e përshtatshme, me këshilla për kujdesin pas procedurës.",
+cbctTitle:"CBCT dhe imazheri dentare",cbctText:"Imazheria dentare ndihmon profesionistët të vlerësojnë rastin dhe të përgatisin një plan të informuar trajtimi.",ask:"Kërko konsultë →",
+panelText:"Kujdes dentar dhe mbështetje për pacientët në Tiranë, Shqipëri.",aboutEyebrow:"DENT WAY · SHQIPËRI",aboutTitle:"Kujdes dentar dhe mbështetje në çdo hap",
+aboutText:"Ne i ndihmojmë pacientët ndërkombëtarë të kuptojnë mundësitë e trajtimit dentar në Tiranë.",
+aboutPoint1:"Shqyrtim individual i rastit dhe diskutim i trajtimit",aboutPoint2:"Mbështetje me imazheri dentare kur nevojitet",aboutPoint3:"Ndihmë për kërkesa mbi udhëtimin dhe akomodimin",aboutPoint4:"Komunikim me ekipin tonë para vizitës",talkCTA:"Flisni me ekipin tonë",
+journeyEyebrow:"SI FUNKSIONON",journeyTitle:"Udhëtimi juaj drejt Tiranës",journeyText:"Ju ndihmojmë të planifikoni vizitën hap pas hapi, nga kërkesa e parë deri te diskutimi i kujdesit pas trajtimit.",
+step1Title:"Na kontaktoni",step1Text:"Na tregoni synimet tuaja dhe ndani radiografitë ose dokumentet dentare që keni.",step2Title:"Shqyrtimi i rastit",step2Text:"Informacioni juaj mund të shqyrtohet për të diskutuar mundësitë dhe hapat e ardhshëm.",step3Title:"Planifikoni vizitën",step3Text:"Diskutoni datat e takimeve dhe çdo ndihmë të nevojshme për udhëtimin ose akomodimin.",step4Title:"Vizitoni klinikën",step4Text:"Dentisti do t'ju ekzaminojë personalisht dhe do të konfirmojë planin e përshtatshëm të trajtimit.",
+faqEyebrow:"INFORMACION I DOBISHËM",faqTitle:"Pyetje të shpeshta",
+faq1Q:"Si mund të filloj një konsultë?",faq1A:"Na kontaktoni përmes WhatsApp-it ose formularit. Na tregoni nevojat tuaja dhe pyesni si të ndani në mënyrë të sigurt dokumentet dentare.",
+faq2Q:"A mund të vlerësohen kostot para udhëtimit?",faq2A:"Mund të diskutojmë një vlerësim fillestar bazuar në informacionin e dhënë. Rekomandimet dhe kostot përfundimtare kërkojnë vlerësim klinik dhe mund të ndryshojnë pas ekzaminimit në klinikë.",
+faq3Q:"A mund të ndihmoni me organizimin e udhëtimit?",faq3A:"Pyesni ekipin tonë për mbështetjen e disponueshme për takimet, udhëtimin dhe akomodimin. Disponueshmëria duhet konfirmuar para rezervimit.",
+faq4Q:"A janë implantet të përshtatshme për çdo pacient?",faq4A:"Jo. Përshtatshmëria varet nga shëndeti oral, historia mjekësore, ekzaminimi dhe imazheria diagnostike. Mundësitë e duhura përcaktohen nga profesionisti dentar i kualifikuar.",
+contactEyebrow:"NA KONTAKTONI",contactTitle:"Të flasim për buzëqeshjen tuaj",contactText:"Kontaktoni Dent Way për pyetje ose për të diskutuar trajtimin dentar në Tiranë, Shqipëri.",
+contactDirect:"Kontaktoni ekipin tonë",contactDirectText:"Presim me kënaqësi mesazhin tuaj.",whatsappCTA:"Na shkruani në WhatsApp",
+formName:"Emri juaj",formEmail:"Email-i juaj",formTreatment:"Trajtimi që ju intereson",formChoose:"Ju lutemi zgjidhni",formOther:"Tjetër / ende nuk e di",formMessage:"Si mund t'ju ndihmojmë?",formSubmit:"Përgatit kërkesën në WhatsApp",formNote:"Ky formular hap WhatsApp-in me mesazhin e përgatitur. Mund ta kontrolloni para dërgimit. Mos përfshini të dhëna mjekësore sensitive.",
+footerLocation:"Turizëm dentar · Tiranë, Shqipëri",disclaimer:"© 2026 Dent Way · Tiranë, Shqipëri. Përshtatshmëria e trajtimit, afatet dhe kostot konfirmohen pas vlerësimit klinik individual. Informacioni në faqe nuk zëvendëson këshillën profesionale dentare.",floatCTA:"☏ WhatsApp",
+waMessage:"Përshëndetje Dent Way, dëshiroj të diskutoj një trajtim dentar."
+}
+};
+
+const languageSelect = document.getElementById("language");
+const nav = document.getElementById("nav");
+const menuButton = document.getElementById("menuButton");
+
+function setLanguage(lang) {
+  const dict = translations[lang] || translations.en;
+  document.documentElement.lang = lang;
+  document.title = ({
+    en:"Dent Way | Dental Care in Albania",
+    it:"Dent Way | Cure dentali in Albania",
+    de:"Dent Way | Zahnbehandlung in Albanien",
+    fr:"Dent Way | Soins dentaires en Albanie",
+    pl:"Dent Way | Leczenie stomatologiczne w Albanii",
+    sq:"Dent Way | Kujdes dentar në Shqipëri"
+  })[lang] || "Dent Way";
+
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.dataset.i18n;
+    if (dict[key]) el.textContent = dict[key];
+  });
+
+  document.getElementById("contactWhatsApp").href =
+    "https://wa.me/355676938595?text=" + encodeURIComponent(dict.waMessage);
+
+  document.getElementById("floatingWhatsApp").href =
+    "https://wa.me/355676938595?text=" + encodeURIComponent(dict.waMessage);
+
+  document.getElementById("language").value = lang;
+  try { localStorage.setItem("dentway-language", lang); } catch (e) {}
+}
+
+languageSelect.addEventListener("change", e => setLanguage(e.target.value));
+
+menuButton.addEventListener("click", () => {
+  nav.classList.toggle("open");
+});
+
+nav.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => nav.classList.remove("open"));
+});
+
+document.getElementById("contactForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const lang = languageSelect.value;
+  const dict = translations[lang] || translations.en;
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const treatment = document.getElementById("treatment").selectedOptions[0].textContent;
+  const message = document.getElementById("message").value.trim();
+
+  const labels = {
+    en:["Name","Email","Treatment","Message"],
+    it:["Nome","Email","Trattamento","Messaggio"],
+    de:["Name","E-Mail","Behandlung","Nachricht"],
+    fr:["Nom","E-mail","Soin","Message"],
+    pl:["Imię i nazwisko","E-mail","Zabieg","Wiadomość"],
+    sq:["Emri","Email","Trajtimi","Mesazhi"]
+  }[lang] || ["Name","Email","Treatment","Message"];
+
+  const text = dict.waMessage + "\n\n" +
+    labels[0] + ": " + name + "\n" +
+    labels[1] + ": " + email + "\n" +
+    labels[2] + ": " + treatment + "\n" +
+    labels[3] + ": " + message;
+
+  window.open("https://wa.me/355676938595?text=" + encodeURIComponent(text), "_blank", "noopener");
+});
+
+let initialLanguage = "en";
+try {
+  const saved = localStorage.getItem("dentway-language");
+  if (saved && translations[saved]) initialLanguage = saved;
+} catch (e) {}
+setLanguage(initialLanguage);
+</script>
 </body>
 </html>
