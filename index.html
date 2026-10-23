@@ -1,1047 +1,380 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#10243a">
-  <meta name="description" content="Dent Way Albania — All-on-4, All-on-6, dental implants and premium dental tourism in Tirana, Albania.">
-  <title>Dent Way | Premium Dental Tourism Albania</title>
-
-  <style>
-    :root {
-      --navy: #10243a;
-      --navy-light: #193650;
-      --gold: #c6a15b;
-      --white: #ffffff;
-      --cream: #f7f5f0;
-      --text: #283746;
-      --muted: #6d7884;
-      --border: #e6e0d5;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
-      background: var(--white);
-      line-height: 1.7;
-    }
-
-    a { color: inherit; text-decoration: none; }
-
-    .container {
-      width: min(1160px, 92%);
-      margin: auto;
-    }
-
-    .topbar {
-      background: var(--navy);
-      color: var(--white);
-      font-size: 13px;
-      padding: 9px 0;
-    }
-
-    .topbar-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .topbar a { color: var(--gold); }
-
-    header {
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-
-    .nav {
-      min-height: 100px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 25px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 13px;
-      min-width: 180px;
-    }
-
-    .logo-placeholder {
-      width: 90px;
-      height: 82px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border: 1px dashed var(--gold);
-      color: var(--gold);
-      font-size: 11px;
-      text-align: center;
-      line-height: 1.3;
-      padding: 5px;
-    }
-
-    .brand-name {
-      font-size: 25px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      color: var(--navy);
-    }
-
-    .brand-name span { color: var(--gold); }
-
-    .brand-subtitle {
-      font-size: 10px;
-      letter-spacing: 2px;
-      color: var(--muted);
-    }
-
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 22px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 22px;
-      align-items: center;
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    .nav-links a:hover { color: var(--gold); }
-
-    .languages {
-      display: flex;
-      gap: 5px;
-      align-items: center;
-    }
-
-    .languages button {
-      border: 1px solid transparent;
-      background: transparent;
-      font-size: 21px;
-      cursor: pointer;
-      padding: 4px;
-      border-radius: 4px;
-    }
-
-    .languages button.active,
-    .languages button:hover {
-      border-color: var(--gold);
-      background: var(--cream);
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--gold);
-      color: var(--navy);
-      border: 1px solid var(--gold);
-      padding: 13px 23px;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: .2s ease;
-    }
-
-    .button:hover {
-      background: var(--white);
-      color: var(--navy);
-    }
-
-    .button-outline {
-      color: var(--white);
-      border-color: rgba(255,255,255,.7);
-      background: transparent;
-    }
-
-    .button-outline:hover {
-      background: var(--white);
-      color: var(--navy);
-    }
-
-    .hero {
-      background:
-        linear-gradient(90deg, rgba(9,25,42,.94), rgba(9,25,42,.72) 55%, rgba(9,25,42,.32)),
-        url("https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=2000&q=85")
-        center/cover no-repeat;
-      min-height: 620px;
-      display: flex;
-      align-items: center;
-      color: var(--white);
-    }
-
-    .hero-content {
-      max-width: 740px;
-      padding: 85px 0;
-    }
-
-    .eyebrow {
-      color: var(--gold);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(42px, 6vw, 72px);
-      line-height: 1.08;
-      font-weight: 400;
-      margin-bottom: 24px;
-    }
-
-    h1 span { color: var(--gold); }
-
-    .hero p {
-      color: #e2e7ec;
-      font-size: 17px;
-      max-width: 620px;
-      margin-bottom: 32px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 13px;
-      flex-wrap: wrap;
-    }
-
-    .trust-strip {
-      background: var(--cream);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .trust-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      text-align: center;
-    }
-
-    .trust-item {
-      padding: 23px 15px;
-      border-right: 1px solid var(--border);
-    }
-
-    .trust-item:last-child { border-right: 0; }
-
-    .trust-item strong {
-      display: block;
-      color: var(--navy);
-      font-size: 14px;
-      letter-spacing: .5px;
-    }
-
-    .trust-item span {
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    section { padding: 90px 0; }
-
-    .section-heading {
-      max-width: 720px;
-      margin: 0 auto 45px;
-      text-align: center;
-    }
-
-    .section-heading h2,
-    .about-copy h2,
-    .contact-copy h2 {
-      font-family: Georgia, "Times New Roman", serif;
-      color: var(--navy);
-      font-size: clamp(32px, 4vw, 46px);
-      font-weight: 400;
-      line-height: 1.2;
-      margin-bottom: 18px;
-    }
-
-    .section-heading p,
-    .about-copy p,
-    .contact-copy p {
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .services { background: var(--white); }
-
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .service-card {
-      border: 1px solid var(--border);
-      background: var(--white);
-      padding: 30px;
-      transition: transform .2s, box-shadow .2s;
-    }
-
-    .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(16,36,58,.09);
-    }
-
-    .service-card.featured {
-      background: var(--navy);
-      color: var(--white);
-      border-color: var(--gold);
-      position: relative;
-    }
-
-    .service-card.featured::before {
-      content: "FEATURED TREATMENT";
-      display: inline-block;
-      color: var(--gold);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      margin-bottom: 20px;
-    }
-
-    .service-number {
-      color: var(--gold);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 40px;
-      line-height: 1.2;
-      margin-bottom: 15px;
-    }
-
-    .service-card h3 {
-      color: var(--navy);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 25px;
-      font-weight: 400;
-      margin-bottom: 12px;
-    }
-
-    .service-card.featured h3 { color: var(--white); }
-
-    .service-card p {
-      font-size: 14px;
-      color: var(--muted);
-    }
-
-    .service-card.featured p { color: #dce4eb; }
-
-    .text-link {
-      display: inline-block;
-      margin-top: 20px;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: var(--gold);
-      text-transform: uppercase;
-    }
-
-    .about { background: var(--cream); }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 65px;
-    }
-
-    .about-image {
-      min-height: 440px;
-      background:
-        linear-gradient(rgba(16,36,58,.1), rgba(16,36,58,.1)),
-        url("https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=1100&q=85")
-        center/cover no-repeat;
-    }
-
-    .about-copy .eyebrow { margin-bottom: 15px; }
-
-    .about-copy p { margin-bottom: 18px; }
-
-    .benefits {
-      list-style: none;
-      margin: 24px 0 30px;
-    }
-
-    .benefits li {
-      padding: 9px 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 14px;
-    }
-
-    .benefits li::before {
-      content: "✓";
-      color: var(--gold);
-      font-weight: 700;
-      margin-right: 12px;
-    }
-
-    .process-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 25px;
-    }
-
-    .process-step { text-align: center; padding: 15px; }
-
-    .process-step .number {
-      width: 48px;
-      height: 48px;
-      display: grid;
-      place-items: center;
-      margin: 0 auto 20px;
-      border: 1px solid var(--gold);
-      border-radius: 50%;
-      color: var(--gold);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 22px;
-    }
-
-    .process-step h3 {
-      color: var(--navy);
-      font-size: 16px;
-      margin-bottom: 10px;
-    }
-
-    .process-step p { color: var(--muted); font-size: 13px; }
-
-    .contact {
-      background: var(--navy);
-      color: var(--white);
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: .85fr 1.15fr;
-      gap: 60px;
-      align-items: start;
-    }
-
-    .contact-copy h2 { color: var(--white); }
-
-    .contact-copy p {
-      color: #d1dae2;
-      margin-bottom: 25px;
-    }
-
-    .contact-detail {
-      margin: 17px 0;
-      font-size: 14px;
-    }
-
-    .contact-detail strong {
-      display: block;
-      color: var(--gold);
-      font-size: 11px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 3px;
-    }
-
-    .contact-form {
-      background: var(--white);
-      padding: 35px;
-      color: var(--text);
-    }
-
-    .contact-form h3 {
-      color: var(--navy);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 28px;
-      font-weight: 400;
-      margin-bottom: 8px;
-    }
-
-    .form-intro {
-      font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 23px;
-    }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-
-    .field { margin-bottom: 16px; }
-    .field.full { grid-column: 1 / -1; }
-
-    .field label {
-      display: block;
-      color: var(--navy);
-      font-size: 12px;
-      font-weight: 700;
-      margin-bottom: 7px;
-    }
-
-    .field input,
-    .field select,
-    .field textarea {
-      width: 100%;
-      border: 1px solid #d9dfe5;
-      padding: 12px;
-      font: inherit;
-      font-size: 13px;
-      background: var(--white);
-      color: var(--text);
-      border-radius: 0;
-    }
-
-    .field textarea {
-      min-height: 115px;
-      resize: vertical;
-    }
-
-    .field input:focus,
-    .field select:focus,
-    .field textarea:focus {
-      outline: 1px solid var(--gold);
-      border-color: var(--gold);
-    }
-
-    .upload-note {
-      font-size: 11px;
-      color: var(--muted);
-      margin-top: 6px;
-    }
-
-    .form-submit { width: 100%; }
-
-    .privacy-note {
-      margin-top: 12px;
-      color: var(--muted);
-      font-size: 11px;
-    }
-
-    footer {
-      background: #0a1929;
-      color: #cbd4dc;
-      padding: 28px 0;
-      font-size: 12px;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .footer-inner strong { color: var(--gold); }
-
-    .whatsapp-float {
-      position: fixed;
-      right: 22px;
-      bottom: 22px;
-      z-index: 20;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #25d366;
-      color: white;
-      width: 58px;
-      height: 58px;
-      border-radius: 50%;
-      font-size: 27px;
-      font-weight: 700;
-      box-shadow: 0 5px 20px rgba(0,0,0,.2);
-    }
-
-    @media (max-width: 980px) {
-      .nav { padding: 14px 0; flex-wrap: wrap; }
-      .nav-right { flex-wrap: wrap; justify-content: flex-end; }
-      .nav-links { gap: 13px; }
-      .service-grid { grid-template-columns: repeat(2, 1fr); }
-      .about-grid, .contact-grid { gap: 35px; }
-    }
-
-    @media (max-width: 720px) {
-      .topbar-inner { justify-content: center; text-align: center; }
-      .nav { justify-content: center; }
-      .brand { justify-content: center; }
-      .nav-right { justify-content: center; }
-      .nav-links { width: 100%; justify-content: center; flex-wrap: wrap; }
-      .hero { min-height: 540px; }
-      .hero-content { padding: 65px 0; }
-      .trust-grid { grid-template-columns: 1fr; }
-      .trust-item { border-right: 0; border-bottom: 1px solid var(--border); }
-      section { padding: 65px 0; }
-      .service-grid, .about-grid, .contact-grid, .process-grid {
-        grid-template-columns: 1fr;
-      }
-      .about-image { min-height: 300px; }
-      .contact-form { padding: 25px 20px; }
-      .form-grid { grid-template-columns: 1fr; }
-      .field.full { grid-column: auto; }
-      .footer-inner { justify-content: center; text-align: center; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#10243a">
+<meta name="description" content="Dent Way Albania - Dental implants, All-on-4, All-on-6 and dental tourism in Tirana.">
+<title>Dent Way | Premium Dental Tourism Albania</title>
+
+<style>
+:root {
+  --navy:#10243a;
+  --navy2:#193650;
+  --gold:#c6a15b;
+  --white:#fff;
+  --cream:#f7f5f0;
+  --text:#283746;
+  --muted:#6d7884;
+  --border:#e6e0d5;
+}
+* {box-sizing:border-box;margin:0;padding:0}
+html {scroll-behavior:smooth}
+body {font-family:Arial,Helvetica,sans-serif;color:var(--text);line-height:1.7}
+a {color:inherit;text-decoration:none}
+.container {width:min(1160px,92%);margin:auto}
+
+.topbar {background:var(--navy);color:white;padding:9px 0;font-size:13px}
+.topbar-inner,.nav,.footer-inner {
+  display:flex;justify-content:space-between;align-items:center;gap:18px
+}
+.topbar a {color:var(--gold)}
+
+header {background:white;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:10}
+.nav {min-height:105px;flex-wrap:wrap;padding:10px 0}
+.brand {display:flex;align-items:center;gap:13px}
+.logo-placeholder {
+  width:95px;height:85px;border:1px dashed var(--gold);
+  color:var(--gold);display:grid;place-items:center;text-align:center;
+  font-size:11px;line-height:1.3
+}
+.brand-name {font-size:27px;font-weight:bold;letter-spacing:3px;color:var(--navy)}
+.brand-name span {color:var(--gold)}
+.brand-subtitle {font-size:10px;letter-spacing:2px;color:var(--muted)}
+
+.nav-right {display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.nav-links {display:flex;align-items:center;gap:18px;flex-wrap:wrap;font-size:13px;font-weight:bold}
+.nav-links a:hover {color:var(--gold)}
+
+/* FLAMUJ TE DUKSHEM */
+.languages {
+  display:flex!important;
+  visibility:visible!important;
+  opacity:1!important;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  flex-wrap:wrap;
+}
+.languages button {
+  display:inline-flex!important;
+  visibility:visible!important;
+  opacity:1!important;
+  align-items:center;
+  justify-content:center;
+  min-width:38px;
+  min-height:38px;
+  border:1px solid transparent;
+  border-radius:5px;
+  background:white;
+  font-family:"Segoe UI Emoji","Apple Color Emoji",sans-serif;
+  font-size:26px;
+  line-height:1;
+  cursor:pointer;
+}
+.languages button:hover,.languages button.active {
+  border-color:var(--gold);
+  background:var(--cream);
+}
+
+.button {
+  display:inline-flex;align-items:center;justify-content:center;
+  background:var(--gold);color:var(--navy);
+  border:1px solid var(--gold);padding:13px 22px;
+  font-size:12px;font-weight:bold;letter-spacing:1px;
+  text-transform:uppercase;cursor:pointer;transition:.2s
+}
+.button:hover {background:white;color:var(--navy)}
+.button-outline {background:transparent;color:white;border-color:white}
+.button-outline:hover {background:white;color:var(--navy)}
+
+.hero {
+  background:linear-gradient(90deg,rgba(9,25,42,.94),rgba(9,25,42,.65)),
+  url("https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=2000&q=85") center/cover no-repeat;
+  min-height:600px;display:flex;align-items:center;color:white
+}
+.hero-content {max-width:760px;padding:80px 0}
+.eyebrow {color:var(--gold);font-size:12px;font-weight:bold;letter-spacing:3px;text-transform:uppercase;margin-bottom:18px}
+h1,h2,.service-card h3,.contact-form h3 {
+  font-family:Georgia,"Times New Roman",serif;font-weight:400
+}
+h1 {font-size:clamp(42px,6vw,72px);line-height:1.1;margin-bottom:24px}
+h1 span {color:var(--gold)}
+.hero p {color:#e2e7ec;font-size:17px;max-width:650px;margin-bottom:30px}
+.hero-buttons {display:flex;gap:12px;flex-wrap:wrap}
+
+.trust-strip {background:var(--cream);border-bottom:1px solid var(--border)}
+.trust-grid {display:grid;grid-template-columns:repeat(3,1fr);text-align:center}
+.trust-item {padding:23px 15px;border-right:1px solid var(--border)}
+.trust-item:last-child {border:0}
+.trust-item strong {display:block;color:var(--navy);font-size:14px}
+.trust-item span {color:var(--muted);font-size:12px}
+
+section {padding:80px 0}
+.section-heading {max-width:760px;text-align:center;margin:0 auto 42px}
+.section-heading h2,.about-copy h2,.contact-copy h2 {
+  color:var(--navy);font-size:clamp(32px,4vw,46px);line-height:1.2;margin-bottom:18px
+}
+.section-heading p,.about-copy p {color:var(--muted);font-size:15px}
+
+.service-grid {display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.service-card {padding:30px;border:1px solid var(--border);background:white;transition:.2s}
+.service-card:hover {transform:translateY(-4px);box-shadow:0 12px 30px #10243a12}
+.service-card.featured {background:var(--navy);color:white;border-color:var(--gold)}
+.service-number {color:var(--gold);font:40px Georgia,serif;margin-bottom:12px}
+.service-card h3 {font-size:25px;color:var(--navy);margin-bottom:12px}
+.service-card.featured h3 {color:white}
+.service-card p {font-size:14px;color:var(--muted)}
+.service-card.featured p {color:#dce4eb}
+.feature-label {font-size:10px;color:var(--gold);letter-spacing:2px;font-weight:bold;margin-bottom:16px}
+.text-link {display:inline-block;margin-top:18px;color:var(--gold);font-size:12px;font-weight:bold}
+
+.about {background:var(--cream)}
+.about-grid {display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+.about-image {
+  min-height:420px;background:url("https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=1100&q=85") center/cover no-repeat
+}
+.about-copy p {margin-bottom:17px}
+.benefits {list-style:none;margin:22px 0}
+.benefits li {padding:9px 0;border-bottom:1px solid var(--border);font-size:14px}
+.benefits li:before {content:"✓";color:var(--gold);font-weight:bold;margin-right:12px}
+
+.process-grid {display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.process-step {text-align:center;padding:15px}
+.number {width:48px;height:48px;display:grid;place-items:center;margin:0 auto 18px;border:1px solid var(--gold);border-radius:50%;color:var(--gold);font:22px Georgia,serif}
+.process-step h3 {color:var(--navy);font-size:16px;margin-bottom:9px}
+.process-step p {color:var(--muted);font-size:13px}
+
+.contact {background:var(--navy);color:white}
+.contact-grid {display:grid;grid-template-columns:.85fr 1.15fr;gap:50px;align-items:start}
+.contact-copy h2 {color:white}
+.contact-copy p {color:#d1dae2;margin-bottom:24px}
+.contact-detail {margin:17px 0;font-size:14px}
+.contact-detail strong {display:block;color:var(--gold);font-size:11px;letter-spacing:2px}
+.contact-detail a:hover {color:var(--gold)}
+.contact-form {background:white;color:var(--text);padding:32px}
+.contact-form h3 {color:var(--navy);font-size:28px;margin-bottom:8px}
+.form-intro {font-size:13px;color:var(--muted);margin-bottom:22px}
+.form-grid {display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.field {margin-bottom:14px}
+.field.full {grid-column:1/-1}
+.field label {display:block;color:var(--navy);font-size:12px;font-weight:bold;margin-bottom:6px}
+.field input,.field select,.field textarea {width:100%;border:1px solid #d9dfe5;padding:12px;font:inherit;font-size:13px;background:white;color:var(--text)}
+.field textarea {min-height:110px;resize:vertical}
+.upload-note,.privacy-note {font-size:11px;color:var(--muted);margin-top:7px}
+.form-submit {width:100%}
+
+footer {background:#0a1929;color:#cbd4dc;padding:26px 0;font-size:12px}
+.footer-inner strong {color:var(--gold)}
+.whatsapp-float {
+  position:fixed;right:20px;bottom:20px;z-index:20;
+  width:58px;height:58px;border-radius:50%;display:grid;place-items:center;
+  background:#25d366;color:white;font-size:27px;font-weight:bold;
+  box-shadow:0 5px 20px #0003
+}
+
+@media(max-width:980px) {
+  .nav {justify-content:center}
+  .nav-right {justify-content:center}
+  .service-grid {grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:720px) {
+  .topbar-inner,.footer-inner {justify-content:center;text-align:center;flex-wrap:wrap}
+  .nav,.nav-right {justify-content:center}
+  .brand {justify-content:center}
+  .nav-links {justify-content:center}
+  .hero {min-height:530px}
+  .hero-content {padding:60px 0}
+  .trust-grid,.service-grid,.about-grid,.contact-grid,.process-grid,.form-grid {grid-template-columns:1fr}
+  .trust-item {border-right:0;border-bottom:1px solid var(--border)}
+  section {padding:60px 0}
+  .about-image {min-height:300px}
+  .contact-form {padding:24px 18px}
+  .field.full {grid-column:auto}
+}
+</style>
 </head>
 
 <body>
-  <div class="topbar">
-    <div class="container topbar-inner">
-      <span data-en="Premium dental care in Tirana, Albania"
-            data-it="Cure dentali di qualità a Tirana, Albania"
-            data-de="Hochwertige Zahnbehandlungen in Tirana, Albanien"
-            data-fr="Soins dentaires haut de gamme à Tirana, Albanie"
-            data-pl="Ekskluzywna opieka dentystyczna w Tiranie, Albania"
-            data-sq="Kujdes dentar premium në Tiranë, Shqipëri">
-        Premium dental care in Tirana, Albania
-      </span>
-      <span><a href="mailto:dentwaytourism@gmail.com">dentwaytourism@gmail.com</a></span>
+<div class="topbar">
+  <div class="container topbar-inner">
+    <span data-en="Premium dental care in Tirana, Albania" data-it="Cure dentali di qualità a Tirana, Albania" data-de="Hochwertige Zahnbehandlungen in Tirana, Albanien" data-fr="Soins dentaires haut de gamme à Tirana, Albanie" data-pl="Wysokiej jakości opieka dentystyczna w Tiranie" data-sq="Kujdes dentar premium në Tiranë, Shqipëri">Premium dental care in Tirana, Albania</span>
+    <a href="mailto:dentwaytourism@gmail.com">dentwaytourism@gmail.com</a>
+  </div>
+</div>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="#home">
+      <div class="logo-placeholder">DENT WAY<br>LOGO</div>
+      <div>
+        <div class="brand-name">DENT <span>WAY</span></div>
+        <div class="brand-subtitle">DENTAL TOURISM</div>
+      </div>
+    </a>
+    <div class="nav-right">
+      <nav class="nav-links">
+        <a href="#home" data-en="Home" data-it="Home" data-de="Start" data-fr="Accueil" data-pl="Start" data-sq="Kryefaqja">Home</a>
+        <a href="#services" data-en="Treatments" data-it="Trattamenti" data-de="Behandlungen" data-fr="Soins" data-pl="Zabiegi" data-sq="Trajtimet">Treatments</a>
+        <a href="#about" data-en="About us" data-it="Chi siamo" data-de="Über uns" data-fr="À propos" data-pl="O nas" data-sq="Rreth nesh">About us</a>
+        <a href="#contact" data-en="Contact" data-it="Contatti" data-de="Kontakt" data-fr="Contact" data-pl="Kontakt" data-sq="Kontakt">Contact</a>
+      </nav>
+
+      <div class="languages" aria-label="Choose language">
+        <button type="button" class="active" data-lang="en" title="English" aria-label="English">🇬🇧</button>
+        <button type="button" data-lang="it" title="Italiano" aria-label="Italiano">🇮🇹</button>
+        <button type="button" data-lang="de" title="Deutsch" aria-label="Deutsch">🇩🇪</button>
+        <button type="button" data-lang="fr" title="Français" aria-label="Français">🇫🇷</button>
+        <button type="button" data-lang="pl" title="Polski" aria-label="Polski">🇵🇱</button>
+        <button type="button" data-lang="sq" title="Shqip" aria-label="Shqip">🇦🇱</button>
+      </div>
     </div>
   </div>
+</header>
 
-  <header>
-    <div class="container nav">
-      <a class="brand" href="#home" aria-label="Dent Way home">
-        <!-- Shto logon origjinale këtu kur ta kesh të disponueshme. -->
-        <div class="logo-placeholder">ORIGINAL<br>LOGO</div>
-        <div>
-          <div class="brand-name">DENT <span>WAY</span></div>
-          <div class="brand-subtitle">DENTAL TOURISM</div>
-        </div>
-      </a>
-
-      <div class="nav-right">
-        <nav class="nav-links" aria-label="Main navigation">
-          <a href="#home" data-en="Home" data-it="Home" data-de="Start" data-fr="Accueil" data-pl="Start" data-sq="Kryefaqja">Home</a>
-          <a href="#services" data-en="Treatments" data-it="Trattamenti" data-de="Behandlungen" data-fr="Soins" data-pl="Zabiegi" data-sq="Trajtimet">Treatments</a>
-          <a href="#about" data-en="About us" data-it="Chi siamo" data-de="Über uns" data-fr="À propos" data-pl="O nas" data-sq="Rreth nesh">About us</a>
-          <a href="#contact" data-en="Contact" data-it="Contatti" data-de="Kontakt" data-fr="Contact" data-pl="Kontakt" data-sq="Kontakt">Contact</a>
-        </nav>
-
-        <div class="languages" aria-label="Choose language">
-          <button type="button" class="active" data-lang="en" aria-label="English" title="English">🇬🇧</button>
-          <button type="button" data-lang="it" aria-label="Italiano" title="Italiano">🇮🇹</button>
-          <button type="button" data-lang="de" aria-label="Deutsch" title="Deutsch">🇩🇪</button>
-          <button type="button" data-lang="fr" aria-label="Français" title="Français">🇫🇷</button>
-          <button type="button" data-lang="pl" aria-label="Polski" title="Polski">🇵🇱</button>
-          <button type="button" data-lang="sq" aria-label="Shqip" title="Shqip">🇦🇱</button>
-        </div>
-      </div>
+<main>
+<section class="hero" id="home">
+  <div class="container"><div class="hero-content">
+    <div class="eyebrow" data-en="Your smile. Our priority." data-it="Il tuo sorriso. La nostra priorità." data-de="Ihr Lächeln. Unsere Priorität." data-fr="Votre sourire. Notre priorité." data-pl="Twój uśmiech. Nasz priorytet." data-sq="Buzëqeshja juaj. Prioriteti ynë.">Your smile. Our priority.</div>
+    <h1 data-en="A new smile.<br><span>A new confidence.</span>" data-it="Un nuovo sorriso.<br><span>Una nuova sicurezza.</span>" data-de="Ein neues Lächeln.<br><span>Neues Selbstvertrauen.</span>" data-fr="Un nouveau sourire.<br><span>Une nouvelle confiance.</span>" data-pl="Nowy uśmiech.<br><span>Nowa pewność siebie.</span>" data-sq="Një buzëqeshje e re.<br><span>Vetëbesim i ri.</span>">A new smile.<br><span>A new confidence.</span></h1>
+    <p data-en="Discover dental care in Tirana, Albania. Explore All-on-4, All-on-6, dental implants and personalised treatment planning." data-it="Scopri le cure dentali a Tirana: All-on-4, All-on-6, impianti e piani personalizzati." data-de="Entdecken Sie Zahnbehandlungen in Tirana: All-on-4, All-on-6, Implantate und individuelle Planung." data-fr="Découvrez les soins dentaires à Tirana : All-on-4, All-on-6, implants et plans personnalisés." data-pl="Poznaj leczenie stomatologiczne w Tiranie: All-on-4, All-on-6, implanty i indywidualne plany." data-sq="Zbuloni trajtimet dentare në Tiranë: All-on-4, All-on-6, implante dhe plane të personalizuara.">Discover dental care in Tirana, Albania. Explore All-on-4, All-on-6, dental implants and personalised treatment planning.</p>
+    <div class="hero-buttons">
+      <a class="button" href="#contact" data-en="Request a consultation" data-it="Richiedi una consulenza" data-de="Beratung anfragen" data-fr="Demander une consultation" data-pl="Poproś o konsultację" data-sq="Kërko konsultë">Request a consultation</a>
+      <a class="button button-outline" href="#services" data-en="Explore treatments" data-it="Scopri i trattamenti" data-de="Behandlungen entdecken" data-fr="Découvrir les soins" data-pl="Poznaj zabiegi" data-sq="Shiko trajtimet">Explore treatments</a>
     </div>
-  </header>
+  </div></div>
+</section>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="container">
-        <div class="hero-content">
-          <div class="eyebrow"
-               data-en="Your smile. Our priority."
-               data-it="Il tuo sorriso. La nostra priorità."
-               data-de="Ihr Lächeln. Unsere Priorität."
-               data-fr="Votre sourire. Notre priorité."
-               data-pl="Twój uśmiech. Nasz priorytet."
-               data-sq="Buzëqeshja juaj. Prioriteti ynë.">Your smile. Our priority.</div>
+<div class="trust-strip"><div class="container trust-grid">
+  <div class="trust-item"><strong>ALL-ON-4 & ALL-ON-6</strong><span data-en="Full-arch treatment options" data-it="Soluzioni per arcata completa" data-de="Optionen für den gesamten Zahnbogen" data-fr="Solutions pour arcade complète" data-pl="Rozwiązania dla całego łuku" data-sq="Zgjidhje për harkun e plotë dentar">Full-arch treatment options</span></div>
+  <div class="trust-item"><strong data-en="PERSONALISED PLANS" data-it="PIANI PERSONALIZZATI" data-de="INDIVIDUELLE PLÄNE" data-fr="PLANS PERSONNALISÉS" data-pl="INDYWIDUALNE PLANY" data-sq="PLANE TË PERSONALIZUARA">PERSONALISED PLANS</strong><span data-en="Based on clinical assessment" data-it="In base alla valutazione clinica" data-de="Nach klinischer Beurteilung" data-fr="Selon l’évaluation clinique" data-pl="Na podstawie oceny klinicznej" data-sq="Bazuar në vlerësimin klinik">Based on clinical assessment</span></div>
+  <div class="trust-item"><strong data-en="DENTAL TOURISM" data-it="TURISMO DENTALE" data-de="ZAHNTOURISMUS" data-fr="TOURISME DENTAIRE" data-pl="TURYSTYKA DENTYSTYCZNA" data-sq="TURIZËM DENTAR">DENTAL TOURISM</strong><span data-en="Treatment and travel coordination" data-it="Coordinamento di cure e viaggio" data-de="Koordination von Behandlung und Reise" data-fr="Coordination des soins et du voyage" data-pl="Koordynacja leczenia i podróży" data-sq="Koordinim i trajtimit dhe udhëtimit">Treatment and travel coordination</span></div>
+</div></div>
 
-          <h1 data-en="A new smile.<br><span>A new confidence.</span>"
-              data-it="Un nuovo sorriso.<br><span>Una nuova sicurezza.</span>"
-              data-de="Ein neues Lächeln.<br><span>Neues Selbstvertrauen.</span>"
-              data-fr="Un nouveau sourire.<br><span>Une nouvelle confiance.</span>"
-              data-pl="Nowy uśmiech.<br><span>Nowa pewność siebie.</span>"
-              data-sq="Një buzëqeshje e re.<br><span>Vetëbesim i ri.</span>">
-            A new smile.<br><span>A new confidence.</span>
-          </h1>
+<section id="services"><div class="container">
+  <div class="section-heading">
+    <div class="eyebrow" data-en="Our treatments" data-it="I nostri trattamenti" data-de="Unsere Behandlungen" data-fr="Nos traitements" data-pl="Nasze zabiegi" data-sq="Trajtimet tona">Our treatments</div>
+    <h2 data-en="Care designed around your smile" data-it="Cure pensate per il tuo sorriso" data-de="Behandlungen für Ihr Lächeln" data-fr="Des soins pensés pour votre sourire" data-pl="Leczenie dopasowane do Twojego uśmiechu" data-sq="Trajtime të përshtatura për buzëqeshjen tuaj">Care designed around your smile</h2>
+    <p data-en="Request an individual assessment. Treatment suitability depends on clinical examination and diagnostic imaging." data-it="Richiedi una valutazione individuale. Il trattamento dipende dalla visita clinica." data-de="Fordern Sie eine individuelle Beurteilung an. Die Eignung hängt von der klinischen Untersuchung ab." data-fr="Demandez une évaluation individuelle. Le traitement dépend de l'examen clinique." data-pl="Poproś o indywidualną ocenę. Leczenie zależy od badania klinicznego." data-sq="Kërkoni vlerësim individual. Trajtimi përcaktohet pas ekzaminimit klinik.">Request an individual assessment. Treatment suitability depends on clinical examination and diagnostic imaging.</p>
+  </div>
+  <div class="service-grid">
+    <article class="service-card featured"><div class="feature-label">FEATURED TREATMENT</div><div class="service-number">01</div><h3>All-on-4</h3><p data-en="Full-arch rehabilitation using four implants in suitable cases, following clinical assessment." data-it="Riabilitazione completa con quattro impianti nei casi idonei." data-de="Vollständige Versorgung mit vier Implantaten bei geeigneten Fällen." data-fr="Réhabilitation complète avec quatre implants dans les cas appropriés." data-pl="Odbudowa całego łuku na czterech implantach w odpowiednich przypadkach." data-sq="Rehabilitim i harkut të plotë me katër implante, në rastet e përshtatshme.">Full-arch rehabilitation using four implants in suitable cases, following clinical assessment.</p><a class="text-link" href="#contact" data-en="Request assessment →" data-it="Richiedi valutazione →" data-de="Beurteilung anfragen →" data-fr="Demander une évaluation →" data-pl="Poproś o ocenę →" data-sq="Kërko vlerësim →">Request assessment →</a></article>
+    <article class="service-card featured"><div class="feature-label">FEATURED TREATMENT</div><div class="service-number">02</div><h3>All-on-6</h3><p data-en="Full-arch rehabilitation using six implants where clinically appropriate." data-it="Riabilitazione completa con sei impianti, quando indicato." data-de="Vollständige Versorgung mit sechs Implantaten, sofern geeignet." data-fr="Réhabilitation complète avec six implants, si indiqué." data-pl="Odbudowa całego łuku na sześciu implantach, jeśli jest to wskazane." data-sq="Rehabilitim i harkut të plotë me gjashtë implante, kur është e përshtatshme.">Full-arch rehabilitation using six implants where clinically appropriate.</p><a class="text-link" href="#contact" data-en="Request assessment →" data-it="Richiedi valutazione →" data-de="Beurteilung anfragen →" data-fr="Demander une évaluation →" data-pl="Poproś o ocenę →" data-sq="Kërko vlerësim →">Request assessment →</a></article>
+    <article class="service-card"><div class="service-number">03</div><h3 data-en="Dental Implants" data-it="Impianti dentali" data-de="Zahnimplantate" data-fr="Implants dentaires" data-pl="Implanty dentystyczne" data-sq="Implante dentare">Dental Implants</h3><p data-en="Individual solutions for replacing missing teeth." data-it="Soluzioni per sostituire i denti mancanti." data-de="Individuelle Lösungen für fehlende Zähne." data-fr="Solutions pour remplacer les dents manquantes." data-pl="Rozwiązania zastępujące brakujące zęby." data-sq="Zgjidhje për zëvendësimin e dhëmbëve që mungojnë.">Individual solutions for replacing missing teeth.</p><a class="text-link" href="#contact">Contact →</a></article>
+    <article class="service-card"><div class="service-number">04</div><h3 data-en="Zirconia Crowns" data-it="Corone in zirconia" data-de="Zirkonkronen" data-fr="Couronnes en zircone" data-pl="Korony cyrkonowe" data-sq="Kurora zirkoni">Zirconia Crowns</h3><p data-en="Restorative options balancing function, fit and appearance." data-it="Soluzioni restaurative funzionali ed estetiche." data-de="Restaurative Lösungen für Funktion und Ästhetik." data-fr="Solutions restauratrices fonctionnelles et esthétiques." data-pl="Rozwiązania protetyczne łączące funkcję i estetykę." data-sq="Zgjidhje restauruese që ndërthurin funksionin dhe estetikën.">Restorative options balancing function, fit and appearance.</p><a class="text-link" href="#contact">Contact →</a></article>
+    <article class="service-card"><div class="service-number">05</div><h3 data-en="Veneers & Smile Design" data-it="Faccette e smile design" data-de="Veneers & Smile Design" data-fr="Facettes et esthétique du sourire" data-pl="Licówki i projektowanie uśmiechu" data-sq="Faseta dhe dizajn buzëqeshjeje">Veneers & Smile Design</h3><p data-en="Cosmetic treatment planning tailored to your goals." data-it="Piani estetici personalizzati." data-de="Individuelle ästhetische Behandlungsplanung." data-fr="Plan esthétique personnalisé." data-pl="Indywidualne planowanie leczenia estetycznego." data-sq="Planifikim estetik sipas objektivave tuaja.">Cosmetic treatment planning tailored to your goals.</p><a class="text-link" href="#contact">Contact →</a></article>
+    <article class="service-card"><div class="service-number">06</div><h3 data-en="Dental Imaging" data-it="Diagnostica dentale" data-de="Dentale Bildgebung" data-fr="Imagerie dentaire" data-pl="Diagnostyka obrazowa" data-sq="Imazheri dentare">Dental Imaging</h3><p data-en="Diagnostic imaging to support treatment planning when clinically indicated." data-it="Diagnostica per immagini a supporto del piano di trattamento." data-de="Bildgebung zur Unterstützung der Behandlungsplanung." data-fr="Imagerie pour aider à planifier les soins." data-pl="Diagnostyka obrazowa wspierająca planowanie leczenia." data-sq="Imazheri diagnostike për të ndihmuar planifikimin e trajtimit.">Diagnostic imaging to support treatment planning when clinically indicated.</p><a class="text-link" href="#contact" data-en="Send your scan →" data-it="Invia la radiografia →" data-de="Aufnahme senden →" data-fr="Envoyer votre radio →" data-pl="Wyślij zdjęcie →" data-sq="Dërgo radiografinë →">Send your scan →</a></article>
+  </div>
+</div></section>
 
-          <p data-en="Discover premium dental care in Tirana, Albania. Explore All-on-4, All-on-6, dental implants and personalised treatment planning with support throughout your journey."
-             data-it="Scopri cure dentali di qualità a Tirana, Albania. All-on-4, All-on-6, impianti dentali e piani di trattamento personalizzati."
-             data-de="Entdecken Sie hochwertige Zahnbehandlungen in Tirana, Albanien. All-on-4, All-on-6, Zahnimplantate und individuelle Behandlungsplanung."
-             data-fr="Découvrez des soins dentaires haut de gamme à Tirana, Albanie. All-on-4, All-on-6, implants dentaires et plans de traitement personnalisés."
-             data-pl="Poznaj wysokiej jakości opiekę stomatologiczną w Tiranie. All-on-4, All-on-6, implanty i indywidualne plany leczenia."
-             data-sq="Zbuloni trajtime dentare premium në Tiranë. All-on-4, All-on-6, implante dentare dhe plane trajtimi të personalizuara.">
-            Discover premium dental care in Tirana, Albania. Explore All-on-4, All-on-6, dental implants and personalised treatment planning with support throughout your journey.
-          </p>
+<section class="about" id="about"><div class="container about-grid">
+  <div class="about-image" role="img" aria-label="Dental clinic environment"></div>
+  <div class="about-copy">
+    <div class="eyebrow" data-en="Why Dent Way" data-it="Perché Dent Way" data-de="Warum Dent Way" data-fr="Pourquoi Dent Way" data-pl="Dlaczego Dent Way" data-sq="Pse Dent Way">Why Dent Way</div>
+    <h2 data-en="Your dental journey, thoughtfully planned" data-it="Il tuo percorso dentale, pianificato con cura" data-de="Ihre Zahnbehandlung sorgfältig geplant" data-fr="Votre parcours dentaire, soigneusement planifié" data-pl="Twoja podróż po zdrowy uśmiech" data-sq="Udhëtimi juaj dentar, i planifikuar me kujdes">Your dental journey, thoughtfully planned</h2>
+    <p data-en="Our team can help you share dental records, arrange an initial discussion and understand the next steps." data-it="Il nostro team può aiutarti a condividere la documentazione e capire i prossimi passi." data-de="Unser Team unterstützt Sie bei Unterlagen und den nächsten Schritten." data-fr="Notre équipe peut vous aider à transmettre vos dossiers et comprendre les prochaines étapes." data-pl="Nasz zespół pomoże przekazać dokumentację i omówić kolejne kroki." data-sq="Ekipi ynë mund t'ju ndihmojë me dokumentacionin dhe hapat e ardhshëm.">Our team can help you share dental records, arrange an initial discussion and understand the next steps.</p>
+    <ul class="benefits">
+      <li data-en="Individual treatment discussions" data-it="Consulenze personalizzate" data-de="Individuelle Beratung" data-fr="Échanges personnalisés" data-pl="Indywidualne konsultacje" data-sq="Konsultime individuale">Individual treatment discussions</li>
+      <li data-en="Review of available dental imaging" data-it="Valutazione delle immagini dentali" data-de="Sichtung vorhandener Röntgenbilder" data-fr="Étude des images dentaires" data-pl="Analiza dostępnych zdjęć" data-sq="Shqyrtim i imazheve dentare">Review of available dental imaging</li>
+      <li data-en="Treatment and travel coordination" data-it="Coordinamento di cure e viaggio" data-de="Koordination von Behandlung und Reise" data-fr="Coordination des soins et du voyage" data-pl="Koordynacja leczenia i podróży" data-sq="Koordinim i trajtimit dhe udhëtimit">Treatment and travel coordination</li>
+    </ul>
+    <a class="button" href="#contact" data-en="Talk to our team" data-it="Parla con il nostro team" data-de="Kontaktieren Sie unser Team" data-fr="Parler à notre équipe" data-pl="Skontaktuj się z zespołem" data-sq="Kontakto ekipin">Talk to our team</a>
+  </div>
+</div></section>
 
-          <div class="hero-buttons">
-            <a class="button" href="#contact"
-               data-en="Request a consultation"
-               data-it="Richiedi una consulenza"
-               data-de="Beratung anfragen"
-               data-fr="Demander une consultation"
-               data-pl="Poproś o konsultację"
-               data-sq="Kërko konsultë">Request a consultation</a>
+<section><div class="container">
+  <div class="section-heading"><div class="eyebrow" data-en="Simple steps" data-it="Passaggi semplici" data-de="Einfache Schritte" data-fr="Étapes simples" data-pl="Proste kroki" data-sq="Hapa të thjeshtë">Simple steps</div><h2 data-en="How it works" data-it="Come funziona" data-de="So funktioniert es" data-fr="Comment ça marche" data-pl="Jak to działa" data-sq="Si funksionon">How it works</h2></div>
+  <div class="process-grid">
+    <div class="process-step"><div class="number">1</div><h3 data-en="Get in touch" data-it="Contattaci" data-de="Kontakt aufnehmen" data-fr="Contactez-nous" data-pl="Skontaktuj się" data-sq="Na kontakto">Get in touch</h3><p data-en="Tell us about your goals." data-it="Parlaci dei tuoi obiettivi." data-de="Teilen Sie uns Ihre Wünsche mit." data-fr="Parlez-nous de vos objectifs." data-pl="Opowiedz nam o swoich celach." data-sq="Na tregoni synimet tuaja.">Tell us about your goals.</p></div>
+    <div class="process-step"><div class="number">2</div><h3 data-en="Share your records" data-it="Invia la documentazione" data-de="Unterlagen senden" data-fr="Transmettez vos dossiers" data-pl="Prześlij dokumentację" data-sq="Dërgo dokumentacionin">Share your records</h3><p data-en="Send available scans or radiographs." data-it="Invia le radiografie disponibili." data-de="Senden Sie vorhandene Aufnahmen." data-fr="Envoyez vos radiographies." data-pl="Prześlij dostępne zdjęcia." data-sq="Dërgoni radiografitë që keni.">Send available scans or radiographs.</p></div>
+    <div class="process-step"><div class="number">3</div><h3 data-en="Discuss your plan" data-it="Discuti il piano" data-de="Plan besprechen" data-fr="Discutez du plan" data-pl="Omów plan leczenia" data-sq="Diskuto planin">Discuss your plan</h3><p data-en="Review possible next steps." data-it="Valuta i prossimi passi." data-de="Besprechen Sie die nächsten Schritte." data-fr="Examinez les prochaines étapes." data-pl="Omów kolejne kroki." data-sq="Shqyrtoni hapat e ardhshëm.">Review possible next steps.</p></div>
+    <div class="process-step"><div class="number">4</div><h3 data-en="Plan your visit" data-it="Pianifica la visita" data-de="Besuch planen" data-fr="Planifiez votre visite" data-pl="Zaplanuj wizytę" data-sq="Planifiko vizitën">Plan your visit</h3><p data-en="Coordinate appointments and travel." data-it="Coordina appuntamenti e viaggio." data-de="Koordinieren Sie Termine und Reise." data-fr="Coordonnez rendez-vous et voyage." data-pl="Uzgodnij terminy i podróż." data-sq="Koordino takimet dhe udhëtimin.">Coordinate appointments and travel.</p></div>
+  </div>
+</div></section>
 
-            <a class="button button-outline" href="#services"
-               data-en="Explore treatments"
-               data-it="Scopri i trattamenti"
-               data-de="Behandlungen entdecken"
-               data-fr="Découvrir les soins"
-               data-pl="Poznaj zabiegi"
-               data-sq="Shiko trajtimet">Explore treatments</a>
-          </div>
-        </div>
-      </div>
-    </section>
+<section class="contact" id="contact"><div class="container contact-grid">
+  <div class="contact-copy">
+    <div class="eyebrow" data-en="Start your journey" data-it="Inizia il tuo percorso" data-de="Starten Sie Ihre Reise" data-fr="Commencez votre parcours" data-pl="Rozpocznij swoją podróż" data-sq="Nisni udhëtimin tuaj">Start your journey</div>
+    <h2 data-en="Let's talk about your smile" data-it="Parliamo del tuo sorriso" data-de="Sprechen wir über Ihr Lächeln" data-fr="Parlons de votre sourire" data-pl="Porozmawiajmy o Twoim uśmiechu" data-sq="Le të flasim për buzëqeshjen tuaj">Let's talk about your smile</h2>
+    <p data-en="Send your questions, treatment interests or available dental radiographs." data-it="Inviaci le tue domande e le radiografie disponibili." data-de="Senden Sie Ihre Fragen und vorhandene Röntgenbilder." data-fr="Envoyez vos questions et radiographies disponibles." data-pl="Prześlij pytania i dostępne zdjęcia." data-sq="Na dërgoni pyetjet dhe radiografitë që keni.">Send your questions, treatment interests or available dental radiographs.</p>
+    <a class="button" href="https://wa.me/355676938595" target="_blank" rel="noopener" data-en="Chat on WhatsApp" data-it="Chatta su WhatsApp" data-de="Über WhatsApp schreiben" data-fr="Écrire sur WhatsApp" data-pl="Napisz na WhatsApp" data-sq="Shkruaj në WhatsApp">Chat on WhatsApp</a>
+    <div class="contact-detail"><strong>Email</strong><a href="mailto:dentwaytourism@gmail.com">dentwaytourism@gmail.com</a></div>
+    <div class="contact-detail"><strong>WhatsApp</strong><a href="https://wa.me/355676938595">+355 67 693 8595</a></div>
+    <div class="contact-detail"><strong>Instagram</strong><a href="https://www.instagram.com/dent__way/" target="_blank" rel="noopener">@dent__way</a></div>
+    <div class="contact-detail"><strong>Facebook</strong><a href="https://www.facebook.com/dentwaytourism" target="_blank" rel="noopener">Dent Way Tourism</a></div>
+  </div>
 
-    <div class="trust-strip">
-      <div class="container trust-grid">
-        <div class="trust-item">
-          <strong>ALL-ON-4 & ALL-ON-6</strong>
-          <span data-en="Full-arch treatment options" data-it="Soluzioni per arcata completa" data-de="Versorgungsmöglichkeiten für den gesamten Zahnbogen" data-fr="Solutions pour arcade complète" data-pl="Rozwiązania dla całego łuku zębowego" data-sq="Zgjidhje për harkun e plotë dentar">Full-arch treatment options</span>
-        </div>
-        <div class="trust-item">
-          <strong data-en="PERSONALISED PLANS" data-it="PIANI PERSONALIZZATI" data-de="INDIVIDUELLE PLÄNE" data-fr="PLANS PERSONNALISÉS" data-pl="INDYWIDUALNE PLANY" data-sq="PLANE TË PERSONALIZUARA">PERSONALISED PLANS</strong>
-          <span data-en="Based on clinical assessment" data-it="In base alla valutazione clinica" data-de="Basierend auf klinischer Untersuchung" data-fr="Selon l’évaluation clinique" data-pl="Na podstawie oceny klinicznej" data-sq="Bazuar në vlerësimin klinik">Based on clinical assessment</span>
-        </div>
-        <div class="trust-item">
-          <strong data-en="DENTAL TOURISM" data-it="TURISMO DENTALE" data-de="ZAHNTOURISMUS" data-fr="TOURISME DENTAIRE" data-pl="TURYSTYKA DENTYSTYCZNA" data-sq="TURIZËM DENTAR">DENTAL TOURISM</strong>
-          <span data-en="Treatment and travel coordination" data-it="Coordinamento di cure e viaggio" data-de="Koordination von Behandlung und Reise" data-fr="Coordination des soins et du voyage" data-pl="Koordynacja leczenia i podróży" data-sq="Koordinim i trajtimit dhe udhëtimit">Treatment and travel coordination</span>
-        </div>
-      </div>
+  <form class="contact-form" id="contactForm">
+    <h3 data-en="Request a consultation" data-it="Richiedi una consulenza" data-de="Beratung anfragen" data-fr="Demander une consultation" data-pl="Poproś o konsultację" data-sq="Kërko konsultë">Request a consultation</h3>
+    <p class="form-intro" data-en="Complete the form and continue through WhatsApp." data-it="Compila il modulo e continua su WhatsApp." data-de="Füllen Sie das Formular aus und fahren Sie über WhatsApp fort." data-fr="Remplissez le formulaire et poursuivez sur WhatsApp." data-pl="Wypełnij formularz i przejdź do WhatsApp." data-sq="Plotësoni formularin dhe vazhdoni në WhatsApp.">Complete the form and continue through WhatsApp.</p>
+    <div class="form-grid">
+      <div class="field"><label for="name">Full name *</label><input id="name" required autocomplete="name"></div>
+      <div class="field"><label for="email">Email *</label><input id="email" type="email" required autocomplete="email"></div>
+      <div class="field"><label for="country">Country</label><input id="country" autocomplete="country-name"></div>
+      <div class="field"><label for="treatment">Treatment of interest</label><select id="treatment"><option>All-on-4</option><option>All-on-6</option><option>Dental implants</option><option>Zirconia crowns</option><option>Veneers / Smile design</option><option>Dental imaging</option><option>Other</option></select></div>
+      <div class="field full"><label for="message">Your message</label><textarea id="message" placeholder="Tell us how we can help..."></textarea></div>
+      <div class="field full"><label for="radiograph">Dental radiograph (optional)</label><input id="radiograph" type="file" accept="image/*,.dcm,.dicom,.pdf"><p class="upload-note">The file is not uploaded automatically. Attach it manually in WhatsApp after opening the chat.</p></div>
+      <div class="field full"><button class="button form-submit" type="submit">Continue to WhatsApp</button><p class="privacy-note">A clinical assessment is required before treatment decisions. Avoid sending unnecessary sensitive medical information.</p></div>
     </div>
+  </form>
+</div></section>
+</main>
 
-    <section class="services" id="services">
-      <div class="container">
-        <div class="section-heading">
-          <div class="eyebrow"
-               data-en="Our treatments" data-it="I nostri trattamenti" data-de="Unsere Behandlungen" data-fr="Nos traitements" data-pl="Nasze zabiegi" data-sq="Trajtimet tona">Our treatments</div>
-          <h2 data-en="Care designed around your smile"
-              data-it="Cure pensate per il tuo sorriso"
-              data-de="Behandlungen für Ihr Lächeln"
-              data-fr="Des soins pensés pour votre sourire"
-              data-pl="Leczenie dopasowane do Twojego uśmiechu"
-              data-sq="Trajtime të përshtatura për buzëqeshjen tuaj">Care designed around your smile</h2>
-          <p data-en="Explore treatment options and request an individual assessment. The appropriate treatment depends on your clinical examination and diagnostic imaging."
-             data-it="Scopri le opzioni di trattamento e richiedi una valutazione individuale."
-             data-de="Entdecken Sie Behandlungsoptionen und fordern Sie eine individuelle Beurteilung an."
-             data-fr="Découvrez les options de traitement et demandez une évaluation personnalisée."
-             data-pl="Poznaj opcje leczenia i poproś o indywidualną ocenę."
-             data-sq="Shikoni alternativat e trajtimit dhe kërkoni një vlerësim individual.">Explore treatment options and request an individual assessment. The appropriate treatment depends on your clinical examination and diagnostic imaging.</p>
-        </div>
+<footer><div class="container footer-inner">
+  <span>© <span id="year"></span> <strong>Dent Way</strong>. All rights reserved.</span>
+  <span data-en="Dental tourism • Tirana, Albania" data-it="Turismo dentale • Tirana, Albania" data-de="Zahntourismus • Tirana, Albanien" data-fr="Tourisme dentaire • Tirana, Albanie" data-pl="Turystyka dentystyczna • Tirana, Albania" data-sq="Turizëm dentar • Tiranë, Shqipëri">Dental tourism • Tirana, Albania</span>
+</div></footer>
 
-        <div class="service-grid">
-          <article class="service-card featured">
-            <div class="service-number">01</div>
-            <h3>All-on-4</h3>
-            <p data-en="A full-arch rehabilitation option using four strategically placed implants in suitable cases. A clinical assessment is needed to determine eligibility."
-               data-it="Una soluzione per riabilitare un'intera arcata con quattro impianti nei casi idonei."
-               data-de="Eine Option zur Versorgung eines gesamten Zahnbogens mit vier Implantaten bei geeigneten Fällen."
-               data-fr="Une solution de réhabilitation complète avec quatre implants dans les cas appropriés."
-               data-pl="Odbudowa całego łuku na czterech implantach w odpowiednich przypadkach."
-               data-sq="Një alternativë për rehabilitimin e harkut të plotë me katër implante, në rastet e përshtatshme.">A full-arch rehabilitation option using four strategically placed implants in suitable cases. A clinical assessment is needed to determine eligibility.</p>
-            <a class="text-link" href="#contact" data-en="Request assessment →" data-it="Richiedi valutazione →" data-de="Beurteilung anfragen →" data-fr="Demander une évaluation →" data-pl="Poproś o ocenę →" data-sq="Kërko vlerësim →">Request assessment →</a>
-          </article>
+<a class="whatsapp-float" href="https://wa.me/355676938595" target="_blank" rel="noopener" aria-label="WhatsApp">✆</a>
 
-          <article class="service-card featured">
-            <div class="service-number">02</div>
-            <h3>All-on-6</h3>
-            <p data-en="A full-arch option using six implants where clinically appropriate. Bone conditions, medical history and treatment goals help guide planning."
-               data-it="Una soluzione per arcata completa con sei impianti, quando clinicamente indicato."
-               data-de="Eine Option für den gesamten Zahnbogen mit sechs Implantaten, sofern klinisch geeignet."
-               data-fr="Une option pour arcade complète avec six implants, lorsque cela est indiqué."
-               data-pl="Odbudowa całego łuku na sześciu implantach, jeśli jest to wskazane klinicznie."
-               data-sq="Një alternativë për harkun e plotë me gjashtë implante, kur është klinikisht e përshtatshme.">A full-arch option using six implants where clinically appropriate. Bone conditions, medical history and treatment goals help guide planning.</p>
-            <a class="text-link" href="#contact" data-en="Request assessment →" data-it="Richiedi valutazione →" data-de="Beurteilung anfragen →" data-fr="Demander une évaluation →" data-pl="Poproś o ocenę →" data-sq="Kërko vlerësim →">Request assessment →</a>
-          </article>
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
 
-          <article class="service-card">
-            <div class="service-number">03</div>
-            <h3 data-en="Dental Implants" data-it="Impianti dentali" data-de="Zahnimplantate" data-fr="Implants dentaires" data-pl="Implanty dentystyczne" data-sq="Implante dentare">Dental Implants</h3>
-            <p data-en="Individual solutions for replacing missing teeth, planned around your oral health and diagnostic findings."
-               data-it="Soluzioni individuali per sostituire i denti mancanti."
-               data-de="Individuelle Lösungen zum Ersatz fehlender Zähne."
-               data-fr="Des solutions personnalisées pour remplacer les dents manquantes."
-               data-pl="Indywidualne rozwiązania zastępujące brakujące zęby."
-               data-sq="Zgjidhje individuale për zëvendësimin e dhëmbëve që mungojnë.">Individual solutions for replacing missing teeth, planned around your oral health and diagnostic findings.</p>
-            <a class="text-link" href="#contact" data-en="Learn more →" data-it="Scopri di più →" data-de="Mehr erfahren →" data-fr="En savoir plus →" data-pl="Dowiedz się więcej →" data-sq="Mëso më shumë →">Learn more →</a>
-          </article>
+const languageButtons = document.querySelectorAll("[data-lang]");
+const translatableElements = document.querySelectorAll("[data-en]");
 
-          <article class="service-card">
-            <div class="service-number">04</div>
-            <h3 data-en="Zirconia Crowns" data-it="Corone in zirconia" data-de="Zirkonkronen" data-fr="Couronnes en zircone" data-pl="Korony cyrkonowe" data-sq="Kurora zirkoni">Zirconia Crowns</h3>
-            <p data-en="Restorative options designed to balance function, fit and appearance."
-               data-it="Soluzioni restaurative che uniscono funzione ed estetica."
-               data-de="Restaurative Lösungen für Funktion und Ästhetik."
-               data-fr="Des solutions restauratrices alliant fonction et esthétique."
-               data-pl="Rozwiązania protetyczne łączące funkcję i estetykę."
-               data-sq="Zgjidhje restauruese që ndërthurin funksionin dhe estetikën.">Restorative options designed to balance function, fit and appearance.</p>
-            <a class="text-link" href="#contact" data-en="Learn more →" data-it="Scopri di più →" data-de="Mehr erfahren →" data-fr="En savoir plus →" data-pl="Dowiedz się więcej →" data-sq="Mëso më shumë →">Learn more →</a>
-          </article>
+function setLanguage(language) {
+  document.documentElement.lang = language;
 
-          <article class="service-card">
-            <div class="service-number">05</div>
-            <h3 data-en="Veneers & Smile Design" data-it="Faccette e smile design" data-de="Veneers & Smile Design" data-fr="Facettes et esthétique du sourire" data-pl="Licówki i projektowanie uśmiechu" data-sq="Faseta dhe dizajn buzëqeshjeje">Veneers & Smile Design</h3>
-            <p data-en="Personalised cosmetic treatment planning based on your goals and dental assessment."
-               data-it="Piani estetici personalizzati in base alle tue esigenze."
-               data-de="Individuelle ästhetische Behandlungsplanung."
-               data-fr="Un plan esthétique personnalisé selon vos objectifs."
-               data-pl="Indywidualne planowanie leczenia estetycznego."
-               data-sq="Planifikim estetik i personalizuar sipas objektivave tuaja.">Personalised cosmetic treatment planning based on your goals and dental assessment.</p>
-            <a class="text-link" href="#contact" data-en="Learn more →" data-it="Scopri di più →" data-de="Mehr erfahren →" data-fr="En savoir plus →" data-pl="Dowiedz się więcej →" data-sq="Mëso më shumë →">Learn more →</a>
-          </article>
+  translatableElements.forEach(element => {
+    const translation = element.getAttribute("data-" + language);
+    if (translation !== null) element.innerHTML = translation;
+  });
 
-          <article class="service-card">
-            <div class="service-number">06</div>
-            <h3 data-en="Dental Imaging" data-it="Diagnostica dentale" data-de="Dentale Bildgebung" data-fr="Imagerie dentaire" data-pl="Diagnostyka obrazowa" data-sq="Imazheri dentare">Dental Imaging</h3>
-            <p data-en="Diagnostic imaging may support treatment planning when prescribed and clinically indicated."
-               data-it="La diagnostica per immagini può supportare la pianificazione del trattamento."
-               data-de="Bildgebung kann die Behandlungsplanung unterstützen."
-               data-fr="L’imagerie peut contribuer à la planification des soins."
-               data-pl="Diagnostyka obrazowa może wspierać planowanie leczenia."
-               data-sq="Imazheria diagnostike mund të ndihmojë në planifikimin e trajtimit.">Diagnostic imaging may support treatment planning when prescribed and clinically indicated.</p>
-            <a class="text-link" href="#contact" data-en="Send your scan →" data-it="Invia la radiografia →" data-de="Aufnahme senden →" data-fr="Envoyer votre radio →" data-pl="Wyślij zdjęcie →" data-sq="Dërgo radiografinë →">Send your scan →</a>
-          </article>
-        </div>
-      </div>
-    </section>
+  languageButtons.forEach(button => {
+    button.classList.toggle("active", button.dataset.lang === language);
+  });
+}
 
-    <section class="about" id="about">
-      <div class="container about-grid">
-        <div class="about-image" role="img" aria-label="Dental clinic environment"></div>
-        <div class="about-copy">
-          <div class="eyebrow"
-               data-en="Why Dent Way" data-it="Perché Dent Way" data-de="Warum Dent Way" data-fr="Pourquoi Dent Way" data-pl="Dlaczego Dent Way" data-sq="Pse Dent Way">Why Dent Way</div>
-          <h2 data-en="Your dental journey, thoughtfully planned"
-              data-it="Il tuo percorso dentale, pianificato con cura"
-              data-de="Ihre Zahnbehandlung sorgfältig geplant"
-              data-fr="Votre parcours dentaire, soigneusement planifié"
-              data-pl="Twoja podróż po zdrowy uśmiech, dobrze zaplanowana"
-              data-sq="Udhëtimi juaj dentar, i planifikuar me kujdes">Your dental journey, thoughtfully planned</h2>
-          <p data-en="Choosing dental treatment abroad is an important decision. Our team can help you share your dental records, arrange an initial discussion and understand the next steps."
-             data-it="Scegliere cure dentali all'estero è una decisione importante. Il nostro team può aiutarti a condividere la documentazione e capire i prossimi passi."
-             data-de="Eine Zahnbehandlung im Ausland ist eine wichtige Entscheidung. Unser Team unterstützt Sie beim Übermitteln Ihrer Unterlagen und bei den nächsten Schritten."
-             data-fr="Choisir des soins dentaires à l'étranger est une décision importante. Notre équipe peut vous aider à transmettre vos dossiers et à comprendre les prochaines étapes."
-             data-pl="Leczenie stomatologiczne za granicą to ważna decyzja. Nasz zespół pomoże przekazać dokumentację i omówić kolejne kroki."
-             data-sq="Zgjedhja e trajtimit dentar jashtë vendit është një vendim i rëndësishëm. Ekipi ynë mund t'ju ndihmojë me dokumentacionin dhe hapat e ardhshëm.">Choosing dental treatment abroad is an important decision. Our team can help you share your dental records, arrange an initial discussion and understand the next steps.</p>
+languageButtons.forEach(button => {
+  button.addEventListener("click", () => setLanguage(button.dataset.lang));
+});
 
-          <ul class="benefits">
-            <li data-en="Individual treatment discussions" data-it="Consulenze personalizzate" data-de="Individuelle Beratungsgespräche" data-fr="Échanges personnalisés" data-pl="Indywidualne konsultacje" data-sq="Konsultime individuale">Individual treatment discussions</li>
-            <li data-en="Review of available dental imaging" data-it="Valutazione della diagnostica disponibile" data-de="Sichtung vorhandener Röntgenbilder" data-fr="Étude des images dentaires disponibles" data-pl="Analiza dostępnych zdjęć dentystycznych" data-sq="Shqyrtim i imazheve dentare të disponueshme">Review of available dental imaging</li>
-            <li data-en="Support with treatment and travel coordination" data-it="Supporto per cure e viaggio" data-de="Unterstützung bei Behandlung und Reise" data-fr="Aide à l'organisation des soins et du voyage" data-pl="Pomoc w organizacji leczenia i podróży" data-sq="Mbështetje për koordinimin e trajtimit dhe udhëtimit">Support with treatment and travel coordination</li>
-          </ul>
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+  event.preventDefault();
 
-          <a class="button" href="#contact"
-             data-en="Talk to our team" data-it="Parla con il nostro team" data-de="Kontaktieren Sie unser Team" data-fr="Parler à notre équipe" data-pl="Skontaktuj się z zespołem" data-sq="Kontakto ekipin">Talk to our team</a>
-        </div>
-      </div>
-    </section>
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const country = document.getElementById("country").value.trim();
+  const treatment = document.getElementById("treatment").value;
+  const message = document.getElementById("message").value.trim();
+  const file = document.getElementById("radiograph").files[0];
 
-    <section>
-      <div class="container">
-        <div class="section-heading">
-          <div class="eyebrow"
-               data-en="Simple steps" data-it="Passaggi semplici" data-de="Einfache Schritte" data-fr="Étapes simples" data-pl="Proste kroki" data-sq="Hapa të thjeshtë">Simple steps</div>
-          <h2 data-en="How it works" data-it="Come funziona" data-de="So funktioniert es" data-fr="Comment ça marche" data-pl="Jak to działa" data-sq="Si funksionon">How it works</h2>
-        </div>
+  const text = [
+    "Hello Dent Way, I would like to request a consultation.",
+    "",
+    "Name: " + name,
+    "Email: " + email,
+    "Country: " + (country || "Not provided"),
+    "Treatment: " + treatment,
+    "Message: " + (message || "No additional message"),
+    "",
+    file ? "I have a radiograph file (" + file.name + "). I will attach it manually." : "No radiograph attached."
+  ].join("\n");
 
-        <div class="process-grid">
-          <div class="process-step">
-            <div class="number">1</div>
-            <h3 data-en="Get in touch" data-it="Contattaci" data-de="Kontakt aufnehmen" data-fr="Contactez-nous" data-pl="Skontaktuj się" data-sq="Na kontakto">Get in touch</h3>
-            <p data-en="Tell us about your goals and questions." data-it="Parlaci dei tuoi obiettivi." data-de="Teilen Sie uns Ihre Wünsche mit." data-fr="Parlez-nous de vos objectifs." data-pl="Opowiedz nam o swoich celach." data-sq="Na tregoni synimet tuaja.">Tell us about your goals and questions.</p>
-          </div>
-          <div class="process-step">
-            <div class="number">2</div>
-            <h3 data-en="Share your records" data-it="Invia la documentazione" data-de="Unterlagen senden" data-fr="Transmettez vos dossiers" data-pl="Prześlij dokumentację" data-sq="Dërgo dokumentacionin">Share your records</h3>
-            <p data-en="Send available dental scans or radiographs for review." data-it="Invia le radiografie disponibili." data-de="Senden Sie vorhandene Aufnahmen." data-fr="Envoyez vos radiographies disponibles." data-pl="Prześlij dostępne zdjęcia." data-sq="Dërgoni radiografitë që keni.">Send available dental scans or radiographs for review.</p>
-          </div>
-          <div class="process-step">
-            <div class="number">3</div>
-            <h3 data-en="Discuss your plan" data-it="Discuti il piano" data-de="Behandlungsplan besprechen" data-fr="Discutez du plan" data-pl="Omów plan leczenia" data-sq="Diskuto planin">Discuss your plan</h3>
-            <p data-en="Review the proposed next steps and clinical requirements." data-it="Valuta i prossimi passi." data-de="Besprechen Sie die nächsten Schritte." data-fr="Examinez les prochaines étapes." data-pl="Omów kolejne kroki." data-sq="Shqyrtoni hapat e ardhshëm.">Review the proposed next steps and clinical requirements.</p>
-          </div>
-          <div class="process-step">
-            <div class="number">4</div>
-            <h3 data-en="Plan your visit" data-it="Pianifica la visita" data-de="Besuch planen" data-fr="Planifiez votre visite" data-pl="Zaplanuj wizytę" data-sq="Planifiko vizitën">Plan your visit</h3>
-            <p data-en="Coordinate appointments and travel details with the team." data-it="Coordina appuntamenti e viaggio." data-de="Koordinieren Sie Termine und Reise." data-fr="Coordonnez les rendez-vous et le voyage." data-pl="Uzgodnij terminy i podróż." data-sq="Koordino takimet dhe udhëtimin.">Coordinate appointments and travel details with the team.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact" id="contact">
-      <div class="container contact-grid">
-        <div class="contact-copy">
-          <div class="eyebrow"
-               data-en="Start your journey" data-it="Inizia il tuo percorso" data-de="Starten Sie Ihre Reise" data-fr="Commencez votre parcours" data-pl="Rozpocznij swoją podróż" data-sq="Nisni udhëtimin tuaj">Start your journey</div>
-          <h2 data-en="Let's talk about your smile"
-              data-it="Parliamo del tuo sorriso"
-              data-de="Sprechen wir über Ihr Lächeln"
-              data-fr="Parlons de votre sourire"
-              data-pl="Porozmawiajmy o Twoim uśmiechu"
-              data-sq="Le të flasim për buzëqeshjen tuaj">Let's talk about your smile</h2>
-          <p data-en="Send us your questions, treatment interests or available dental radiographs. Our team can contact you to discuss possible next steps."
-             data-it="Inviaci le tue domande e le radiografie disponibili."
-             data-de="Senden Sie uns Ihre Fragen und vorhandene Röntgenbilder."
-             data-fr="Envoyez-nous vos questions et radiographies disponibles."
-             data-pl="Prześlij pytania i dostępne zdjęcia dentystyczne."
-             data-sq="Na dërgoni pyetjet dhe radiografitë që keni.">Send us your questions, treatment interests or available dental radiographs. Our team can contact you to discuss possible next steps.</p>
-
-          <a class="button" href="https://wa.me/355676938595" target="_blank" rel="noopener"
-             data-en="Chat on WhatsApp" data-it="Chatta su WhatsApp" data-de="Über WhatsApp schreiben" data-fr="Écrire sur WhatsApp" data-pl="Napisz na WhatsApp" data-sq="Shkruaj në WhatsApp">Chat on WhatsApp</a>
-
-          <div class="contact-detail">
-            <strong>Email</strong>
-            <a href="mailto:dentwaytourism@gmail.com">dentwaytourism@gmail.com</a>
-          </div>
-          <div class="contact-detail">
-            <strong>WhatsApp</strong>
-            <a href="https://wa.me/355676938595" target="_blank" rel="noopener">+355 67 693 8595</a>
-          </div>
-          <div class="contact-detail">
-            <strong>Instagram</strong>
-            <a href="https://www.instagram.com/dent__way/" target="_blank" rel="noopener">@dent__way</a>
-          </div>
-          <div class="contact-detail">
-            <strong>Facebook</strong>
-            <a href="https://www.facebook.com/dentwaytourism" target="_blank" rel="noopener">Dent Way Tourism</a>
-          </div>
-        </div>
-
-        <form class="contact-form" id="contactForm">
-          <h3 data-en="Request a consultation" data-it="Richiedi una consulenza" data-de="Beratung anfragen" data-fr="Demander une consultation" data-pl="Poproś o konsultację" data-sq="Kërko konsultë">Request a consultation</h3>
-          <p class="form-intro" data-en="Complete the form and continue through WhatsApp to send your request." data-it="Compila il modulo e continua su WhatsApp." data-de="Füllen Sie das Formular aus und senden Sie Ihre Anfrage über WhatsApp." data-fr="Remplissez le formulaire et poursuivez sur WhatsApp." data-pl="Wypełnij formularz i przejdź do WhatsApp." data-sq="Plotësoni formularin dhe vazhdoni në WhatsApp.">Complete the form and continue through WhatsApp to send your request.</p>
-
-          <div class="form-grid">
-            <div class="field">
-              <label for="name" data-en="Full name *" data-it="Nome completo *" data-de="Vollständiger Name *" data-fr="Nom complet *" data-pl="Imię i nazwisko *" data-sq="Emri i plotë *">Full name *</label>
-              <input id="name" name="name" required autocomplete="name">
-            </div>
-
-            <div class="field">
-              <label for="email" data-en="Email *" data-it="Email *" data-de="E-Mail *" data-fr="E-mail *" data-pl="E-mail *" data-sq="Email *">Email *</label>
-              <input id="email" name="email" type="email" required autocomplete="email">
-            </div>
-
-            <div class="field">
-              <label for="country" data-en="Country" data-it="Paese" data-de="Land" data-fr="Pays" data-pl="Kraj" data-sq="Shteti">Country</label>
-              <input id="country" name="country" autocomplete="country-name">
-            </div>
-
-            <div class="field">
-              <label for="treatment" data-en="Treatment of interest" data-it="Trattamento desiderato" data-de="Gewünschte Behandlung" data-fr="Traitement souhaité" data-pl="Wybrany zabieg" data-sq="Trajtimi i dëshiruar">Treatment of interest</label>
-              <select id="treatment" name="treatment">
-                <option value="All-on-4">All-on-4</option>
-                <option value="All-on-6">All-on-6</option>
-                <option value="Dental implants">Dental implants</option>
-                <option value="Zirconia crowns">Zirconia crowns</option>
-                <option value="Veneers / Smile design">Veneers / Smile design</option>
-                <option value="Dental imaging">Dental imaging</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-
-            <div class="field full">
-              <label for="message" data-en="Your message" data-it="Il tuo messaggio" data-de="Ihre Nachricht" data-fr="Votre message" data-pl="Twoja wiadomość" data-sq="Mesazhi juaj">Your message</label>
-              <textarea id="message" name="message" placeholder="Tell us how we can help..."></textarea>
-            </div>
-
-            <div class="field full">
-              <label for="radiograph" data-en="Upload dental radiograph (optional)" data-it="Carica radiografia dentale (facoltativo)" data-de="Zahnaufnahme hochladen (optional)" data-fr="Joindre une radiographie (facultatif)" data-pl="Dodaj zdjęcie dentystyczne (opcjonalnie)" data-sq="Ngarko radiografinë dentare (opsionale)">Upload dental radiograph (optional)</label>
-              <input id="radiograph" name="radiograph" type="file" accept="image/*,.dcm,.dicom,.pdf">
-              <p class="upload-note" data-en="The file is not uploaded automatically. You can attach it manually in WhatsApp after opening the chat."
-                 data-it="Il file non viene caricato automaticamente. Puoi allegarlo manualmente su WhatsApp."
-                 data-de="Die Datei wird nicht automatisch hochgeladen. Sie können sie anschließend manuell über WhatsApp anhängen."
-                 data-fr="Le fichier n'est pas envoyé automatiquement. Vous pourrez le joindre manuellement dans WhatsApp."
-                 data-pl="Plik nie jest wysyłany automatycznie. Możesz dodać go ręcznie w WhatsApp."
-                 data-sq="Skedari nuk dërgohet automatikisht. Mund ta bashkëngjitni manualisht në WhatsApp.">The file is not uploaded automatically. You can attach it manually in WhatsApp after opening the chat.</p>
-            </div>
-
-            <div class="field full">
-              <button class="button form-submit" type="submit"
-                      data-en="Continue to WhatsApp" data-it="Continua su WhatsApp" data-de="Weiter zu WhatsApp" data-fr="Continuer sur WhatsApp" data-pl="Przejdź do WhatsApp" data-sq="Vazhdo në WhatsApp">Continue to WhatsApp</button>
-              <p class="privacy-note" data-en="Please avoid sending unnecessary sensitive medical information. A clinical assessment is required before treatment decisions."
-                 data-it="Evita di inviare dati sanitari non necessari. È necessaria una valutazione clinica."
-                 data-de="Bitte senden Sie keine unnötigen sensiblen Gesundheitsdaten. Eine klinische Beurteilung ist erforderlich."
-                 data-fr="Évitez d'envoyer des données médicales sensibles inutiles. Une évaluation clinique est nécessaire."
-                 data-pl="Nie wysyłaj niepotrzebnych wrażliwych danych medycznych. Wymagana jest ocena kliniczna."
-                 data-sq="Shmangni dërgimin e të dhënave mjekësore të panevojshme. Nevojitet vlerësim klinik.">Please avoid sending unnecessary sensitive medical information. A clinical assessment is required before treatment decisions.</p>
-            </div>
-          </div>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer-inner">
-      <span>© <span id="year"></span> <strong>Dent Way</strong>. All rights reserved.</span>
-      <span data-en="Dental tourism • Tirana, Albania" data-it="Turismo dentale • Tirana, Albania" data-de="Zahntourismus • Tirana, Albanien" data-fr="Tourisme dentaire • Tirana, Albanie" data-pl="Turystyka dentystyczna • Tirana, Albania" data-sq="Turizëm dentar • Tiranë, Shqipëri">Dental tourism • Tirana, Albania</span>
-    </div>
-  </footer>
-
-  <a class="whatsapp-float" href="https://wa.me/355676938595"
-     target="_blank" rel="noopener" aria-label="Chat on WhatsApp">✆</a>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    const languageButtons = document.querySelectorAll("[data-lang]");
-    const translatableElements = document.querySelectorAll("[data-en]");
-
-    function setLanguage(language) {
-      document.documentElement.lang = language;
-
-      translatableElements.forEach(element => {
-        const translation = element.getAttribute("data-" + language);
-        if (translation !== null) {
-          element.innerHTML = translation;
-        }
-      });
-
-      languageButtons.forEach(button => {
-        button.classList.toggle(
-          "active",
-          button.getAttribute("data-lang") === language
-        );
-      });
-    }
-
-    languageButtons.forEach(button => {
-      button.addEventListener("click", () => {
-        setLanguage(button.getAttribute("data-lang"));
-      });
-    });
-
-    document.getElementById("contactForm").addEventListener("submit", function(event) {
-      event.preventDefault();
-
-      const name = document.getElementById("name").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const country = document.getElementById("country").value.trim();
-      const treatment = document.getElementById("treatment").value;
-      const message = document.getElementById("message").value.trim();
-      const radiograph = document.getElementById("radiograph").files[0];
-
-      const text = [
-        "Hello Dent Way, I would like to request a consultation.",
-        "",
-        "Name: " + name,
-        "Email: " + email,
-        "Country: " + (country || "Not provided"),
-        "Treatment: " + treatment,
-        "Message: " + (message || "No additional message"),
-        "",
-        radiograph
-          ? "I have a radiograph file (" + radiograph.name + "). I will attach it manually in the WhatsApp chat."
-          : "No radiograph attached."
-      ].join("\n");
-
-      const whatsappURL = "https://wa.me/355676938595?text=" + encodeURIComponent(text);
-      window.open(whatsappURL, "_blank", "noopener,noreferrer");
-    });
-  </script>
+  window.open("https://wa.me/355676938595?text=" + encodeURIComponent(text), "_blank", "noopener,noreferrer");
+});
+</script>
 </body>
 </html>
