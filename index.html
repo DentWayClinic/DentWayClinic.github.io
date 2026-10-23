@@ -1,278 +1,690 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Dent Way dental tourism in Tirana, Albania. Dental implants, All-on-4, All-on-6, crowns and veneers. Contact our team for a consultation.">
-  <title>Dent Way | Premium Dental Tourism Albania</title>
-  <style>
-    :root {
-      --black: #111111;
-      --white: #ffffff;
-      --gold: #d4af37;
-      --light: #f7f6f2;
-      --gray: #666666;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: Arial, sans-serif;
-      background: var(--white);
-      color: var(--black);
-      line-height: 1.7;
-    }
-    a { text-decoration: none; }
-    .top {
-      background: var(--black);
-      color: var(--gold);
-      text-align: center;
-      padding: 9px 15px;
-      font-size: 13px;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 7%;
-      gap: 20px;
-      background: var(--white);
-      border-bottom: 1px solid #eeeeee;
-    }
-    .logo {
-      color: var(--black);
-      font-size: 27px;
-      font-weight: 800;
-      letter-spacing: 2px;
-      white-space: nowrap;
-    }
-    .logo span { color: var(--gold); }
-    nav {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    nav a { color: var(--black); font-size: 14px; }
-    nav a:hover { color: #a7861e; }
-    .btn {
-      display: inline-block;
-      background: var(--gold);
-      color: var(--black);
-      padding: 12px 20px;
-      border-radius: 4px;
-      font-weight: bold;
-      margin: 5px 5px 5px 0;
-      transition: .2s;
-    }
-    .btn:hover { background: #e5c85c; }
-    .btn-dark { background: var(--black); color: var(--white); }
-    .btn-dark:hover { background: #333333; }
-    .hero {
-      background: linear-gradient(120deg, #111111, #292721);
-      color: var(--white);
-      padding: 90px 7%;
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      align-items: center;
-      gap: 45px;
-    }
-    .eyebrow {
-      color: var(--gold);
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 12px;
-    }
-    h1 {
-      font-size: clamp(36px, 5vw, 58px);
-      line-height: 1.15;
-      margin: 18px 0;
-    }
-    .hero p {
-      font-size: 17px;
-      max-width: 580px;
-      margin-bottom: 22px;
-      color: #e3e3e3;
-    }
-    .hero-art {
-      min-height: 290px;
-      border: 1px solid var(--gold);
-      border-radius: 14px;
-      background: #1b1b1b;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 30px;
-      text-align: center;
-    }
-    .smile { font-size: 85px; }
-    .art-caption { color: var(--gold); font-weight: bold; }
-    section { padding: 70px 7%; }
-    .section-title {
-      text-align: center;
-      max-width: 720px;
-      margin: 0 auto 35px;
-    }
-    h2 {
-      color: var(--black);
-      font-size: clamp(27px, 3vw, 38px);
-      margin-bottom: 12px;
-    }
-    .muted { color: var(--gray); }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-    .card {
-      border: 1px solid #e8e3d5;
-      padding: 27px;
-      border-radius: 10px;
-      background: var(--white);
-    }
-    .card .symbol { color: #b18b20; font-size: 31px; margin-bottom: 12px; }
-    .card h3 { margin-bottom: 9px; }
-    .about { background: var(--light); }
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: center;
-    }
-    .steps { display: grid; gap: 15px; }
-    .step {
-      background: var(--white);
-      border-radius: 7px;
-      padding: 17px;
-      border-left: 4px solid var(--gold);
-    }
-    .contact {
-      background: var(--black);
-      color: var(--white);
-      text-align: center;
-    }
-    .contact h2 { color: var(--white); }
-    .contact p {
-      margin: 12px auto 22px;
-      max-width: 650px;
-      color: #dddddd;
-    }
-    .contact-details { margin-top: 25px; }
-    .contact-details a { color: var(--gold); }
-    footer {
-      background: #080808;
-      color: #dddddd;
-      text-align: center;
-      padding: 25px 7%;
-      font-size: 13px;
-    }
-    footer strong { color: var(--gold); }
-    .notice { font-size: 12px; margin-top: 20px; color: #bbbbbb; }
-    @media(max-width: 760px) {
-      header { align-items: flex-start; flex-direction: column; }
-      nav { gap: 12px; }
-      .hero, .about-grid { grid-template-columns: 1fr; }
-      .hero { padding-top: 55px; padding-bottom: 55px; }
-      .hero-art { min-height: 200px; }
-      .cards { grid-template-columns: 1fr; }
-      section { padding: 50px 6%; }
-    }
-  </style>
-</head>
-<body>
-  <div class="top">YOUR SMILE, YOUR JOURNEY — TIRANA, ALBANIA</div>
+<style>
+:root {
+  --green: #111111;
+  --green2: #292929;
+  --gold: #c9a646;
+  --cream: #f7f5ef;
+  --white: #ffffff;
+  --text: #222222;
+  --muted: #686868;
+}
 
-  <header>
-    <a class="logo" href="#">DENT <span>WAY</span></a>
-    <nav>
-      <a href="#treatments">Treatments</a>
-      <a href="#about">Why Albania?</a>
-      <a href="#journey">Your Journey</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <a class="btn" href="#contact">Free Consultation</a>
-  </header>
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 100px; }
 
-  <main>
-    <section class="hero">
-      <div>
-        <div class="eyebrow">Dental Tourism · Tirana, Albania</div>
-        <h1>A confident smile starts with the right team.</h1>
-        <p>Discover your dental treatment options with Dent Way in Tirana, Albania. Contact our team to discuss your needs and plan your visit.</p>
-        <a class="btn" href="#contact">Request a Consultation</a>
-        <a class="btn btn-dark" href="tel:+355676938595">Call Us</a>
-      </div>
-      <div class="hero-art">
-        <div>
-          <div class="smile">✦</div>
-          <div class="art-caption">YOUR SMILE. OUR CARE.</div>
-          <p>Personalised dental care in Albania</p>
-        </div>
-      </div>
-    </section>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  line-height: 1.7;
+  background: var(--white);
+}
 
-    <section id="treatments">
-      <div class="section-title">
-        <div class="eyebrow">Our Services</div>
-        <h2>Dental treatments tailored to you</h2>
-        <p class="muted">Treatment recommendations depend on a professional dental assessment and your individual needs.</p>
-      </div>
-      <div class="cards">
-        <article class="card">
-          <div class="symbol">✦</div>
-          <h3>Dental Implants</h3>
-          <p class="muted">Explore tooth replacement options and suitable implant systems with our clinical team.</p>
-        </article>
-        <article class="card">
-          <div class="symbol">◈</div>
-          <h3>All-on-4 &amp; All-on-6</h3>
-          <p class="muted">Discuss full-arch rehabilitation options following clinical examination and imaging review.</p>
-        </article>
-        <article class="card">
-          <div class="symbol">✧</div>
-          <h3>Crowns &amp; Veneers</h3>
-          <p class="muted">Explore restorative and cosmetic options designed around your smile and dental health.</p>
-        </article>
-      </div>
-    </section>
+a { color: inherit; text-decoration: none; }
+button, select, input, textarea { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+.container { width: min(1160px, 92%); margin: auto; }
 
-    <section class="about" id="about">
-      <div class="about-grid">
-        <div>
-          <div class="eyebrow">Discover Albania</div>
-          <h2>Your dental visit in Tirana</h2>
-          <p class="muted">Our team can help you discuss appointments, travel timing and practical details for your visit to Albania.</p>
-        </div>
-        <div class="steps" id="journey">
-          <div class="step"><strong>01 · Get in touch</strong><br><span class="muted">Tell us about the treatment you are considering.</span></div>
-          <div class="step"><strong>02 · Share your records</strong><br><span class="muted">Ask our team how to securely share relevant dental images.</span></div>
-          <div class="step"><strong>03 · Discuss your plan</strong><br><span class="muted">Review proposed treatment and costs with the clinical team.</span></div>
-          <div class="step"><strong>04 · Plan your visit</strong><br><span class="muted">Discuss appointments and travel arrangements.</span></div>
-        </div>
-      </div>
-    </section>
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255,255,255,.98);
+  border-bottom: 1px solid #d8c58a;
+  backdrop-filter: blur(12px);
+}
 
-    <section id="contact" class="contact">
-      <div class="eyebrow">Let's Talk</div>
-      <h2>Start your smile consultation</h2>
-      <p>Contact Dent Way to ask a question or discuss your dental treatment options in Tirana, Albania.</p>
+.nav {
+  min-height: 105px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
 
-      <a class="btn" href="https://wa.me/355676938595" target="_blank" rel="noopener">WhatsApp Us</a>
-      <a class="btn btn-dark" href="tel:+355676938595">Call +355 67 693 8595</a>
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-width: 0;
+}
 
-      <div class="contact-details">
-        <p>Email: <a href="mailto:dentwaytourism@gmail.com">dentwaytourism@gmail.com</a></p>
-        <p>Instagram: <a href="https://www.instagram.com/dent__way/" target="_blank" rel="noopener">@dent__way</a></p>
-      </div>
-      <p class="notice">Submitting an enquiry does not confirm an appointment or guarantee a specific treatment outcome.</p>
-    </section>
-  </main>
+.brand img {
+  width: 165px;
+  height: 95px;
+  object-fit: contain;
+}
 
-  <footer>
-    <strong>DENT WAY</strong> · Dental Tourism in Tirana, Albania
-    <p>All treatment recommendations and prices are subject to individual clinical assessment.</p>
-    <p>© 2026 Dent Way. All rights reserved.</p>
-  </footer>
-</body>
-</html>
+.brand-text {
+  color: #111111;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.brand-text small {
+  display: block;
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 19px;
+}
+
+nav a {
+  font-size: 13px;
+  font-weight: 700;
+  color: #171717;
+}
+
+nav a:hover { color: #a88728; }
+
+#language {
+  max-width: 112px;
+  padding: 10px 8px;
+  border: 1px solid var(--gold);
+  border-radius: 8px;
+  background: white;
+  color: #111111;
+  cursor: pointer;
+}
+
+.menu-button {
+  display: none;
+  border: 0;
+  background: transparent;
+  color: #111111;
+  font-size: 27px;
+  cursor: pointer;
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(120deg, #050505 0%, #171717 62%, #303030 100%);
+  color: white;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 440px;
+  height: 440px;
+  border: 1px solid rgba(201,166,70,.45);
+  border-radius: 50%;
+  right: -130px;
+  top: -120px;
+  pointer-events: none;
+}
+
+.hero-grid {
+  min-height: 550px;
+  padding: 85px 0;
+  display: grid;
+  grid-template-columns: 1.25fr .75fr;
+  align-items: center;
+  gap: 55px;
+  position: relative;
+  z-index: 1;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  color: var(--gold);
+  letter-spacing: 2.5px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+h1 {
+  font-size: clamp(40px, 5.6vw, 69px);
+  line-height: 1.08;
+  margin: 20px 0;
+  letter-spacing: -2px;
+}
+
+h1 span { color: #dfc66f; }
+
+.hero p {
+  color: #e6e6e6;
+  font-size: 17px;
+  max-width: 600px;
+}
+
+.hero-art {
+  min-height: 330px;
+  border: 1px solid rgba(201,166,70,.5);
+  border-radius: 190px 190px 24px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+  background: radial-gradient(ellipse at center, #ffffff16, #ffffff03 65%);
+}
+
+.hero-art-inner {
+  border: 1px solid rgba(201,166,70,.8);
+  border-radius: 50%;
+  width: 210px;
+  height: 210px;
+  display: grid;
+  place-content: center;
+}
+
+.hero-art .tooth {
+  font-size: 83px;
+  line-height: 1.2;
+  color: #dfc66f;
+}
+
+.hero-art small {
+  color: #f0e3b7;
+  letter-spacing: 2px;
+  font-size: 10px;
+}
+
+/* BUTTONS */
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 13px 21px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 800;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: #111111;
+}
+
+.btn-gold:hover {
+  background: #dfc66f;
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  border-color: rgba(255,255,255,.65);
+  color: white;
+}
+
+.btn-outline:hover {
+  background: white;
+  color: #111111;
+}
+
+.btn-green {
+  background: #111111;
+  color: white;
+  border: 1px solid var(--gold);
+}
+
+.btn-green:hover { background: #303030; }
+
+/* TRUST BAR */
+.trust {
+  padding: 25px 0;
+  background: var(--cream);
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 25px;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.trust-icon {
+  color: var(--gold);
+  font-size: 25px;
+}
+
+.trust-item strong {
+  display: block;
+  color: #111111;
+  font-size: 14px;
+}
+
+.trust-item small {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* SECTIONS */
+section { padding: 85px 0; }
+
+.section-head {
+  max-width: 720px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+
+.section-head h2,
+.about h2,
+.contact h2 {
+  color: #111111;
+  font-size: clamp(30px, 4vw, 43px);
+  line-height: 1.2;
+  margin: 12px 0 17px;
+  letter-spacing: -1px;
+}
+
+.section-head p,
+.about p { color: var(--muted); }
+
+/* TREATMENT CARDS */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+}
+
+.card {
+  padding: 27px;
+  border: 1px solid #e5dfcf;
+  border-radius: 12px;
+  background: white;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px #00000012;
+}
+
+.card-icon {
+  width: 49px;
+  height: 49px;
+  display: grid;
+  place-content: center;
+  background: #f4eedf;
+  color: #111111;
+  border-radius: 10px;
+  font-size: 24px;
+  margin-bottom: 18px;
+}
+
+.card h3 {
+  color: #111111;
+  margin: 0 0 10px;
+  font-size: 19px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 19px;
+}
+
+.card a {
+  color: #8a6d20;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.card a:hover { color: #111111; }
+
+/* ABOUT */
+.about { background: var(--cream); }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  gap: 65px;
+  align-items: center;
+}
+
+.about-panel {
+  min-height: 330px;
+  border-radius: 14px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  background: linear-gradient(145deg, #050505, #292929);
+  border: 1px solid #c9a646;
+}
+
+.about-panel .big {
+  color: #dfc66f;
+  font-size: 51px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.about-panel p { color: #e6e6e6; }
+
+.check-list { list-style: none; padding: 0; }
+
+.check-list li { padding: 8px 0; }
+
+.check-list li::before {
+  content: "✓";
+  color: #a88728;
+  font-weight: 800;
+  margin-right: 10px;
+}
+
+/* PATIENT JOURNEY */
+.journey-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 18px;
+}
+
+.journey-step {
+  padding: 23px 19px;
+  border-top: 2px solid var(--gold);
+  background: #faf9f5;
+}
+
+.journey-step .number {
+  color: #a88728;
+  font-size: 29px;
+  font-weight: 800;
+}
+
+.journey-step h3 {
+  color: #111111;
+  font-size: 16px;
+}
+
+.journey-step p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* FAQ */
+.faq { background: var(--cream); }
+
+.faq-list {
+  max-width: 820px;
+  margin: auto;
+}
+
+details {
+  background: white;
+  border: 1px solid #e5dfcf;
+  border-radius: 8px;
+  padding: 17px 20px;
+  margin: 10px 0;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: #111111;
+}
+
+details p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* CONTACT */
+.contact-grid {
+  display: grid;
+  grid-template-columns: .85fr 1.15fr;
+  gap: 45px;
+  align-items: start;
+}
+
+.contact-info {
+  background: #111111;
+  color: white;
+  border: 1px solid var(--gold);
+  border-radius: 12px;
+  padding: 30px;
+}
+
+.contact-info h3 { color: #dfc66f; }
+.contact-info p { color: #e6e6e6; }
+.contact-info a { overflow-wrap: anywhere; }
+
+.contact-form {
+  display: grid;
+  gap: 14px;
+}
+
+.contact-form label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #111111;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  margin-top: 6px;
+  padding: 12px;
+  border: 1px solid #d8d1bd;
+  border-radius: 6px;
+  background: white;
+  color: var(--text);
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: 2px solid var(--gold);
+  outline-offset: 1px;
+}
+
+.contact-form textarea {
+  min-height: 115px;
+  resize: vertical;
+}
+
+.form-note {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+/* FOOTER */
+footer {
+  background: #050505;
+  color: white;
+  padding: 35px 0 20px;
+  border-top: 2px solid var(--gold);
+}
+
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.footer-brand img {
+  width: 95px;
+  height: 70px;
+  object-fit: contain;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 17px;
+  font-size: 13px;
+}
+
+.footer-links a:hover { color: #dfc66f; }
+footer p { color: #d0d0d0; font-size: 12px; }
+
+.copyright {
+  border-top: 1px solid #5b4b24;
+  margin-top: 24px;
+  padding-top: 16px;
+}
+
+/* FLOATING WHATSAPP */
+.whatsapp {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 99;
+  background: #111111;
+  color: white;
+  border: 1px solid var(--gold);
+  padding: 13px 19px;
+  border-radius: 40px;
+  box-shadow: 0 5px 22px #0002;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.whatsapp:hover { background: #303030; }
+
+/* TABLETS */
+@media(max-width:900px) {
+  .nav { min-height: 88px; }
+
+  .brand img {
+    width: 130px;
+    height: 80px;
+  }
+
+  .brand-text { letter-spacing: 2px; }
+
+  .menu-button { display: block; }
+  .nav-right { gap: 10px; }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 88px;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 18px 5%;
+    border-bottom: 1px solid var(--gold);
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  nav.open { display: flex; }
+  nav a { padding: 12px 0; }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    padding: 65px 0;
+    gap: 30px;
+  }
+
+  .hero-art {
+    min-height: 230px;
+    border-radius: 100px 100px 18px 18px;
+  }
+
+  .hero-art-inner {
+    width: 155px;
+    height: 155px;
+  }
+
+  .hero-art .tooth { font-size: 57px; }
+  .cards { grid-template-columns: repeat(2,1fr); }
+
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .journey-grid { grid-template-columns: repeat(2,1fr); }
+}
+
+/* MOBILE */
+@media(max-width:540px) {
+  .brand img {
+    width: 100px;
+    height: 72px;
+  }
+
+  .brand { gap: 6px; }
+
+  .brand-text {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+  }
+
+  .brand-text small {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  #language {
+    font-size: 12px;
+    max-width: 95px;
+    padding: 8px 5px;
+  }
+
+  .nav-right { gap: 7px; }
+  .hero-grid { padding: 52px 0; }
+
+  .trust-grid {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+
+  section { padding: 60px 0; }
+  .cards, .journey-grid { grid-template-columns: 1fr; }
+  .card { padding: 23px; }
+
+  .whatsapp {
+    right: 12px;
+    bottom: 12px;
+    padding: 12px 15px;
+  }
+
+  .footer-grid {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .footer-brand img {
+    width: 80px;
+    height: 60px;
+  }
+}
+</style
