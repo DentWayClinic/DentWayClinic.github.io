@@ -918,24 +918,34 @@ document.getElementById("year").textContent = new Date().getFullYear();
 const languageButtons = document.querySelectorAll("[data-lang]");
 const translatableElements = document.querySelectorAll("[data-en]");
 
+
 function setLanguage(language) {
   document.documentElement.lang = language;
 
-  translatableElements.forEach(element => {
+  // Përfshin edhe trajtimet që shtohen nga Pages CMS.
+  const currentTranslatableElements = document.querySelectorAll(
+    "[data-en], [data-it], [data-de], [data-fr], [data-pl], [data-sq]"
+  );
+
+  currentTranslatableElements.forEach(element => {
     const translation = element.getAttribute("data-" + language);
+
     if (translation !== null) {
       element.innerHTML = translation;
     }
   });
 
   languageButtons.forEach(button => {
-    button.classList.toggle("active", button.dataset.lang === language);
+    button.classList.toggle(
+      "active",
+      button.dataset.lang === language
+    );
   });
 
   try {
     localStorage.setItem("dentway-language", language);
   } catch (error) {
-    /* The website still works if browser storage is unavailable. */
+    // Website-i funksionon edhe pa ruajtjen e gjuhës.
   }
 }
 
