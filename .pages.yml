@@ -1,0 +1,14 @@
+
+media:
+  input: /
+  output: /
+
+content:
+  - name: homepage
+    label: Faqja kryesore
+    type: file
+    path: index.html
+    fields:
+      - name: title
+        label: Titulli i faqes
+        type: string
