@@ -1133,7 +1133,6 @@ async function loadDentWayContent() {
     }
 
     if (data.email) {
-    if (data.email) {
       document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
         link.href = 'mailto:' + data.email;
       });
