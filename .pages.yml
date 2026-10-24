@@ -25,6 +25,27 @@ content:
       - name: hero_description
         label: Përshkrimi kryesor
         type: text
+        
+     
+      - name: hero_title_size
+        label: Madhësia e titullit kryesor (px)
+        type: number
+
+      - name: body_text_size
+        label: Madhësia e tekstit (px)
+        type: number
+
+      - name: section_title_size
+        label: Madhësia e titujve të seksioneve (px)
+        type: number
+
+      - name: logo_width
+        label: Gjerësia e logos në kompjuter (px)
+        type: number
+
+      - name: logo_width_mobile
+        label: Gjerësia e logos në celular (px)
+        type: number
 
       - name: services_heading
         label: Titulli i trajtimeve
