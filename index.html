@@ -1079,7 +1079,7 @@ async function loadDentWayContent() {
         const descriptionAttrs = languages.map(lang => {
           const key = lang === 'en' ? 'description' : 'description_' + lang;
           return `data-${lang}="${escapeHTML(service[key] || description)}"`;
-        }).join(' ');
+        }).join(' '); 
 
         const requestLabels = {
           en: 'Request assessment →',
@@ -1102,11 +1102,15 @@ async function loadDentWayContent() {
             <p ${descriptionAttrs}>${escapeHTML(description)}</p>
             ${service.price ? `<p class="service-price">${escapeHTML(service.price)}</p>` : ''}
             <a class="text-link" href="#contact" ${linkAttrs}>Request assessment →</a>
-          </article>
+       </article>
         `;
       }).join('');
     }
+    if (typeof setLanguage === 'function') {
+  setLanguage(document.documentElement.lang || 'en');
+    }
 
+    if (data.email) {
     if (data.email) {
       document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
         link.href = 'mailto:' + data.email;
