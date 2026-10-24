@@ -1003,6 +1003,28 @@ async function loadDentWayContent() {
     if (!response.ok) return;
 
     const data = await response.json();
+     const style = document.createElement('style');
+    style.textContent = `
+      .hero h1 { font-size: ${Number(data.hero_title_size) || 48}px !important; }
+      body { font-size: ${Number(data.body_text_size) || 16}px; }
+      #services .section-heading h2,
+      #about .about-copy h2,
+      #contact .contact-copy h2 {
+        font-size: ${Number(data.section_title_size) || 32}px;
+      }
+      header .logo img, .logo img, img.logo {
+        width: ${Number(data.logo_width) || 160}px;
+        height: auto;
+      }
+      @media (max-width: 768px) {
+        header .logo img, .logo img, img.logo {
+          width: ${Number(data.logo_width_mobile) || 120}px;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+
+    
 
     if (data.site_title) {
       document.title = data.site_title;
