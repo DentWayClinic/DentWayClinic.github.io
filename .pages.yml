@@ -11,48 +11,62 @@ content:
     format: json
     fields:
       - name: site_title
-        label: Titulli SEO
+        label: Titulli i website-it
         type: string
+
       - name: meta_description
-        label: Përshkrimi SEO
+        label: Përshkrimi për Google
         type: text
+
       - name: hero_title
         label: Titulli kryesor
         type: string
+
       - name: hero_description
         label: Përshkrimi kryesor
         type: text
+
       - name: services_heading
         label: Titulli i trajtimeve
         type: string
+
       - name: about_heading
         label: Titulli Rreth Nesh
         type: string
+
       - name: contact_heading
         label: Titulli i kontaktit
         type: string
+
       - name: email
         label: Email
         type: string
+
       - name: whatsapp
-        label: Numri WhatsApp
+        label: WhatsApp
         type: string
+
       - name: instagram_url
         label: Instagram
         type: string
+
       - name: facebook_url
         label: Facebook
         type: string
+
       - name: hero_image
-        label: Foto kryesore (URL)
+        label: Fotoja kryesore
         type: string
+
       - name: about_image
-        label: Foto Rreth Nesh (URL)
+        label: Fotoja Rreth Nesh
         type: string
+
       - name: services
-        label: Trajtimet
+        label: Trajtimet dentare
         type: object
-        list: true
+        list:
+          collapsible: true
         fields:
           - name: title
             label: Emri i trajtimit
@@ -63,17 +77,22 @@ content:
           - name: price
             label: Çmimi
             type: string
+          - name: featured
+            label: Trajtim i veçuar
+            type: boolean
+
       - name: gallery
         label: Galeria e fotove
         type: object
-        list: true
+        list:
+          collapsible: true
         fields:
           - name: image
-            label: Foto (URL ose rrugë)
+            label: Rruga ose linku i fotos
             type: string
           - name: alt
             label: Përshkrimi i fotos
             type: string
           - name: caption
-            label: Titulli i fotos
+            label: Titulli poshtë fotos
             type: string
