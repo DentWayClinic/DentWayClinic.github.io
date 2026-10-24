@@ -2,11 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-  <meta name="google-site-verification" content="cMGN95WgdSHfUajB8ya4b6YqD-WiKkjrFX1vb175LfY" />
+<meta name="google-site-verification" content="cMGN95WgdSHfUajB8ya4b6YqD-WiKkjrFX1vb175LfY" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#10243a">
-<meta name="description" content="Explore dental implants, All-on-4, All-on-6, zirconia crowns and smile makeovers at Dent Way Albania in Tirana. Contact our team for a personalised treatment plan.">
-<title>Dent Way Albania | Dental Implants & All-on-4 in Tirana</title>
 <meta name="description" content="Explore dental implants, All-on-4, All-on-6, zirconia crowns and smile makeovers at Dent Way Albania in Tirana. Contact our team for a personalised treatment plan.">
 <title>Dent Way Albania | Dental Implants &amp; All-on-4 in Tirana</title>
 
@@ -16,7 +14,6 @@
 <meta property="og:url" content="https://dentwayclinic.github.io/">
 <meta property="og:site_name" content="Dent Way Albania">
 
-<style>
 <style>
 :root {
   --navy:#10243a;
@@ -62,22 +59,23 @@ header {
 }
 
 .nav {
-  min-height:130px;
-  flex-wrap:wrap;
-  padding:12px 0;
+  min-height:120px;
+  flex-wrap:nowrap;
+  padding:10px 0;
 }
 
 .brand {
   display:flex;
   align-items:center;
-  gap:16px;
+  gap:10px;
   flex-shrink:0;
+  min-width:0;
 }
 
 /* LARGER LOGO */
 .site-logo {
-  width:190px;
-  height:145px;
+  width:165px;
+  height:125px;
   object-fit:contain;
   object-position:center;
   display:block;
@@ -101,9 +99,9 @@ header {
   display:flex;
   align-items:center;
   justify-content:flex-end;
-  gap:14px;
-  flex-wrap:wrap;
-  flex:1 1 500px;
+  gap:10px;
+  flex-wrap:nowrap;
+  flex:1 1 auto;
   min-width:0;
 }
 
@@ -111,9 +109,9 @@ header {
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:18px;
+  gap:12px;
   flex-wrap:wrap;
-  font-size:13px;
+  font-size:12px;
   font-weight:bold;
 }
 .nav-links a:hover { color:var(--gold); }
@@ -123,12 +121,12 @@ header {
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:10px;
+  gap:7px;
   flex-shrink:0;
 }
 .social-icons a {
-  width:36px;
-  height:36px;
+  width:32px;
+  height:32px;
   display:grid;
   place-items:center;
   border:1px solid var(--border);
@@ -156,9 +154,10 @@ header {
   opacity:1 !important;
   align-items:center;
   justify-content:center;
-  gap:5px;
-  flex-wrap:wrap;
+  gap:2px;
+  flex-wrap:nowrap;
   flex-shrink:0;
+  min-width:0;
 }
 
 .languages button {
@@ -167,14 +166,14 @@ header {
   opacity:1 !important;
   align-items:center;
   justify-content:center;
-  width:38px;
-  height:38px;
+  width:32px;
+  height:34px;
   padding:0;
   border:1px solid transparent;
   border-radius:5px;
   background:white;
   font-family:"Segoe UI Emoji","Apple Color Emoji",sans-serif;
-  font-size:25px;
+  font-size:22px;
   line-height:1;
   cursor:pointer;
 }
@@ -497,16 +496,25 @@ footer {
   box-shadow:0 5px 20px #0003;
 }
 
+/* DESKTOP HEADER: keep logo, social links, navigation and language flags visible */
+@media (min-width:1101px) {
+  .nav-right { min-width:0; }
+  .nav-links { white-space:normal; }
+  .languages button { flex:0 0 32px; }
+}
+
 /* TABLETS AND SMALL LAPTOPS */
 @media (max-width:1100px) {
-  .nav { justify-content:center; }
+  .nav { justify-content:center; flex-wrap:wrap; }
   .nav-right {
     flex:1 1 100%;
     justify-content:center;
+    flex-wrap:wrap;
   }
   .languages {
     flex-basis:100%;
     justify-content:center;
+    flex-wrap:wrap;
   }
   .service-grid { grid-template-columns:repeat(2,1fr); }
 
@@ -788,9 +796,9 @@ footer {
 <section class="gallery" id="gallery">
   <div class="container">
     <div class="section-heading">
-      <div class="eyebrow">OUR CLINICAL CASES</div>
-      <h2>Before &amp; After</h2>
-      <p>Explore selected clinical cases from Dent Way Albania.</p>
+      <div class="eyebrow" data-en="OUR CLINICAL CASES" data-it="I NOSTRI CASI CLINICI" data-de="UNSERE KLINISCHEN FÄLLE" data-fr="NOS CAS CLINIQUES" data-pl="NASZE PRZYPADKI KLINICZNE" data-sq="RASTET TONA KLINIKE">OUR CLINICAL CASES</div>
+      <h2 data-en="Before &amp; After" data-it="Prima e Dopo" data-de="Vorher &amp; Nachher" data-fr="Avant &amp; Après" data-pl="Przed i Po" data-sq="Para dhe Pas">Before &amp; After</h2>
+      <p data-en="Explore selected clinical cases from Dent Way Albania." data-it="Scopri alcuni casi clinici selezionati di Dent Way Albania." data-de="Entdecken Sie ausgewählte klinische Fälle von Dent Way Albania." data-fr="Découvrez une sélection de cas cliniques de Dent Way Albania." data-pl="Zobacz wybrane przypadki kliniczne Dent Way Albania." data-sq="Shikoni raste klinike të përzgjedhura nga Dent Way Albania.">Explore selected clinical cases from Dent Way Albania.</p>
     </div>
 
     <div class="gallery-grid">
@@ -845,22 +853,22 @@ footer {
 
       <div class="form-grid">
         <div class="field">
-          <label for="name">Full name *</label>
+          <label for="name" data-en="Full name *" data-it="Nome completo *" data-de="Vollständiger Name *" data-fr="Nom complet *" data-pl="Imię i nazwisko *" data-sq="Emri i plotë *">Full name *</label>
           <input id="name" name="name" required autocomplete="name">
         </div>
 
         <div class="field">
-          <label for="email">Email *</label>
+          <label for="email" data-en="Email *" data-it="Email *" data-de="E-Mail *" data-fr="E-mail *" data-pl="E-mail *" data-sq="Email *">Email *</label>
           <input id="email" name="email" type="email" required autocomplete="email">
         </div>
 
         <div class="field">
-          <label for="country">Country</label>
+          <label for="country" data-en="Country" data-it="Paese" data-de="Land" data-fr="Pays" data-pl="Kraj" data-sq="Shteti">Country</label>
           <input id="country" name="country" autocomplete="country-name">
         </div>
 
         <div class="field">
-          <label for="treatment">Treatment of interest</label>
+          <label for="treatment" data-en="Treatment of interest" data-it="Trattamento di interesse" data-de="Gewünschte Behandlung" data-fr="Traitement souhaité" data-pl="Interesujący zabieg" data-sq="Trajtimi i dëshiruar">Treatment of interest</label>
           <select id="treatment" name="treatment">
             <option>All-on-4</option>
             <option>All-on-6</option>
@@ -873,19 +881,19 @@ footer {
         </div>
 
         <div class="field full">
-          <label for="message">Your message</label>
+          <label for="message" data-en="Your message" data-it="Il tuo messaggio" data-de="Ihre Nachricht" data-fr="Votre message" data-pl="Twoja wiadomość" data-sq="Mesazhi juaj">Your message</label>
           <textarea id="message" name="message" placeholder="Tell us how we can help..."></textarea>
         </div>
 
         <div class="field full">
-          <label for="radiograph">Dental radiograph (optional)</label>
+          <label for="radiograph" data-en="Dental radiograph (optional)" data-it="Radiografia dentale (facoltativa)" data-de="Zahnröntgenbild (optional)" data-fr="Radiographie dentaire (facultatif)" data-pl="Zdjęcie RTG zębów (opcjonalnie)" data-sq="Radiografi dentare (opsionale)">Dental radiograph (optional)</label>
           <input id="radiograph" name="radiograph" type="file" accept="image/*,.dcm,.dicom,.pdf">
-          <p class="upload-note">The file is not uploaded automatically. Attach it manually in WhatsApp after opening the chat.</p>
+          <p class="upload-note" data-en="The file is not uploaded automatically. Attach it manually in WhatsApp after opening the chat." data-it="Il file non viene caricato automaticamente. Allegalo manualmente su WhatsApp dopo aver aperto la chat." data-de="Die Datei wird nicht automatisch hochgeladen. Fügen Sie sie nach dem Öffnen des Chats manuell in WhatsApp hinzu." data-fr="Le fichier n’est pas envoyé automatiquement. Joignez-le manuellement dans WhatsApp après l’ouverture du chat." data-pl="Plik nie jest przesyłany automatycznie. Dołącz go ręcznie w WhatsApp po otwarciu czatu." data-sq="Skedari nuk ngarkohet automatikisht. Bashkëngjiteni manualisht në WhatsApp pasi të hapet biseda.">The file is not uploaded automatically. Attach it manually in WhatsApp after opening the chat.</p>
         </div>
 
         <div class="field full">
-          <button class="button form-submit" type="submit">Continue to WhatsApp</button>
-          <p class="privacy-note">A clinical assessment is required before treatment decisions. Avoid sending unnecessary sensitive medical information.</p>
+          <button class="button form-submit" type="submit" data-en="Continue to WhatsApp" data-it="Continua su WhatsApp" data-de="Weiter zu WhatsApp" data-fr="Continuer vers WhatsApp" data-pl="Przejdź do WhatsApp" data-sq="Vazhdo në WhatsApp">Continue to WhatsApp</button>
+          <p class="privacy-note" data-en="A clinical assessment is required before treatment decisions. Avoid sending unnecessary sensitive medical information." data-it="È necessaria una valutazione clinica prima di decidere il trattamento. Evita di inviare informazioni mediche sensibili non necessarie." data-de="Vor einer Behandlungsentscheidung ist eine klinische Untersuchung erforderlich. Senden Sie keine unnötigen sensiblen medizinischen Informationen." data-fr="Une évaluation clinique est nécessaire avant toute décision de traitement. Évitez d’envoyer des informations médicales sensibles inutiles." data-pl="Przed decyzją o leczeniu wymagana jest ocena kliniczna. Nie wysyłaj niepotrzebnych wrażliwych informacji medycznych." data-sq="Para vendimeve për trajtimin nevojitet vlerësim klinik. Shmangni dërgimin e të dhënave mjekësore të ndjeshme që nuk janë të nevojshme.">A clinical assessment is required before treatment decisions. Avoid sending unnecessary sensitive medical information.</p>
         </div>
       </div>
     </form>
