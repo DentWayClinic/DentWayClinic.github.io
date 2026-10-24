@@ -368,6 +368,35 @@ section { padding:80px 0; }
 }
 .process-step p { color:var(--muted); font-size:13px; }
 
+/* BEFORE & AFTER GALLERY - ADDED */
+.gallery {
+  background:#fff;
+}
+.gallery-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:24px;
+}
+.gallery-card {
+  border:1px solid var(--border);
+  background:white;
+  overflow:hidden;
+  box-shadow:0 8px 24px #10243a10;
+}
+.gallery-card img {
+  display:block;
+  width:100%;
+  height:300px;
+  object-fit:cover;
+}
+.gallery-caption {
+  padding:18px;
+  color:var(--navy);
+  font-size:14px;
+  font-weight:bold;
+  text-align:center;
+}
+
 .contact { background:var(--navy); color:white; }
 .contact-grid {
   display:grid;
@@ -516,6 +545,14 @@ footer {
   .contact-form { padding:24px 18px; }
   .field.full { grid-column:auto; }
   .whatsapp-float { right:14px; bottom:14px; }
+
+  /* GALLERY ON MOBILE - ADDED */
+  .gallery-grid {
+    grid-template-columns:1fr;
+  }
+  .gallery-card img {
+    height:260px;
+  }
 }
 </style>
 </head>
@@ -729,6 +766,46 @@ footer {
         <h3 data-en="Plan your visit" data-it="Pianifica la visita" data-de="Besuch planen" data-fr="Planifiez votre visite" data-pl="Zaplanuj wizytę" data-sq="Planifiko vizitën">Plan your visit</h3>
         <p data-en="Coordinate appointments and travel." data-it="Coordina appuntamenti e viaggio." data-de="Koordinieren Sie Termine und Reise." data-fr="Coordonnez rendez-vous et voyage." data-pl="Uzgodnij terminy i podróż." data-sq="Koordino takimet dhe udhëtimin.">Coordinate appointments and travel.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE & AFTER GALLERY - ADDED -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">OUR CLINICAL CASES</div>
+      <h2>Before &amp; After</h2>
+      <p>Explore selected clinical cases from Dent Way Albania.</p>
+    </div>
+
+    <div class="gallery-grid">
+      <article class="gallery-card">
+        <img
+          src="./images/WhatsApp%20Image%202026-10-24%20at%209.11.09%20AM.jpeg"
+          alt="Dent Way clinical case 1"
+          loading="lazy"
+        >
+        <div class="gallery-caption">Clinical Case 1</div>
+      </article>
+
+      <article class="gallery-card">
+        <img
+          src="./images/WhatsApp%20Image%202026-10-24%20at%209.11.09%20AM%20(1).jpeg"
+          alt="Dent Way clinical case 2"
+          loading="lazy"
+        >
+        <div class="gallery-caption">Clinical Case 2</div>
+      </article>
+
+      <article class="gallery-card">
+        <img
+          src="./images/WhatsApp%20Image%202026-10-24%20at%209.11.09%20AM%20(2).jpeg"
+          alt="Dent Way clinical case 3"
+          loading="lazy"
+        >
+        <div class="gallery-caption">Clinical Case 3</div>
+      </article>
     </div>
   </div>
 </section>
