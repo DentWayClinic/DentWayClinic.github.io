@@ -1011,12 +1011,29 @@ async function loadDentWayContent() {
 
       element.setAttribute('data-en', value);
 
-      if (
-        document.documentElement.lang === 'en' ||
-        !document.documentElement.lang
-      ) {
+       if (
+  document.documentElement.lang === 'en' ||
+  !document.documentElement.lang
+) {
+  if (element.matches('.hero h1')) {
+    const span = element.querySelector('span');
+
+    if (span) {
+      const parts = value.split('. ');
+      if (parts.length > 1) {
+        element.innerHTML =
+          parts[0] + '.<br><span>' +
+          parts.slice(1).join('. ') + '</span>';
+      } else {
         element.textContent = value;
       }
+    } else {
+      element.textContent = value;
+    }
+  } else {
+    element.textContent = value;
+  }
+}
     }
 
     updateText('.hero h1', data.hero_title);
