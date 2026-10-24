@@ -1041,6 +1041,61 @@ async function loadDentWayContent() {
     updateText('#services .section-heading h2', data.services_heading);
     updateText('#about .about-copy h2', data.about_heading);
     updateText('#contact .contact-copy h2', data.contact_heading);
+    // Render dental treatments from Pages CMS
+    const grid = document.querySelector('.service-grid');
+
+    if (grid && Array.isArray(data.services) && data.services.length) {
+      const escapeHTML = value =>
+        String(value ?? '').replace(/[&<>"']/g, char => ({
+          '&': '&amp;',
+          '<': '&lt;',
+          '>': '&gt;',
+          '"': '&quot;',
+          "'": '&#39;'
+        })[char]);
+
+      const languages = ['en', 'it', 'de', 'fr', 'pl', 'sq'];
+
+      grid.innerHTML = data.services.map((service, index) => {
+        const title = service.title || '';
+        const description = service.description || '';
+        const featured = service.featured === true;
+
+        const titleAttrs = languages.map(lang => {
+          const key = lang === 'en' ? 'title' : 'title_' + lang;
+          return `data-${lang}="${escapeHTML(service[key] || title)}"`;
+        }).join(' ');
+
+        const descriptionAttrs = languages.map(lang => {
+          const key = lang === 'en' ? 'description' : 'description_' + lang;
+          return `data-${lang}="${escapeHTML(service[key] || description)}"`;
+        }).join(' ');
+
+        const requestLabels = {
+          en: 'Request assessment →',
+          it: 'Richiedi valutazione →',
+          de: 'Beurteilung anfragen →',
+          fr: 'Demander une évaluation →',
+          pl: 'Poproś o ocenę →',
+          sq: 'Kërko vlerësim →'
+        };
+
+        const linkAttrs = languages.map(lang =>
+          `data-${lang}="${escapeHTML(requestLabels[lang])}"`
+        ).join(' ');
+
+        return `
+          <article class="service-card${featured ? ' featured' : ''}">
+            ${featured ? '<div class="feature-label">FEATURED TREATMENT</div>' : ''}
+            <div class="service-number">${String(index + 1).padStart(2, '0')}</div>
+            <h3 ${titleAttrs}>${escapeHTML(title)}</h3>
+            <p ${descriptionAttrs}>${escapeHTML(description)}</p>
+            ${service.price ? `<p class="service-price">${escapeHTML(service.price)}</p>` : ''}
+            <a class="text-link" href="#contact" ${linkAttrs}>Request assessment →</a>
+          </article>
+        `;
+      }).join('');
+    }
 
     if (data.email) {
       document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
