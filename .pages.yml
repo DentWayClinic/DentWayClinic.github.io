@@ -43,3 +43,37 @@ content:
       - name: facebook_url
         label: Facebook
         type: string
+      - name: hero_image
+        label: Foto kryesore (URL)
+        type: string
+      - name: about_image
+        label: Foto Rreth Nesh (URL)
+        type: string
+      - name: services
+        label: Trajtimet
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Emri i trajtimit
+            type: string
+          - name: description
+            label: Përshkrimi
+            type: text
+          - name: price
+            label: Çmimi
+            type: string
+      - name: gallery
+        label: Galeria e fotove
+        type: object
+        list: true
+        fields:
+          - name: image
+            label: Foto (URL ose rrugë)
+            type: string
+          - name: alt
+            label: Përshkrimi i fotos
+            type: string
+          - name: caption
+            label: Titulli i fotos
+            type: string
