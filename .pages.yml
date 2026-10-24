@@ -4,11 +4,42 @@ media:
   output: /
 
 content:
-  - name: homepage
-    label: Faqja kryesore
+  - name: website
+    label: Website Dent Way
     type: file
-    path: index.html
+    path: content/site.json
+    format: json
     fields:
-      - name: title
-        label: Titulli i faqes
+      - name: site_title
+        label: Titulli SEO
+        type: string
+      - name: meta_description
+        label: Përshkrimi SEO
+        type: text
+      - name: hero_title
+        label: Titulli kryesor
+        type: string
+      - name: hero_description
+        label: Përshkrimi kryesor
+        type: text
+      - name: services_heading
+        label: Titulli i trajtimeve
+        type: string
+      - name: about_heading
+        label: Titulli Rreth Nesh
+        type: string
+      - name: contact_heading
+        label: Titulli i kontaktit
+        type: string
+      - name: email
+        label: Email
+        type: string
+      - name: whatsapp
+        label: Numri WhatsApp
+        type: string
+      - name: instagram_url
+        label: Instagram
+        type: string
+      - name: facebook_url
+        label: Facebook
         type: string
