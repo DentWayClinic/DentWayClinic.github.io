@@ -986,6 +986,76 @@ document.getElementById("contactForm").addEventListener("submit", function(event
   window.open(whatsappURL, "_blank", "noopener,noreferrer");
 });
 </script>
+<script>
+async function loadDentWayContent() {
+  try {
+    const response = await fetch('./content/site.json');
+    if (!response.ok) return;
+
+    const data = await response.json();
+
+    if (data.site_title) {
+      document.title = data.site_title;
+    }
+
+    const description = document.querySelector(
+      'meta[name="description"]'
+    );
+    if (description && data.meta_description) {
+      description.setAttribute('content', data.meta_description);
+    }
+
+    function updateText(selector, value) {
+      const element = document.querySelector(selector);
+      if (!element || !value) return;
+
+      element.setAttribute('data-en', value);
+
+      if (
+        document.documentElement.lang === 'en' ||
+        !document.documentElement.lang
+      ) {
+        element.textContent = value;
+      }
+    }
+
+    updateText('.hero h1', data.hero_title);
+    updateText('.hero p', data.hero_description);
+    updateText('#services .section-heading h2', data.services_heading);
+    updateText('#about .about-copy h2', data.about_heading);
+    updateText('#contact .contact-copy h2', data.contact_heading);
+
+    if (data.email) {
+      document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+        link.href = 'mailto:' + data.email;
+      });
+    }
+
+    if (data.instagram_url) {
+      document.querySelectorAll('a[href*="instagram.com"]').forEach(link => {
+        link.href = data.instagram_url;
+      });
+    }
+
+    if (data.facebook_url) {
+      document.querySelectorAll('a[href*="facebook.com"]').forEach(link => {
+        link.href = data.facebook_url;
+      });
+    }
+
+    if (data.whatsapp) {
+      const phone = data.whatsapp.replace(/\D/g, '');
+      document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+        link.href = 'https://wa.me/' + phone;
+      });
+    }
+  } catch (error) {
+    console.error('Dent Way content could not be loaded:', error);
+  }
+}
+
+loadDentWayContent();
+</script>
 
 </body>
 </html>
