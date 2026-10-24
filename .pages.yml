@@ -69,18 +69,47 @@ content:
           collapsible: true
         fields:
           - name: title
-            label: Emri i trajtimit
+            label: Emri i trajtimit (Anglisht)
+            type: string
+          - name: title_it
+            label: Emri i trajtimit (Italisht)
+            type: string
+          - name: title_de
+            label: Emri i trajtimit (Gjermanisht)
+            type: string
+          - name: title_fr
+            label: Emri i trajtimit (Frëngjisht)
+            type: string
+          - name: title_pl
+            label: Emri i trajtimit (Polonisht)
+            type: string
+          - name: title_sq
+            label: Emri i trajtimit (Shqip)
             type: string
           - name: description
-            label: Përshkrimi
+            label: Përshkrimi (Anglisht)
+            type: text
+          - name: description_it
+            label: Përshkrimi (Italisht)
+            type: text
+          - name: description_de
+            label: Përshkrimi (Gjermanisht)
+            type: text
+          - name: description_fr
+            label: Përshkrimi (Frëngjisht)
+            type: text
+          - name: description_pl
+            label: Përshkrimi (Polonisht)
+            type: text
+          - name: description_sq
+            label: Përshkrimi (Shqip)
             type: text
           - name: price
-            label: Çmimi
+            label: Çmimi (opsional)
             type: string
           - name: featured
             label: Trajtim i veçuar
             type: boolean
-
       - name: gallery
         label: Galeria e fotove
         type: object
