@@ -1,7 +1,7 @@
 {
   "site_title": "Dent Way Albania | Dental Implants & All-on-4 in Tirana",
   "meta_description": "Dental implants, All-on-4, All-on-6, zirconia crowns and smile makeovers in Tirana, Albania.",
-  "hero_title": "A New Smile. A New Confidence",
+  "hero_title": "Your Smile. Our Passion. Your Confidence",
   "hero_description": "Discover personalised dental care in Tirana, Albania.",
   "services_heading": "Our Dental Treatments",
   "about_heading": "About Dent Way Albania",
@@ -16,37 +16,31 @@
     {
       "title": "All-on-4",
       "description": "Full-arch rehabilitation using four implants when clinically suitable.",
-      "price": "",
       "featured": true
     },
     {
       "title": "All-on-6",
       "description": "Full-arch rehabilitation using six implants when clinically suitable.",
-      "price": "",
       "featured": true
     },
     {
       "title": "Dental Implants",
       "description": "Personalised options for replacing missing teeth.",
-      "price": "",
       "featured": false
     },
     {
       "title": "Zirconia Crowns",
       "description": "Restorative treatment planned around your clinical needs.",
-      "price": "",
       "featured": false
     },
     {
       "title": "Veneers & Smile Design",
       "description": "Cosmetic options tailored to your smile goals.",
-      "price": "",
       "featured": false
     },
     {
       "title": "Dental Imaging",
       "description": "Diagnostic imaging to support treatment planning when indicated.",
-      "price": "",
       "featured": false
     }
   ],
