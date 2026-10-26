@@ -1,7 +1,7 @@
 
 media:
-  input: /
-  output: /
+  input: images
+  output: /images
   extensions: [jpg, jpeg, png, webp, gif, svg]
 content:
   - name: website
