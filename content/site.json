@@ -31,32 +31,44 @@
   "services": [
     {
       "title": "All-on-4",
+      "title_it": "Impianti dentali All-on-4 in Albania",
       "description": "Full-arch rehabilitation using four implants when clinically suitable.",
+      "description_it": "Scopri il trattamento All-on-4 in Albania presso Dent Way a Tirana. Richiedi una valutazione personalizzata e un piano di trattamento in base alle tue esigenze.",
       "featured": true
     },
     {
       "title": "All-on-6",
+      "title_it": "Impianti dentali All-on-6 in Albania",
       "description": "Full-arch rehabilitation using six implants when clinically suitable.",
+      "description_it": "Scopri il trattamento All-on-6 in Albania presso Dent Way a Tirana. Richiedi una valutazione personalizzata e un piano di trattamento in base alle tue esigenze.",
       "featured": true
     },
     {
       "title": "Dental Implants",
+      "title_it": "Impianti dentali in Albania | Dent Way Tirana",
       "description": "Personalised options for replacing missing teeth.",
+      "description_it": "Cerchi impianti dentali in Albania? Dent Way a Tirana offre valutazioni personalizzate e piani di trattamento in base alle tue esigenze cliniche.",
       "featured": false
     },
     {
       "title": "Zirconia Crowns",
+      "title_it": "Corone dentali in zirconia in Albania | Dent Way",
       "description": "Restorative treatment planned around your clinical needs.",
+      "description_it": "Scopri le corone dentali in zirconia in Albania presso Dent Way a Tirana. Richiedi una valutazione personalizzata per il tuo sorriso.",
       "featured": false
     },
     {
       "title": "Veneers & Smile Design",
+      "title_it": "Faccette dentali in Albania | Smile Design a Tirana",
       "description": "Cosmetic options tailored to your smile goals.",
+      "description_it": "Migliora il tuo sorriso con faccette dentali in Albania presso Dent Way a Tirana. Richiedi una consulenza personalizzata per valutare le soluzioni più adatte a te.",
       "featured": false
     },
     {
       "title": "Dental Imaging",
+      "title_it": "Radiologia dentale in Albania | Dent Way Tirana",
       "description": "Diagnostic imaging to support treatment planning when indicated.",
+      "description_it": "Esami di diagnostica dentale a Tirana, Albania. Contatta Dent Way per informazioni su radiografie panoramiche e CBCT 3D, in base alle indicazioni cliniche.",
       "featured": false
     }
   ],
