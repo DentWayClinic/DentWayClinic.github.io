@@ -51,7 +51,7 @@ a { color:inherit; text-decoration:none; }
 .topbar a { color:var(--gold); }
 
 header {
-  background:white;
+  background:f2f7fa;
   border-bottom:1px solid var(--border);
   position:sticky;
   top:0;
@@ -74,8 +74,8 @@ header {
 
 /* LARGER LOGO */
 .site-logo {
-  width:165px;
-  height:125px;
+  width:210px;
+  height:145px;
   object-fit:contain;
   object-position:center;
   display:block;
@@ -518,10 +518,14 @@ footer {
   }
   .service-grid { grid-template-columns:repeat(2,1fr); }
 
-  .site-logo {
-    width:170px;
-    height:130px;
-  }
+ .site-logo {
+    width:210px;
+    height:145px;
+    object-fit:contain;
+    object-position:center;
+    display:block;
+    flex-shrink:0;
+}
 }
 
 /* MOBILE */
