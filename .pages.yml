@@ -47,6 +47,54 @@ content:
         label: Gjerësia e logos në celular (px)
         type: number
 
+      - name: logo_position
+        label: Pozicioni i logos
+        type: string
+
+      - name: logo_height
+        label: Lartësia maksimale e logos (px)
+        type: number
+
+      - name: logo_margin_top
+        label: Hapësira mbi logon (px)
+        type: number
+
+      - name: logo_margin_bottom
+        label: Hapësira poshtë logos (px)
+        type: number
+
+      - name: logo_image
+        label: Linku i logos
+        type: string
+
+      - name: color_primary
+        label: Ngjyra kryesore
+        type: string
+
+      - name: color_secondary
+        label: Ngjyra dytësore
+        type: string
+
+      - name: color_accent
+        label: Ngjyra e theksit
+        type: string
+
+      - name: color_background
+        label: Ngjyra e sfondit
+        type: string
+
+      - name: color_text
+        label: Ngjyra e tekstit
+        type: string
+
+      - name: button_text
+        label: Teksti i butonit kryesor
+        type: string
+
+      - name: button_color
+        label: Ngjyra e butonit kryesor
+        type: string
+
       - name: services_heading
         label: Titulli i trajtimeve
         type: string
