@@ -1003,26 +1003,71 @@ async function loadDentWayContent() {
     if (!response.ok) return;
 
     const data = await response.json();
-     const style = document.createElement('style');
-    style.textContent = `
-      .hero h1 { font-size: ${Number(data.hero_title_size) || 48}px !important; }
-      body { font-size: ${Number(data.body_text_size) || 16}px; }
-      #services .section-heading h2,
-      #about .about-copy h2,
-      #contact .contact-copy h2 {
-        font-size: ${Number(data.section_title_size) || 32}px;
-      }
-      header .logo img, .logo img, img.logo {
-        width: ${Number(data.logo_width) || 160}px;
-        height: auto;
-      }
-      @media (max-width: 768px) {
-        header .logo img, .logo img, img.logo {
-          width: ${Number(data.logo_width_mobile) || 120}px;
-        }
-      }
-    `;
-    document.head.appendChild(style);
+    
+const style = document.createElement('style');
+
+style.textContent = `
+  :root {
+    --navy: ${data.color_primary || '#10243a'};
+    --navy2: ${data.color_secondary || '#193650'};
+    --gold: ${data.color_accent || '#c6a15b'};
+    --white: #fff;
+    --cream: ${data.color_background || '#ffffff'};
+    --text: ${data.color_text || '#283746'};
+  }
+
+  .hero h1 {
+    font-size: ${Number(data.hero_title_size) || 48}px !important;
+  }
+
+  body {
+    font-size: ${Number(data.body_text_size) || 16}px;
+    color: var(--text);
+  }
+
+  #services .section-heading h2,
+  #about .about-copy h2,
+  #contact .contact-copy h2 {
+    font-size: ${Number(data.section_title_size) || 32}px;
+  }
+
+  .site-logo {
+    width: ${Number(data.logo_width) || 200}px;
+    height: ${Number(data.logo_height) || 100}px;
+    margin-top: ${Number(data.logo_margin_top) || 0}px;
+    margin-bottom: ${Number(data.logo_margin_bottom) || 0}px;
+    object-fit: contain;
+    object-position: ${
+      ['left', 'center', 'right'].includes(data.logo_position)
+        ? data.logo_position
+        : 'center'
+    };
+  }
+
+  .button {
+    background: ${data.button_color || '#c6a15b'};
+    border-color: ${data.button_color || '#c6a15b'};
+  }
+
+  @media (max-width: 768px) {
+    .site-logo {
+      width: ${Number(data.logo_width_mobile) || 120}px;
+      height: auto;
+    }
+  }
+`;
+
+document.head.appendChild(style);
+
+if (data.button_text) {
+  const mainButton = document.querySelector(
+    '.hero-buttons .button:not(.button-outline)'
+  );
+
+  if (mainButton) {
+    mainButton.textContent = data.button_text;
+  }
+}
 
     
 
