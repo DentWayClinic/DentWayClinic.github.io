@@ -2,7 +2,7 @@
 media:
   input: /
   output: /
-
+  extensions: [jpg, jpeg, png, webp, gif, svg]
 content:
   - name: website
     label: Website Dent Way
